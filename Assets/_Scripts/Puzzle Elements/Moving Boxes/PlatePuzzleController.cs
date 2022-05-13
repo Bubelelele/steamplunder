@@ -37,7 +37,6 @@ public class PlatePuzzleController : MonoBehaviour {
             }
         }
 
-        Debug.Log(numPlatesPressed);
         onPlatePressed.Invoke(numPlatesPressed.ToString());
         
         //All plates are pressed if this point is reached
