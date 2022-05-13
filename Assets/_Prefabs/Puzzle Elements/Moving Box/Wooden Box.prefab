@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7498908693046289768}
+  - component: {fileID: 7498908693046289769}
   - component: {fileID: 7498908693046289774}
   - component: {fileID: 7498908693046289775}
   - component: {fileID: 7498908693046289772}
   - component: {fileID: 7498908693046289773}
-  - component: {fileID: 7498908693046289769}
   - component: {fileID: 7498908693046289763}
   m_Layer: 0
   m_Name: Wooden Box
@@ -37,6 +37,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7498908693046289769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7498908693046289770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ec1bc33e0c0384cbf02abbbd85e610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slideSpeed: 15
+  raycastLength: 1.5
+  description: Push
 --- !u!65 &7498908693046289774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82,7 +97,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7498908693046289770}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -116,21 +131,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7498908693046289769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7498908693046289770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ec1bc33e0c0384cbf02abbbd85e610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slideSpeed: 15
-  raycastLength: 1.5
-  description: Push
 --- !u!114 &7498908693046289763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7498908693046289769}
-        m_TargetAssemblyTypeName: WoodenBox, Assembly-CSharp
+        m_TargetAssemblyTypeName: Box, Assembly-CSharp
         m_MethodName: AttemptMove
         m_Mode: 6
         m_Arguments:

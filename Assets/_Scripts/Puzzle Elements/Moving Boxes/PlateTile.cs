@@ -17,8 +17,8 @@ public class PlateTile : Tile {
     }
 
     public override void ClearTile() {
-        StateChanged();
         base.ClearTile();
+        StateChanged();
     }
 
     private void OnCollisionEnter(Collision collision) {
