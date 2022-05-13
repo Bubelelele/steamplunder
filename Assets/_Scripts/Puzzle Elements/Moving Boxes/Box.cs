@@ -4,6 +4,8 @@ public class Box : MonoBehaviour {
     
     [SerializeField] private float slideSpeed = 10f;
     [SerializeField] private float raycastLength = 1.5f;
+    [SerializeField] private float heightOffset = .1f;
+    
 
     private bool _isMoving;
     private Vector3 _targetPos;
@@ -54,7 +56,7 @@ public class Box : MonoBehaviour {
         _currentTile = tile.TakeTile(this);
 
         if (instant) {
-            transform.position = tile.transform.position;
+            transform.position = tile.transform.position + Vector3.up * heightOffset;
         } else {
             _targetPos = tile.transform.position;
             _isMoving = true;
