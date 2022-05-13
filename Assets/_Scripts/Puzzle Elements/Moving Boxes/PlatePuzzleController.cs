@@ -8,7 +8,7 @@ public class PlatePuzzleController : MonoBehaviour {
     [SerializeField] private PlateTile[] platesToCheck;
     [SerializeField] private UnityEvent onPuzzleCompletion;
     [SerializeField] private UnityEvent onPuzzleUndone;
-    [SerializeField] private UnityEvent<int> onPlatePressed;
+    [SerializeField] private UnityEvent<string> onPlatePressed;
 
     private bool _completed;
     
@@ -37,7 +37,7 @@ public class PlatePuzzleController : MonoBehaviour {
             }
             return;
         }
-        onPlatePressed.Invoke(numPlatesPressed);
+        onPlatePressed.Invoke(numPlatesPressed.ToString());
         
         //All plates are pressed if this point is reached
         if (_completed) return;
