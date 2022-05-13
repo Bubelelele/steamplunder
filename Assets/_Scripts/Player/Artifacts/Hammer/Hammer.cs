@@ -35,7 +35,7 @@ public class Hammer : ArtifactBase {
             float fraction = 1f - Mathf.Clamp01(distance / colliderRadius);
 
             if (collider.TryGetComponent<IHittable>(out var hittable)) {
-                hittable.Hit(Mathf.RoundToInt(damage * fraction), Artifact.Hammer);
+                hittable.Hit(Mathf.RoundToInt(damage * fraction), ArtifactType);
             }
 
             if (collider.TryGetComponent<Rigidbody>(out var rb)) {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.52386564, g: 0.56170434, b: 0.47704506, a: 1}
+  m_IndirectSpecularColor: {r: 0.5238657, g: 0.5617042, b: 0.47704506, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -557,19 +557,7 @@ MonoBehaviour:
       m_Calls: []
   onPlatePressed:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8473282050144259790}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &570381491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,21 +2810,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4580245335022380796, guid: 1eea9f90d4763d045b347b5aba004e88,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4580245335022380797, guid: 1eea9f90d4763d045b347b5aba004e88,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4580245335022380797, guid: 1eea9f90d4763d045b347b5aba004e88,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 4580245335147276416, guid: 1eea9f90d4763d045b347b5aba004e88,
         type: 3}
       propertyPath: m_Name
@@ -3596,9 +3569,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0598e47872819a74db213fd7cd7b85f1, type: 3}
---- !u!95 &8473282050144259790 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5361886867829658281, guid: 0598e47872819a74db213fd7cd7b85f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 8473282050144259789}
-  m_PrefabAsset: {fileID: 0}
