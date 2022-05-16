@@ -9,10 +9,7 @@ public class AxeHitbox : HitboxBase {
             return;
         }
         if (other.TryGetComponent<IHittable>(out _)) {
-            if (_colliders.Contains(other)) return;
-            
-            _colliders.Add(other);
-            if (_artifact != null) _artifact.ProcessHitboxData(other);
+            CheckCollider(other);
         }
     }
 

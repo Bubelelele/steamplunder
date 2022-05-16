@@ -18,6 +18,13 @@ public abstract class HitboxBase : MonoBehaviour {
         ClearTrigger();
     }
 
+    protected void CheckCollider(Collider other) {
+        if (_colliders.Contains(other)) return;
+            
+        _colliders.Add(other);
+        if (_artifact != null) _artifact.ProcessHitboxData(other);
+    }
+
     private void ClearTrigger() {
         _triggerEnabled = false;
         _colliders = new List<Collider>();

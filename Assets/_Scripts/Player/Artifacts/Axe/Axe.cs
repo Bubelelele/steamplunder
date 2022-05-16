@@ -49,6 +49,7 @@ public class Axe : ArtifactWeaponBase {
     private void Attack2Ended() {
         if (_queuedTime > 0f) {
             if (PlayerData.ArtifactStatus[Artifact.Spin])
+                // 50/50 for spin or bash attack
                 if (Random.value > .5f) {
                     _animator.SetTrigger("Spin Attack");
                     return;

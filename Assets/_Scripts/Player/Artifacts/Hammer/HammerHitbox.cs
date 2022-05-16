@@ -4,11 +4,12 @@ public class HammerHitbox : HitboxBase {
 
     private void OnTriggerStay(Collider other) {
         if (!_triggerEnabled) return;
+        if (_artifact == null) {
+            Debug.LogWarning($"Artifact connection missing on: {gameObject.name}");
+            return;
+        }
         if (other.TryGetComponent<EntityBase>(out _)) {
-            if (_colliders.Contains(other)) return;
-            
-            _colliders.Add(other);
-            if (_artifact != null) _artifact.ProcessHitboxData(other);
+            CheckCollider(other);
         }
     }
 
