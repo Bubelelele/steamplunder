@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,22 +26,18 @@ public class PlatePuzzleController : MonoBehaviour {
     private void OnPlatePressStateChanged() {
         int numPlatesPressed = 0;
         foreach (var plateTile in platesToCheck) {
-            if (plateTile.IsPressed) {
-                numPlatesPressed++;
-                continue;
-            }
-            if (canUndoPuzzle) {
-                if (_completed) onPuzzleUndone.Invoke();
-                _completed = false;
-            }
+            if (plateTile.IsPressed) numPlatesPressed++;
         }
 
         onPlatePressed.Invoke(numPlatesPressed.ToString());
         
-        //All plates are pressed if this point is reached
-        if (_completed) return;
-        _completed = true;
-        onPuzzleCompletion.Invoke();
+        if (numPlatesPressed == platesToCheck.Length) {
+            onPuzzleCompletion.Invoke();
+            _completed = true;
+        } else if (canUndoPuzzle && _completed) {
+            onPuzzleUndone.Invoke();
+            _completed = false;
+        }
     }
     
 }

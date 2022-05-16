@@ -1,33 +1,19 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AxeHitbox : MonoBehaviour {
-
-    private List<IHittable> _entities;
-    private bool _triggerEnabled;
-    private Axe _artifact;
-
-    public void SetArtifact(Axe artifact) => _artifact = artifact;
-    
-    private void OnEnable() {
-        _entities = new List<IHittable>();
-        _triggerEnabled = false;
-        Invoke(nameof(EnableTrigger), .2f);
-    }
-
-    private void EnableTrigger() => _triggerEnabled = true;
+public class AxeHitbox : HitboxBase {
 
     private void OnTriggerStay(Collider other) {
+        if (!_triggerEnabled) return;
         if (_artifact == null) {
             Debug.LogWarning($"Artifact connection missing on: {gameObject.name}");
             return;
         }
-        if (!_triggerEnabled) return;
-        if (other.TryGetComponent<IHittable>(out var hittable)) {
-            if (_entities.Contains(hittable)) return;
+        if (other.TryGetComponent<IHittable>(out _)) {
+            if (_colliders.Contains(other)) return;
             
-            hittable.Hit(_artifact.GetDamageValue(), Artifact.Axe);
-            _entities.Add(hittable);
+            _colliders.Add(other);
+            if (_artifact != null) _artifact.ProcessHitboxData(other);
         }
     }
+
 }
