@@ -658,7 +658,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Attacks
     m_StateMachine: {fileID: -7974994631937770169}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: d73acf43a72863c4f9cc54c632f3708d, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -1138,12 +1138,12 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 5900787497063519900}
-    second:
-    - {fileID: 7623112901569294468}
   - first: {fileID: -7627013844070665033}
     second:
     - {fileID: 4626284976256951683}
+  - first: {fileID: 5900787497063519900}
+    second:
+    - {fileID: 7623112901569294468}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
