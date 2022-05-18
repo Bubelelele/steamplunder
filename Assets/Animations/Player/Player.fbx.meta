@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: dc7edb67c3bc5f644b88eba16b23edc1
+guid: cd525d2882aceac46a7d37a96cde87bb
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -3100369314251171874
-    second: Idle
-  - first:
       74: 5522812681064789136
     second: Run
+  - first:
+      74: -3100369314251171874
+    second: Idle
   - first:
       74: 8992522252433359312
     second: Attack_1
@@ -42,7 +42,27 @@ ModelImporter:
   - first:
       74: -3704289112126983070
     second: Shoot
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Axe_Material
+    second: {fileID: 2100000, guid: 5720bf6b368899a4eb2c65783fa03896, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grapple_Material
+    second: {fileID: 2100000, guid: bd0a3c367697ef84794cd4b56311b637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hammer_Material
+    second: {fileID: 2100000, guid: 64c7734588c919744ae295b3cab39b3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steamer_Material
+    second: {fileID: 2100000, guid: 1cb19e65303f73744ba8cf8ecb4cfc8c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -154,6 +174,22 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.37762237
+        functionName: HitboxOn
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 89a027859f5ec4f43b6b96be0e0ed1dc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7652547
+        functionName: HitboxOff
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 89a027859f5ec4f43b6b96be0e0ed1dc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 1
         functionName: Attack1Ended
         data: 
@@ -191,6 +227,22 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.1013986
+        functionName: HitboxOn
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 89a027859f5ec4f43b6b96be0e0ed1dc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.53866124
+        functionName: HitboxOff
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 89a027859f5ec4f43b6b96be0e0ed1dc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 1
         functionName: Attack2Ended
         data: 
@@ -202,7 +254,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 115
+      additiveReferencePoseFrame: 116
     - serializedVersion: 16
       name: Attack_3_Bash
       takeName: Attack_3_Bash
@@ -228,6 +280,22 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.4020979
+        functionName: HitboxOn
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 89a027859f5ec4f43b6b96be0e0ed1dc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.66239744
+        functionName: HitboxOff
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 89a027859f5ec4f43b6b96be0e0ed1dc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 1
         functionName: ActionEnded
         data: 
@@ -239,7 +307,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 130
+      additiveReferencePoseFrame: 136
     - serializedVersion: 16
       name: Attack_3_Spin
       takeName: Attack_3_Spin
@@ -265,6 +333,22 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.3216783
+        functionName: HitboxOn
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 89a027859f5ec4f43b6b96be0e0ed1dc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6566036
+        functionName: HitboxOff
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 89a027859f5ec4f43b6b96be0e0ed1dc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 1
         functionName: ActionEnded
         data: 
@@ -276,7 +360,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 151
+      additiveReferencePoseFrame: 156
     - serializedVersion: 16
       name: Hammer_Bash
       takeName: Hammer_Bash
@@ -302,7 +386,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.49003986
+      - time: 0.5804196
         functionName: OnGroundHit
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 21fc220762b2c984dbd47b951c84aa00,
@@ -326,7 +410,7 @@ ModelImporter:
       name: Grapple_Shoot
       takeName: Grapple_Shoot
       internalID: 0
-      firstFrame: 205
+      firstFrame: 211
       lastFrame: 235
       wrapMode: 0
       orientationOffsetY: 0
@@ -347,7 +431,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
+      - time: 0.3846154
         functionName: Shoot
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 741f578a531e0e24dada0856a3df0416,
@@ -358,13 +442,13 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 205
+      additiveReferencePoseFrame: 211
     - serializedVersion: 16
       name: Grapple_Fly
       takeName: Grapple_Fly
       internalID: 0
-      firstFrame: 215
-      lastFrame: 245
+      firstFrame: 236
+      lastFrame: 255
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -387,13 +471,13 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 215
+      additiveReferencePoseFrame: 236
     - serializedVersion: 16
       name: Steamer_Equip
       takeName: Steamer_Equip
       internalID: 0
-      firstFrame: 246
-      lastFrame: 265
+      firstFrame: 256
+      lastFrame: 275
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -416,13 +500,13 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 215
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Steamer_Steam
       takeName: Steamer_Steam
       internalID: 0
-      firstFrame: 266
-      lastFrame: 295
+      firstFrame: 276
+      lastFrame: 305
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -445,13 +529,13 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 256
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Block
       takeName: Block
       internalID: 0
-      firstFrame: 296
-      lastFrame: 315
+      firstFrame: 306
+      lastFrame: 325
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -474,13 +558,13 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 295
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Shoot
       takeName: Shoot
       internalID: 0
-      firstFrame: 316
-      lastFrame: 340
+      firstFrame: 326
+      lastFrame: 350
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -503,7 +587,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 306
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -569,7 +653,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

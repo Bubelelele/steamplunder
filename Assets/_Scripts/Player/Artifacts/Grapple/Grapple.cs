@@ -92,7 +92,7 @@ public class Grapple : ArtifactBase {
 
     private bool InClearPath(Vector3 vectorToGrapplePoint) {
         Ray ray = new Ray(transform.position, vectorToGrapplePoint);
-        int layerMask = 1 | 1 << 6; //bit shifting. Means that it will look at layers 1 (default) and 6 (ground)
+        int layerMask = 1 | 1 << 6; //bit shifting. It will look at layers 1 (default) and 6 (ground)
         
         Debug.DrawLine(transform.position, GrapplePoint.Current.transform.position);
         if (Physics.Raycast(ray, out var hit, grappleRange, layerMask)) {

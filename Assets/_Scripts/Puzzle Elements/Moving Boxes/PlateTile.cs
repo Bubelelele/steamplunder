@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PlateTile : Tile {
     
@@ -17,8 +16,8 @@ public class PlateTile : Tile {
     }
 
     public override void ClearTile() {
-        StateChanged();
         base.ClearTile();
+        StateChanged();
     }
 
     private void OnCollisionEnter(Collision collision) {
