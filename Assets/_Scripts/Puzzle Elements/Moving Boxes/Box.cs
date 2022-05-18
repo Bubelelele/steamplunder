@@ -4,8 +4,6 @@ public class Box : MonoBehaviour {
     
     [SerializeField] private float slideSpeed = 10f;
     [SerializeField] private float raycastLength = 1.5f;
-    [SerializeField] private float heightOffset = .1f;
-    
 
     private bool _isMoving;
     private Vector3 _targetPos;
@@ -24,10 +22,9 @@ public class Box : MonoBehaviour {
     }
 
     public void AttemptMove(bool slide = false) {
-        var currentPlayer = Player.GetPlayer();
-        if (currentPlayer == null || _isMoving) return;
+        if (!Player.GetPlayer() || _isMoving) return;
 
-        Vector3 moveDirection = GetMoveDirection(currentPlayer.transform.position);
+        Vector3 moveDirection = GetMoveDirection(Player.GetPosition());
         if (slide) {
             Tile nextTile = FindOpenTile(moveDirection, transform.position);
             Tile destination = null;
@@ -56,7 +53,7 @@ public class Box : MonoBehaviour {
         _currentTile = tile.TakeTile(this);
 
         if (instant) {
-            transform.position = tile.transform.position + Vector3.up * heightOffset;
+            transform.position = tile.transform.position;
         } else {
             _targetPos = tile.transform.position;
             _isMoving = true;

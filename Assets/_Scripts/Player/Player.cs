@@ -11,6 +11,11 @@ public class Player : MonoBehaviour {
         return _currentPlayer;
     }
 
+    public static Vector3 GetPosition() {
+        if (_currentPlayer == null) Debug.LogWarning($"No player assigned!");
+        return _currentPlayer.transform.position;
+    }
+
     private void Awake() {
         _currentPlayer = this;
         PlayerData.Init(maxHealth);
