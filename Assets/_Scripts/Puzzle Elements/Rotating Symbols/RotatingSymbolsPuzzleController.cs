@@ -3,28 +3,37 @@ using UnityEngine.Events;
 
 public class RotatingSymbolsPuzzleController : MonoBehaviour {
 
-    [SerializeField] private int[] solution;
-    [SerializeField] private RotatingSymbolBlock[] blocks;
+    [SerializeField] private RotatingSymbolPedestal[] symbolPedestals;
     [SerializeField] private UnityEvent onPuzzleCompletion;
     
     private bool _solved;
 
     private void Start() {
-        if (solution.Length != blocks.Length) Debug.LogWarning("Rotating block puzzle solution length error");
+        foreach (var pedestal in symbolPedestals) {
+            pedestal.onCorrect.AddListener(CheckSolution);
+        }
 
-        foreach (var block in blocks) {
-            block.OnRotate += CheckSolution;
+        while (AllPedestalsSolved()) {
+            //will scramble all pedestals until it is not a completed state
+            Debug.Log("Scrambling");
+            foreach (var pedestal in symbolPedestals) {
+                pedestal.Scramble();
+            }
         }
     }
 
     private void CheckSolution() {
-        if (_solved) return;
-        
-        for (int i = 0; i < blocks.Length; i++) {
-            if (blocks[i].CurrentSymbol != solution[i]) return;
-        }
+        if (_solved || !AllPedestalsSolved()) return;
 
+        //Symbols are correctly rotated if this point is reached
         _solved = true;
         onPuzzleCompletion.Invoke();
+    }
+    
+    private bool AllPedestalsSolved() {
+        foreach (var pedestal in symbolPedestals) {
+            if (!pedestal.Solved) return false;
+        }
+        return true;
     }
 }
