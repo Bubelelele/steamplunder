@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class MeleeBandit : BanditBase {
-    
+public class MeleeBandit : BanditBase
+{
+
     //Paramaters to other scripts
     [HideInInspector] public bool lethal = false;
 
@@ -36,29 +37,13 @@ public class MeleeBandit : BanditBase {
     private float distanceBeforeImidiateAttack = 1.3f;
 
     private bool attackInvoked = false;
-    
+
 
     //Stunning parameters
     private bool isStunned = false;
     private bool canBeStunned = false;
 
-
-    //Overrides
-    protected override void UpdateChase()
-    {
-        
-    }
-    protected override void UpdateAttack()
-    {
-        
-    }
-    protected override void UpdateStun()
-    {
-        
-    }
-
-
-    /*protected override void UpdateSense()
+    protected override void UpdateSense()
     {
 
         //Distance control
@@ -126,8 +111,8 @@ public class MeleeBandit : BanditBase {
                     }
 
                     //ZigZag
-                    if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack - 1) { forwardZigZag = false;}
-                    else if (Vector3.Distance(player.transform.position, transform.position) > distanceAttack + 1){ forwardZigZag = true; }
+                    if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack - 1) { forwardZigZag = false; }
+                    else if (Vector3.Distance(player.transform.position, transform.position) > distanceAttack + 1) { forwardZigZag = true; }
 
                     if (!forwardZigZag)
                     {
@@ -148,7 +133,7 @@ public class MeleeBandit : BanditBase {
                     Invoke("Attack", Random.Range(minWaitBeforeAttack, maxWaitBeforeAttack));
                     attackInvoked = true;
                 }
-                else if(Vector3.Distance(transform.position, player.transform.position) < distanceBeforeImidiateAttack)
+                else if (Vector3.Distance(transform.position, player.transform.position) < distanceBeforeImidiateAttack)
                 {
                     CancelInvoke();
                     Attack();
@@ -160,26 +145,26 @@ public class MeleeBandit : BanditBase {
         if (moveBack)
         {
             var backedUpPos = transform.position - transform.forward;
-            transform.position = Vector3.MoveTowards(transform.position ,backedUpPos, stepBackSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, backedUpPos, stepBackSpeed * Time.deltaTime);
         }
-    }*/
-    /*public override void Attack()
+    }
+    public void Attack()
     {
         animationPlaying = true;
         enemyAnim.SetInteger("Swing", Random.Range(1, 4));
         CanMoveToDestination(movementSpeed);
         CannotPivot();
-    }*/
+    }
 
     //Other functions
-    /*public void Stun()
+    public override void Stun()
     {
         animationPlaying = true;
         enemyAnim.SetTrigger("Stunned");
         isStunned = true;
         ChangeSwordMat(swordMat);
         lethal = false;
-    }*/
+    }
     public void CanBeStunned()
     {
         _navMeshAgent.SetDestination(player.transform.position);
@@ -199,9 +184,11 @@ public class MeleeBandit : BanditBase {
     {
         lethal = false;
     }
-
-    private void ChangeSwordMat(Material newMat) {
-        swordRenderer.material = newMat;
+    public void ChangeSwordMat(Material newMat)
+    {
+        var tempMaterials = swordRenderer.materials;
+        tempMaterials[2] = newMat;
+        swordRenderer.materials = tempMaterials;
     }
     private void CanPivot() { pivot = true; }
     private void CannotPivot()
@@ -215,12 +202,12 @@ public class MeleeBandit : BanditBase {
     }
     private void ChangePivotDirection()
     {
-        pivotSpeed = - pivotSpeed;
+        pivotSpeed = -pivotSpeed;
     }
-    private void MovingBack() 
-    { 
+    private void MovingBack()
+    {
         moveBack = true;
-        Invoke(nameof(StopMovingBack), 0.2f);
+        Invoke("StopMovingBack", 0.2f);
     }
     private void StopMovingBack()
     {
@@ -232,8 +219,6 @@ public class MeleeBandit : BanditBase {
         isStunned = false;
         attackInvoked = false;
         enemyAnim.SetInteger("Swing", 0);
-        enemyAnim.SetInteger("IdleNumber", 0);
         MovingBack();
     }
-
 }

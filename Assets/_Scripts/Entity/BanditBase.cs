@@ -51,8 +51,12 @@ public abstract class BanditBase : EnemyBase {
         homePoint = transform.position;
         alertTrigger = transform.GetComponentInChildren<AlertTrigger>().gameObject;
     }
-    protected override void UpdateIdle()
+
+    protected virtual void UpdateSense() { }
+
+    private void Update()
     {
+        UpdateSense();
         Idle();
         timeSinceLastMoved += Time.deltaTime;
 
@@ -129,9 +133,10 @@ public abstract class BanditBase : EnemyBase {
     {
         if (idle)
         {
+            enemyAnim.SetBool("Idle", true);
             if (!patrol)
             {
-                enemyAnim.SetBool("Idle", true);
+                
                 if (idleTurnedDone)
                 {
                     Invoke("TurnWhileIdle", Random.Range(4, 10));
@@ -165,7 +170,6 @@ public abstract class BanditBase : EnemyBase {
                 {
 
                     StopMovingToDestination();
-                    enemyAnim.SetBool("Idle", true);
                     enemyAnim.SetBool("Walking", false);
                     if (changeDestinationNumber)
                     {
@@ -184,7 +188,7 @@ public abstract class BanditBase : EnemyBase {
     public void EnemyInSight() { chasePlayer = true; distanceBeforeImidiateDetection = rangeForStopChasingPlayer; }
     public void EnemyOutOfSight() { chasePlayer = false; idle = true; distanceBeforeImidiateDetection = 3; }
     public void InAttackRange() { inAttackRange = true; }
-    public void StopMovingToDestination() { _navMeshAgent.isStopped = true; }
+    public void StopMovingToDestination() { _navMeshAgent.isStopped = true;}
     public void CanMoveToDestination(float speed)
     {
         _navMeshAgent.isStopped = false;
@@ -225,6 +229,10 @@ public abstract class BanditBase : EnemyBase {
     private void PlayIdleAnimation()
     {
         enemyAnim.SetInteger("IdleNumber", Random.Range(1, 4));
+    }
+    private void IdleAnimationDone()
+    {
+        enemyAnim.SetInteger("IdleNumber", 0);
     }
 
 }
