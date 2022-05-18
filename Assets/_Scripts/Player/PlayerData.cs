@@ -41,7 +41,10 @@ public static class PlayerData {
     
     public static void Damage(int amount) {
         SetHealth(Health - amount);
-        if (Health <= 0) Player.GetPlayer()?.Die();
+        if (Health <= 0) {
+            SetHealth(MaxHealth);
+            Player.GetPlayer()?.Die();
+        }
     }
 
     public static void Heal(int amount) {

@@ -15,6 +15,10 @@ public class NoteUI : MonoBehaviour {
         Note.OnDisplayNote += DisplayNote;
     }
 
+    private void OnDestroy() {
+        Note.OnDisplayNote -= DisplayNote;
+    }
+
     private void Update() {
         if (noteImage.activeSelf && Input.GetKeyDown(exitKey)) {
             noteImage.SetActive(false);
