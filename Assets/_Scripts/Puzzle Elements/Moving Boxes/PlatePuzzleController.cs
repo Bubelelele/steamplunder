@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +8,7 @@ public class PlatePuzzleController : MonoBehaviour {
     [SerializeField] private PlateTile[] platesToCheck;
     [SerializeField] private UnityEvent onPuzzleCompletion;
     [SerializeField] private UnityEvent onPuzzleUndone;
-    [SerializeField] private UnityEvent<string> onPlatePressed;
+    [SerializeField] private UnityEvent<int> onPlatePressed;
 
     private bool _completed;
     
@@ -26,18 +27,22 @@ public class PlatePuzzleController : MonoBehaviour {
     private void OnPlatePressStateChanged() {
         int numPlatesPressed = 0;
         foreach (var plateTile in platesToCheck) {
-            if (plateTile.IsPressed) numPlatesPressed++;
+            if (plateTile.IsPressed) {
+                numPlatesPressed++;
+                continue;
+            }
+            if (canUndoPuzzle) {
+                if (_completed) onPuzzleUndone.Invoke();
+                _completed = false;
+            }
+            return;
         }
-
-        onPlatePressed.Invoke(numPlatesPressed.ToString());
+        onPlatePressed.Invoke(numPlatesPressed);
         
-        if (numPlatesPressed == platesToCheck.Length) {
-            onPuzzleCompletion.Invoke();
-            _completed = true;
-        } else if (canUndoPuzzle && _completed) {
-            onPuzzleUndone.Invoke();
-            _completed = false;
-        }
+        //All plates are pressed if this point is reached
+        if (_completed) return;
+        _completed = true;
+        onPuzzleCompletion.Invoke();
     }
     
 }

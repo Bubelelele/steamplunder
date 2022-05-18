@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Hammer : ArtifactWeaponBase {
+public class Hammer : ArtifactBase {
     
     /*
      * 1. Write out hammer functionality *
@@ -13,8 +14,7 @@ public class Hammer : ArtifactWeaponBase {
     [SerializeField] private float knockbackStength = 10f;
 
     private HammerHitbox _hitbox;
-    private SphereCollider _sphereCollider;
-
+    
     public override void Use() {
         base.Use();
         _animator.SetTrigger("Hammer");
@@ -23,32 +23,32 @@ public class Hammer : ArtifactWeaponBase {
     protected override void Awake() {
         base.Awake();
         _hitbox = artifactObject.GetComponent<HammerHitbox>();
-        _sphereCollider = artifactObject.GetComponent<SphereCollider>();
     }
 
     private void OnGroundHit() {
         if (_hitbox != null) _hitbox.EnableTrigger(this);
     }
 
-    public override void ProcessHitboxData(Collider collider) {
-        Vector3 colliderCenter = artifactObject.transform.position + _sphereCollider.center;
-        float colliderRadius = _sphereCollider.radius;
-        float distance = Vector3.Distance(colliderCenter, collider.transform.position);
-        float fraction = 1f - Mathf.Clamp01(distance / colliderRadius);
+    public void ProcessHitboxData(List<Transform> colliders, Vector3 colliderCenter, float colliderRadius) {
+        foreach (var collider in colliders) {
+            float distance = Vector3.Distance(colliderCenter, collider.position);
+            float fraction = 1f - Mathf.Clamp01(distance / colliderRadius);
 
-        if (collider.TryGetComponent<IHittable>(out var hittable)) {
-            hittable.Hit(Mathf.RoundToInt(damage * fraction), ArtifactType);
+            if (collider.TryGetComponent<IHittable>(out var hittable)) {
+                hittable.Hit(Mathf.RoundToInt(damage * fraction), Artifact.Hammer);
+            }
+
+            if (collider.TryGetComponent<Rigidbody>(out var rb)) {
+                Vector3 knockbackDir = (collider.position - colliderCenter).normalized;
+                Vector3 knockbackVector = knockbackDir * knockbackStength * fraction;
+                rb.AddForce(knockbackVector, ForceMode.Impulse);
+            }
+            
+            if (collider.TryGetComponent<EnemyBase>(out var enemy)) {
+                enemy.Stun();
+            }
         }
 
-        if (collider.TryGetComponent<Rigidbody>(out var rb)) {
-            Vector3 knockbackDir = (collider.transform.position - colliderCenter).normalized;
-            Vector3 knockbackVector = knockbackDir * knockbackStength * fraction;
-            rb.AddForce(knockbackVector, ForceMode.Impulse);
-        }
-        
-        if (collider.TryGetComponent<EnemyBase>(out var enemy)) {
-            enemy.Stun();
-        }
     }
     
 }

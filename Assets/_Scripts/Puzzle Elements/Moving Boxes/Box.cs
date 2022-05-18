@@ -22,9 +22,10 @@ public class Box : MonoBehaviour {
     }
 
     public void AttemptMove(bool slide = false) {
-        if (!Player.GetPlayer() || _isMoving) return;
+        var currentPlayer = Player.GetPlayer();
+        if (currentPlayer == null || _isMoving) return;
 
-        Vector3 moveDirection = GetMoveDirection(Player.GetPosition());
+        Vector3 moveDirection = GetMoveDirection(currentPlayer.transform.position);
         if (slide) {
             Tile nextTile = FindOpenTile(moveDirection, transform.position);
             Tile destination = null;
