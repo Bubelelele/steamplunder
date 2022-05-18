@@ -14,9 +14,11 @@ public class HammerInteractHitbox : MonoBehaviour {
     }
 
     private IEnumerator ToggleTrigger() {
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.3f);
+        Debug.Log("true");
         _triggerEnabled = true;
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.3f);
+        Debug.Log("false");
         _triggerEnabled = false;
     }
 
