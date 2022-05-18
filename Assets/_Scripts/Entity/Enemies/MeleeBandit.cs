@@ -41,9 +41,23 @@ public class MeleeBandit : BanditBase {
     //Stunning parameters
     private bool isStunned = false;
     private bool canBeStunned = false;
-    
+
 
     //Overrides
+    protected override void UpdateChase()
+    {
+        
+    }
+    protected override void UpdateAttack()
+    {
+        
+    }
+    protected override void UpdateStun()
+    {
+        
+    }
+
+
     /*protected override void UpdateSense()
     {
 
@@ -218,6 +232,7 @@ public class MeleeBandit : BanditBase {
         isStunned = false;
         attackInvoked = false;
         enemyAnim.SetInteger("Swing", 0);
+        enemyAnim.SetInteger("IdleNumber", 0);
         MovingBack();
     }
 

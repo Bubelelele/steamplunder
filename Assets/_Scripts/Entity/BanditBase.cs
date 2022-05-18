@@ -51,13 +51,9 @@ public abstract class BanditBase : EnemyBase {
         homePoint = transform.position;
         alertTrigger = transform.GetComponentInChildren<AlertTrigger>().gameObject;
     }
-
-    /*private void Update()
+    protected override void UpdateIdle()
     {
-        UpdateSense();
         Idle();
-
-        //For the idle movement
         timeSinceLastMoved += Time.deltaTime;
 
         //Idle turn
@@ -73,7 +69,7 @@ public abstract class BanditBase : EnemyBase {
                 EnemyInSight();
                 playerDetected = true;
             }
-            else if(Vector3.Distance(player.transform.position, transform.position) < distanceBeforeImidiateDetection)
+            else if (Vector3.Distance(player.transform.position, transform.position) < distanceBeforeImidiateDetection)
             {
                 EnemyInSight();
                 playerDetected = true;
@@ -95,10 +91,10 @@ public abstract class BanditBase : EnemyBase {
                 alertTrigger.transform.localScale = Vector3.one;
                 idle = true;
                 EnemyOutOfSight();
-                
+
             }
         }
-        
+
 
         if (playerDetected)
         {
@@ -108,8 +104,7 @@ public abstract class BanditBase : EnemyBase {
                 EnemyInSight();
             }
         }
-
-    }*/
+    }
     public void AwareOfPlayer()
     {
         playerDetected = true;
@@ -140,6 +135,7 @@ public abstract class BanditBase : EnemyBase {
                 if (idleTurnedDone)
                 {
                     Invoke("TurnWhileIdle", Random.Range(4, 10));
+                    Invoke("PlayIdleAnimation", Random.Range(2, 6));
                     idleTurnedDone = false;
                 }
             }
@@ -158,8 +154,11 @@ public abstract class BanditBase : EnemyBase {
                         randomPos = hit.position;
                         randomCheck = true;
                     }
+                    enemyAnim.SetBool("Walking", true);
                     CanMoveToDestination(slowWalkingSpeed);
                     _navMeshAgent.SetDestination(randomPos);
+                    var targetRotation = Quaternion.LookRotation(new Vector3(randomPos.x, transform.position.y, randomPos.z) - transform.position);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
                     if (Vector3.Distance(transform.position, randomPos) < 1 || timeSinceLastMoved > 4) { moveToPatrolDestination = false; }
                 }
                 else if (!moveToPatrolDestination)
@@ -167,9 +166,11 @@ public abstract class BanditBase : EnemyBase {
 
                     StopMovingToDestination();
                     enemyAnim.SetBool("Idle", true);
+                    enemyAnim.SetBool("Walking", false);
                     if (changeDestinationNumber)
                     {
                         Invoke("NextDestination", Random.Range(5, 15));
+                        Invoke("PlayIdleAnimation", Random.Range(2, 6));
                         changeDestinationNumber = false;
                     }
                 }
@@ -220,6 +221,10 @@ public abstract class BanditBase : EnemyBase {
     {
         canIdleTurn = false;
         idleTurnedDone = true;
+    }
+    private void PlayIdleAnimation()
+    {
+        enemyAnim.SetInteger("IdleNumber", Random.Range(1, 4));
     }
 
 }
