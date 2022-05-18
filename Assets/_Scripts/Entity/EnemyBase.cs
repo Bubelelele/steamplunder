@@ -7,7 +7,7 @@ public abstract class EnemyBase : EntityBase {
     
     [SerializeField] private Healthbar healthbar;
     
-    private NavMeshAgent _navMeshAgent;
+    protected NavMeshAgent _navMeshAgent;
 
     protected override void Awake() {
         base.Awake();
