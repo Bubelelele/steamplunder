@@ -67,6 +67,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: BanditTent
       objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: a5f80c13172e41743844a7ee0727d22e,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 56cc50719f9d1a64b9a8e366920aa77f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5f80c13172e41743844a7ee0727d22e, type: 3}
 --- !u!4 &1376714842863733185 stripped
@@ -75,26 +81,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1482154488333332010}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7895598435436575919 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -503445113162673531, guid: a5f80c13172e41743844a7ee0727d22e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1482154488333332010}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &7593062044740092700
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7895598435436575919}
-  m_Material: {fileID: 13400000, guid: 56cc50719f9d1a64b9a8e366920aa77f, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5591875528572977948, guid: a5f80c13172e41743844a7ee0727d22e, type: 3}
 --- !u!1001 &7580006062534448292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,7 +91,7 @@ PrefabInstance:
     - target: {fileID: 1106939448434895030, guid: 896f7d90f0181544fa7e3c6a8d6704a2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1106939448434895030, guid: 896f7d90f0181544fa7e3c6a8d6704a2,
         type: 3}
@@ -175,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 8292637428746503207, guid: 896f7d90f0181544fa7e3c6a8d6704a2,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.107412
+      value: 1.7772512
       objectReference: {fileID: 0}
     - target: {fileID: 8813450175808923106, guid: 896f7d90f0181544fa7e3c6a8d6704a2,
         type: 3}
