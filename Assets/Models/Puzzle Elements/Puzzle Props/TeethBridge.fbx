@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2022
 		Month: 5
-		Day: 9
-		Hour: 6
+		Day: 20
+		Hour: 0
 		Minute: 8
-		Second: 31
-		Millisecond: 917
+		Second: 27
+		Millisecond: 509
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.3"
 	OtherFlags:  {
@@ -31,21 +31,21 @@ FBXHeaderExtension:  {
 			Comment: ""
 		}
 		Properties70:  {
-			P: "DocumentUrl", "KString", "Url", "", "D:\.unity\3D Models\Assets\Models\Environment\TeethBridge.fbx"
-			P: "SrcDocumentUrl", "KString", "Url", "", "D:\.unity\3D Models\Assets\Models\Environment\TeethBridge.fbx"
+			P: "DocumentUrl", "KString", "Url", "", "D:\.unity\steamplunder\Assets\Models\Puzzle Elements\Puzzle Props\TeethBridge.fbx"
+			P: "SrcDocumentUrl", "KString", "Url", "", "D:\.unity\steamplunder\Assets\Models\Puzzle Elements\Puzzle Props\TeethBridge.fbx"
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "Maya"
 			P: "Original|ApplicationVersion", "KString", "", "", "2023"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "09/05/2022 04:08:31.915"
-			P: "Original|FileName", "KString", "", "", "D:\.unity\3D Models\Assets\Models\Environment\TeethBridge.fbx"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "19/05/2022 22:08:27.506"
+			P: "Original|FileName", "KString", "", "", "D:\.unity\steamplunder\Assets\Models\Puzzle Elements\Puzzle Props\TeethBridge.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Maya"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2023"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "09/05/2022 04:08:31.915"
-			P: "Original|ApplicationActiveProject", "KString", "", "", "D:\.maya\steamplunder\scenes"
-			P: "Original|ApplicationNativeFile", "KString", "", "", "D:\.maya\steamplunder\scenes\TeethBridge.ma"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "19/05/2022 22:08:27.506"
+			P: "Original|ApplicationActiveProject", "KString", "", "", "D:\.unity\steamplunder\Assets\Models\Puzzle Elements"
+			P: "Original|ApplicationNativeFile", "KString", "", "", "D:\.maya\steamplunder\scenes\Puzzle Elements\TeethBridge.ma"
 		}
 	}
 }
@@ -80,7 +80,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 2000037308080, "", "Scene" {
+	Document: 2264661580144, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", "Take 001"
@@ -100,22 +100,49 @@ References:  {
 
 Definitions:  {
 	Version: 100
-	Count: 8
+	Count: 4
 	ObjectType: "GlobalSettings" {
 		Count: 1
 	}
-	ObjectType: "NodeAttribute" {
-		Count: 2
-		PropertyTemplate: "FbxNull" {
+	ObjectType: "Geometry" {
+		Count: 1
+		PropertyTemplate: "FbxMesh" {
 			Properties70:  {
 				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
-				P: "Size", "double", "Number", "",100
-				P: "Look", "enum", "", "",1
+				P: "BBoxMin", "Vector3D", "Vector", "",0,0,0
+				P: "BBoxMax", "Vector3D", "Vector", "",0,0,0
+				P: "Primary Visibility", "bool", "", "",1
+				P: "Casts Shadows", "bool", "", "",1
+				P: "Receive Shadows", "bool", "", "",1
+			}
+		}
+	}
+	ObjectType: "Material" {
+		Count: 1
+		PropertyTemplate: "FbxSurfaceLambert" {
+			Properties70:  {
+				P: "ShadingModel", "KString", "", "", "Lambert"
+				P: "MultiLayer", "bool", "", "",0
+				P: "EmissiveColor", "Color", "", "A",0,0,0
+				P: "EmissiveFactor", "Number", "", "A",1
+				P: "AmbientColor", "Color", "", "A",0.2,0.2,0.2
+				P: "AmbientFactor", "Number", "", "A",1
+				P: "DiffuseColor", "Color", "", "A",0.8,0.8,0.8
+				P: "DiffuseFactor", "Number", "", "A",1
+				P: "Bump", "Vector3D", "Vector", "",0,0,0
+				P: "NormalMap", "Vector3D", "Vector", "",0,0,0
+				P: "BumpFactor", "double", "Number", "",1
+				P: "TransparentColor", "Color", "", "A",0,0,0
+				P: "TransparencyFactor", "Number", "", "A",0
+				P: "DisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "DisplacementFactor", "double", "Number", "",1
+				P: "VectorDisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "VectorDisplacementFactor", "double", "Number", "",1
 			}
 		}
 	}
 	ObjectType: "Model" {
-		Count: 3
+		Count: 1
 		PropertyTemplate: "FbxNode" {
 			Properties70:  {
 				P: "QuaternionInterpolate", "enum", "", "",0
@@ -192,62 +219,13 @@ Definitions:  {
 			}
 		}
 	}
-	ObjectType: "Geometry" {
-		Count: 1
-		PropertyTemplate: "FbxMesh" {
-			Properties70:  {
-				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
-				P: "BBoxMin", "Vector3D", "Vector", "",0,0,0
-				P: "BBoxMax", "Vector3D", "Vector", "",0,0,0
-				P: "Primary Visibility", "bool", "", "",1
-				P: "Casts Shadows", "bool", "", "",1
-				P: "Receive Shadows", "bool", "", "",1
-			}
-		}
-	}
-	ObjectType: "Material" {
-		Count: 1
-		PropertyTemplate: "FbxSurfaceLambert" {
-			Properties70:  {
-				P: "ShadingModel", "KString", "", "", "Lambert"
-				P: "MultiLayer", "bool", "", "",0
-				P: "EmissiveColor", "Color", "", "A",0,0,0
-				P: "EmissiveFactor", "Number", "", "A",1
-				P: "AmbientColor", "Color", "", "A",0.2,0.2,0.2
-				P: "AmbientFactor", "Number", "", "A",1
-				P: "DiffuseColor", "Color", "", "A",0.8,0.8,0.8
-				P: "DiffuseFactor", "Number", "", "A",1
-				P: "Bump", "Vector3D", "Vector", "",0,0,0
-				P: "NormalMap", "Vector3D", "Vector", "",0,0,0
-				P: "BumpFactor", "double", "Number", "",1
-				P: "TransparentColor", "Color", "", "A",0,0,0
-				P: "TransparencyFactor", "Number", "", "A",0
-				P: "DisplacementColor", "ColorRGB", "Color", "",0,0,0
-				P: "DisplacementFactor", "double", "Number", "",1
-				P: "VectorDisplacementColor", "ColorRGB", "Color", "",0,0,0
-				P: "VectorDisplacementFactor", "double", "Number", "",1
-			}
-		}
-	}
 }
 
 ; Object properties
 ;------------------------------------------------------------------
 
 Objects:  {
-	NodeAttribute: 1999844951504, "NodeAttribute::", "Null" {
-		Properties70:  {
-			P: "Look", "enum", "", "",0
-		}
-		TypeFlags: "Null"
-	}
-	NodeAttribute: 1999844955200, "NodeAttribute::", "Null" {
-		Properties70:  {
-			P: "Look", "enum", "", "",0
-		}
-		TypeFlags: "Null"
-	}
-	Geometry: 1998370678576, "Geometry::", "Mesh" {
+	Geometry: 2261872033808, "Geometry::", "Mesh" {
 		Vertices: *636 {
 			a: -99.9999847412109,-49.9165344238281,705.881591796875,200.000015258789,-49.9165344238281,705.881591796875,-99.9999847412109,-49.9165344238281,611.763977050781,200.000015258789,-49.9165344238281,611.763977050781,-99.9999847412109,-49.9165344238281,517.645874023438,200.000015258789,-49.9165344238281,517.645874023438,-99.9999847412109,-49.9165344238281,423.527709960938,200.000015258789,-49.9165344238281,423.527709960938,-99.9999847412109,-49.9165344238281,329.410278320313,200.000015258789,-49.9165344238281,329.410278320313,-99.9999847412109,-49.9165344238281,235.293121337891,200.000015258789,-49.9165344238281,235.293121337891,-99.9999847412109,-49.9165344238281,141.175659179688,200.000015258789,-49.9165344238281,141.175659179688,-99.9999847412109,-49.9165344238281,47.0580711364746,200.000015258789,-49.9165344238281,47.0580711364746,-99.9999847412109,-49.9165344238281,-47.0593872070313,200.000015258789,-49.9165344238281,-47.0593872070313,-99.9999847412109,-49.9165344238281,-141.176956176758,200.000015258789,-49.9165344238281,-141.176956176758,-99.9999847412109,-49.9165344238281,-235.294464111328,200.000015258789,-49.9165344238281,-235.294464111328,-99.9999847412109,-49.9165344238281,-329.412231445313,200.000015258789,-49.9165344238281,-329.412231445313,-99.9999847412109,-49.9165344238281,-423.529754638672,200.000015258789,-49.9165344238281,-423.529754638672,-99.9999847412109,-49.9165344238281,-517.647338867188,200.000015258789,-49.9165344238281,-517.647338867188,-99.9999847412109,-49.9165344238281,-611.764831542969,200.000015258789,-49.9165344238281,-611.764831542969,-99.9999847412109,-49.9165344238281,-705.882385253906,200.000015258789,-49.9165344238281,-705.882385253906,-94.8720397949219,-49.9165344238281,800,-99.9999847412109,-49.9165344238281,794.884521484375,-94.1444702148438,38.7802276611328,795.071166992188,-88.8526458740234,38.6023864746094,800,-88.847900390625,43.7114486694336,795.061767578125,200.000015258789,-49.9165344238281,794.884521484375,194.8720703125,-49.9165344238281,800,188.518218994141,43.5475311279297,795.054138183594,
 188.69384765625,38.4320755004883,800,193.809097290039,38.6137237548828,795.054138183594,-195.113845825195,44.9459838867188,634.28271484375,-200.000015258789,44.8551025390625,639.93603515625,-194.900695800781,49.9165420532227,639.436584472656,-200.000015258789,-49.9165115356445,639.833557128906,-195.506393432617,-49.9165115356445,634.1640625,-195.506393432617,-49.9165115356445,683.481750488281,-200.000015258789,-49.9165115356445,677.812316894531,-194.900680541992,49.9165420532227,678.210205078125,-200.000015258789,44.9218215942383,677.770935058594,-195.113845825195,44.9459762573242,683.364013671875,-195.113693237305,44.9459075927734,446.036773681641,-200.000015258789,44.855110168457,451.689788818359,-194.900680541992,49.9165420532227,451.190612792969,-200.000015258789,-49.9165344238281,451.587036132813,-195.506118774414,-49.9165344238281,445.917755126953,-195.506103515625,-49.9165344238281,495.25634765625,-200.000015258789,-49.9165344238281,489.587097167969,-194.900665283203,49.9165420532227,489.984893798828,-200.000015258789,44.9218063354492,489.545837402344,-195.113677978516,44.9458999633789,495.138702392578,-195.113235473633,44.9456939697266,257.772521972656,-200.000015258789,44.8551330566406,263.424743652344,-194.900619506836,49.9165420532227,262.926300048828,-200.000015258789,-49.9165344238281,263.322326660156,-195.505294799805,-49.9165344238281,257.653717041016,-195.505264282227,-49.9165344238281,307.050323486328,-200.000015258789,-49.9165344238281,301.381744384766,-194.900604248047,49.9165420532227,301.778869628906,-200.000015258789,44.9217529296875,301.340484619141,-195.113220214844,44.945686340332,306.932586669922,-195.106353759766,44.942497253418,69.0969467163086,-200.000015258789,44.8554992675781,74.7368240356445,-194.89973449707,49.9165115356445,74.2494735717773,-200.000015258789,-49.9165344238281,74.6344909667969,-195.492904663086,-49.9165344238281,68.9757080078125,-195.492889404297,-49.9165344238281,119.258354187012,-200.000015258789,-49.9165344238281,113.599586486816,-194.899719238281,49.91650390625,113.985305786133,
@@ -350,29 +328,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 1998417923424, "Model::TeethBridge", "Null" {
-		Version: 232
-		Properties70:  {
-			P: "RotationActive", "bool", "", "",1
-			P: "InheritType", "enum", "", "",1
-			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "DefaultAttributeIndex", "int", "Integer", "",0
-		}
-		Shading: Y
-		Culling: "CullingOff"
-	}
-	Model: 1998417955904, "Model::Geometry", "Null" {
-		Version: 232
-		Properties70:  {
-			P: "RotationActive", "bool", "", "",1
-			P: "InheritType", "enum", "", "",1
-			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "DefaultAttributeIndex", "int", "Integer", "",0
-		}
-		Shading: Y
-		Culling: "CullingOff"
-	}
-	Model: 1998417962864, "Model::TeethBridge_Mesh", "Mesh" {
+	Model: 2261915346320, "Model::TeethBridge", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -384,7 +340,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 2000071322848, "Material::TeethBridge_Material", "" {
+	Material: 2263309643424, "Material::TeethBridge_Material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -407,23 +363,11 @@ Objects:  {
 Connections:  {
 	
 	;Model::TeethBridge, Model::RootNode
-	C: "OO",1998417923424,0
+	C: "OO",2261915346320,0
 	
-	;NodeAttribute::, Model::TeethBridge
-	C: "OO",1999844951504,1998417923424
+	;Geometry::, Model::TeethBridge
+	C: "OO",2261872033808,2261915346320
 	
-	;Model::Geometry, Model::TeethBridge
-	C: "OO",1998417955904,1998417923424
-	
-	;NodeAttribute::, Model::Geometry
-	C: "OO",1999844955200,1998417955904
-	
-	;Model::TeethBridge_Mesh, Model::Geometry
-	C: "OO",1998417962864,1998417955904
-	
-	;Geometry::, Model::TeethBridge_Mesh
-	C: "OO",1998370678576,1998417962864
-	
-	;Material::TeethBridge_Material, Model::TeethBridge_Mesh
-	C: "OO",2000071322848,1998417962864
+	;Material::TeethBridge_Material, Model::TeethBridge
+	C: "OO",2263309643424,2261915346320
 }
