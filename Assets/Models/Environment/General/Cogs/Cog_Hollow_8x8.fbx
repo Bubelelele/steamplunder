@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2022
 		Month: 5
-		Day: 18
-		Hour: 1
-		Minute: 28
-		Second: 29
-		Millisecond: 295
+		Day: 19
+		Hour: 17
+		Minute: 15
+		Second: 48
+		Millisecond: 907
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.3"
 	OtherFlags:  {
@@ -37,13 +37,13 @@ FBXHeaderExtension:  {
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "Maya"
 			P: "Original|ApplicationVersion", "KString", "", "", "2023"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "17/05/2022 23:28:29.293"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "19/05/2022 15:15:48.905"
 			P: "Original|FileName", "KString", "", "", "D:\.unity\steamplunder\Assets\Models\Environment\General\Cogs\Cog_Hollow_8x8.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Maya"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2023"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "17/05/2022 23:28:29.293"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "19/05/2022 15:15:48.905"
 			P: "Original|ApplicationActiveProject", "KString", "", "", "D:\.unity\steamplunder\Assets\Models\Environment\General"
 			P: "Original|ApplicationNativeFile", "KString", "", "", "D:\.maya\steamplunder\scenes\Environment\Props\Cogs.ma"
 		}
@@ -80,7 +80,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1613121118432, "", "Scene" {
+	Document: 2440237156768, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", "Take 001"
@@ -100,22 +100,49 @@ References:  {
 
 Definitions:  {
 	Version: 100
-	Count: 8
+	Count: 4
 	ObjectType: "GlobalSettings" {
 		Count: 1
 	}
-	ObjectType: "NodeAttribute" {
-		Count: 2
-		PropertyTemplate: "FbxNull" {
+	ObjectType: "Geometry" {
+		Count: 1
+		PropertyTemplate: "FbxMesh" {
 			Properties70:  {
 				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
-				P: "Size", "double", "Number", "",100
-				P: "Look", "enum", "", "",1
+				P: "BBoxMin", "Vector3D", "Vector", "",0,0,0
+				P: "BBoxMax", "Vector3D", "Vector", "",0,0,0
+				P: "Primary Visibility", "bool", "", "",1
+				P: "Casts Shadows", "bool", "", "",1
+				P: "Receive Shadows", "bool", "", "",1
+			}
+		}
+	}
+	ObjectType: "Material" {
+		Count: 1
+		PropertyTemplate: "FbxSurfaceLambert" {
+			Properties70:  {
+				P: "ShadingModel", "KString", "", "", "Lambert"
+				P: "MultiLayer", "bool", "", "",0
+				P: "EmissiveColor", "Color", "", "A",0,0,0
+				P: "EmissiveFactor", "Number", "", "A",1
+				P: "AmbientColor", "Color", "", "A",0.2,0.2,0.2
+				P: "AmbientFactor", "Number", "", "A",1
+				P: "DiffuseColor", "Color", "", "A",0.8,0.8,0.8
+				P: "DiffuseFactor", "Number", "", "A",1
+				P: "Bump", "Vector3D", "Vector", "",0,0,0
+				P: "NormalMap", "Vector3D", "Vector", "",0,0,0
+				P: "BumpFactor", "double", "Number", "",1
+				P: "TransparentColor", "Color", "", "A",0,0,0
+				P: "TransparencyFactor", "Number", "", "A",0
+				P: "DisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "DisplacementFactor", "double", "Number", "",1
+				P: "VectorDisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "VectorDisplacementFactor", "double", "Number", "",1
 			}
 		}
 	}
 	ObjectType: "Model" {
-		Count: 3
+		Count: 1
 		PropertyTemplate: "FbxNode" {
 			Properties70:  {
 				P: "QuaternionInterpolate", "enum", "", "",0
@@ -192,62 +219,13 @@ Definitions:  {
 			}
 		}
 	}
-	ObjectType: "Geometry" {
-		Count: 1
-		PropertyTemplate: "FbxMesh" {
-			Properties70:  {
-				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
-				P: "BBoxMin", "Vector3D", "Vector", "",0,0,0
-				P: "BBoxMax", "Vector3D", "Vector", "",0,0,0
-				P: "Primary Visibility", "bool", "", "",1
-				P: "Casts Shadows", "bool", "", "",1
-				P: "Receive Shadows", "bool", "", "",1
-			}
-		}
-	}
-	ObjectType: "Material" {
-		Count: 1
-		PropertyTemplate: "FbxSurfaceLambert" {
-			Properties70:  {
-				P: "ShadingModel", "KString", "", "", "Lambert"
-				P: "MultiLayer", "bool", "", "",0
-				P: "EmissiveColor", "Color", "", "A",0,0,0
-				P: "EmissiveFactor", "Number", "", "A",1
-				P: "AmbientColor", "Color", "", "A",0.2,0.2,0.2
-				P: "AmbientFactor", "Number", "", "A",1
-				P: "DiffuseColor", "Color", "", "A",0.8,0.8,0.8
-				P: "DiffuseFactor", "Number", "", "A",1
-				P: "Bump", "Vector3D", "Vector", "",0,0,0
-				P: "NormalMap", "Vector3D", "Vector", "",0,0,0
-				P: "BumpFactor", "double", "Number", "",1
-				P: "TransparentColor", "Color", "", "A",0,0,0
-				P: "TransparencyFactor", "Number", "", "A",0
-				P: "DisplacementColor", "ColorRGB", "Color", "",0,0,0
-				P: "DisplacementFactor", "double", "Number", "",1
-				P: "VectorDisplacementColor", "ColorRGB", "Color", "",0,0,0
-				P: "VectorDisplacementFactor", "double", "Number", "",1
-			}
-		}
-	}
 }
 
 ; Object properties
 ;------------------------------------------------------------------
 
 Objects:  {
-	NodeAttribute: 1613168687744, "NodeAttribute::", "Null" {
-		Properties70:  {
-			P: "Look", "enum", "", "",0
-		}
-		TypeFlags: "Null"
-	}
-	NodeAttribute: 1613168680176, "NodeAttribute::", "Null" {
-		Properties70:  {
-			P: "Look", "enum", "", "",0
-		}
-		TypeFlags: "Null"
-	}
-	Geometry: 1613166717584, "Geometry::", "Mesh" {
+	Geometry: 2440252763088, "Geometry::", "Mesh" {
 		Vertices: *432 {
 			a: 371.599884033203,156.756698608398,-494.009246826172,428.400146484375,156.756698608398,-494.009246826172,477.590637207031,156.756698608398,-522.409362792969,505.990783691406,156.756698608398,-571.599853515625,505.990783691406,156.756698608398,-628.400146484375,477.590637207031,156.756698608398,-677.590637207031,428.400146484375,156.756698608398,-705.99072265625,371.599853515625,156.756698608398,-705.99072265625,322.409393310547,156.756698608398,-677.590637207031,294.00927734375,156.756698608398,-628.400146484375,294.00927734375,156.756698608398,-571.599853515625,322.409423828125,156.756698608398,-522.409301757813,371.599884033203,-2.288818359375e-05,-494.009246826172,428.400146484375,-2.288818359375e-05,-494.009246826172,477.590637207031,-2.288818359375e-05,-522.409362792969,505.990783691406,-2.288818359375e-05,-571.599853515625,505.990783691406,-2.288818359375e-05,-628.400146484375,477.590637207031,-2.288818359375e-05,-677.590637207031,428.400146484375,-2.288818359375e-05,-705.99072265625,371.599853515625,-2.288818359375e-05,-705.99072265625,322.409393310547,-2.288818359375e-05,-677.590637207031,294.00927734375,-2.288818359375e-05,-628.400146484375,294.00927734375,-2.288818359375e-05,-571.599853515625,322.409423828125,-2.288818359375e-05,-522.409301757813,321.621643066406,131.678146362305,-328.489349365234,346.7001953125,156.756698608398,-342.968475341797,478.378356933594,131.678146362305,-328.489349365234,453.2998046875,156.756698608398,-342.968505859375,346.7001953125,131.678146362305,-203.083984375,346.7001953125,156.756698608398,-228.162536621094,321.621643066406,131.678146362305,-228.162536621094,478.378356933594,131.678146362305,-228.162536621094,453.2998046875,156.756698608398,-228.162536621094,453.2998046875,131.678146362305,-203.083984375,595.945922851563,131.678146362305,-396.367034912109,595.945922851563,156.756698608398,-425.325225830078,674.324279785156,131.678146362305,-532.122314453125,649.245727539063,156.756698608398,-517.643249511719,717.089416503906,131.678146362305,-355.382965087891,
 695.370788574219,156.756698608398,-367.922271728516,682.83154296875,131.678146362305,-346.20361328125,761.209899902344,131.678146362305,-481.958923339844,748.670593261719,156.756698608398,-460.240234375,770.389282226563,131.678146362305,-447.700988769531,674.324279785156,131.678146362305,-667.877685546875,649.245727539063,156.756698608398,-682.356750488281,595.945922851563,131.678146362305,-803.632934570313,595.945922851563,156.756698608398,-774.674743652344,770.389282226563,131.678146362305,-752.299011230469,748.670593261719,156.756698608398,-739.759765625,761.209899902344,131.678146362305,-718.041076660156,682.83154296875,131.678146362305,-853.796447753906,695.370788574219,156.756698608398,-832.077758789063,717.089416503906,131.678146362305,-844.617065429688,478.378356933594,131.678146362305,-871.510620117188,453.2998046875,156.756698608398,-857.031494140625,321.621643066406,131.678146362305,-871.510620117188,346.7001953125,156.756698608398,-857.031494140625,453.2998046875,131.678146362305,-996.916015625,453.2998046875,156.756698608398,-971.83740234375,478.378356933594,131.678146362305,-971.83740234375,321.621643066406,131.678146362305,-971.83740234375,346.7001953125,156.756698608398,-971.83740234375,346.7001953125,131.678146362305,-996.916015625,204.054107666016,131.678146362305,-803.632934570313,204.054107666016,156.756698608398,-774.674743652344,125.675720214844,131.678146362305,-667.877685546875,150.754333496094,156.756698608398,-682.356811523438,82.9106140136719,131.678146362305,-844.617065429688,104.629211425781,156.756698608398,-832.077758789063,117.168548583984,131.678146362305,-853.796447753906,38.7901306152344,131.678146362305,-718.041137695313,51.3294677734375,156.756698608398,-739.759765625,29.6107788085938,131.678146362305,-752.299072265625,125.675720214844,131.678146362305,-532.122375488281,150.754333496094,156.756698608398,-517.643249511719,204.054107666016,131.678146362305,-396.367065429688,204.054107666016,156.756698608398,-425.325286865234,29.6107177734375,131.678131103516,-447.701019287109,51.3294067382813,156.756698608398,-460.240295410156,
@@ -331,7 +309,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 1612247017632, "Model::Cog_Hollow_8x8", "Null" {
+	Model: 2440251487328, "Model::Cog_Hollow_8x8", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",400,0,-600
@@ -341,38 +319,12 @@ Objects:  {
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
 			P: "DefaultAttributeIndex", "int", "Integer", "",0
 			P: "Lcl Translation", "Lcl Translation", "", "A",-400,0,600
-		}
-		Shading: Y
-		Culling: "CullingOff"
-	}
-	Model: 1612247040832, "Model::Geomtry", "Null" {
-		Version: 232
-		Properties70:  {
-			P: "RotationPivot", "Vector3D", "Vector", "",400,0,-600
-			P: "ScalingPivot", "Vector3D", "Vector", "",400,0,-600
-			P: "RotationActive", "bool", "", "",1
-			P: "InheritType", "enum", "", "",1
-			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "DefaultAttributeIndex", "int", "Integer", "",0
-		}
-		Shading: Y
-		Culling: "CullingOff"
-	}
-	Model: 1612247036192, "Model::Cog_Hollow_8x8_Mesh", "Mesh" {
-		Version: 232
-		Properties70:  {
-			P: "RotationPivot", "Vector3D", "Vector", "",400,0,-600
-			P: "ScalingPivot", "Vector3D", "Vector", "",400,0,-600
-			P: "RotationActive", "bool", "", "",1
-			P: "InheritType", "enum", "", "",1
-			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "DefaultAttributeIndex", "int", "Integer", "",0
 			P: "currentUVSet", "KString", "", "U", "map1"
 		}
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 1613134371904, "Material::Cog_Hollow_Material", "" {
+	Material: 2440133821520, "Material::Cog_Hollow_Material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -395,23 +347,11 @@ Objects:  {
 Connections:  {
 	
 	;Model::Cog_Hollow_8x8, Model::RootNode
-	C: "OO",1612247017632,0
+	C: "OO",2440251487328,0
 	
-	;NodeAttribute::, Model::Cog_Hollow_8x8
-	C: "OO",1613168687744,1612247017632
+	;Geometry::, Model::Cog_Hollow_8x8
+	C: "OO",2440252763088,2440251487328
 	
-	;Model::Geomtry, Model::Cog_Hollow_8x8
-	C: "OO",1612247040832,1612247017632
-	
-	;NodeAttribute::, Model::Geomtry
-	C: "OO",1613168680176,1612247040832
-	
-	;Model::Cog_Hollow_8x8_Mesh, Model::Geomtry
-	C: "OO",1612247036192,1612247040832
-	
-	;Geometry::, Model::Cog_Hollow_8x8_Mesh
-	C: "OO",1613166717584,1612247036192
-	
-	;Material::Cog_Hollow_Material, Model::Cog_Hollow_8x8_Mesh
-	C: "OO",1613134371904,1612247036192
+	;Material::Cog_Hollow_Material, Model::Cog_Hollow_8x8
+	C: "OO",2440133821520,2440251487328
 }
