@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2022
 		Month: 5
-		Day: 18
-		Hour: 5
-		Minute: 17
-		Second: 12
-		Millisecond: 297
+		Day: 19
+		Hour: 19
+		Minute: 10
+		Second: 17
+		Millisecond: 228
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.3"
 	OtherFlags:  {
@@ -37,13 +37,13 @@ FBXHeaderExtension:  {
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "Maya"
 			P: "Original|ApplicationVersion", "KString", "", "", "2023"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "18/05/2022 03:17:12.295"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "19/05/2022 17:10:17.226"
 			P: "Original|FileName", "KString", "", "", "D:\.unity\steamplunder\Assets\Models\Puzzle Elements\Moving Boxes\Box_Wooden_Plain.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Maya"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2023"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "18/05/2022 03:17:12.295"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "19/05/2022 17:10:17.226"
 			P: "Original|ApplicationActiveProject", "KString", "", "", "D:\.unity\steamplunder\Assets\Models\Puzzle Elements"
 			P: "Original|ApplicationNativeFile", "KString", "", "", "D:\.maya\steamplunder\scenes\Puzzle Elements\Boxes.ma"
 		}
@@ -80,7 +80,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 2556421598576, "", "Scene" {
+	Document: 2440237237664, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", "Take 001"
@@ -100,22 +100,49 @@ References:  {
 
 Definitions:  {
 	Version: 100
-	Count: 8
+	Count: 4
 	ObjectType: "GlobalSettings" {
 		Count: 1
 	}
-	ObjectType: "NodeAttribute" {
-		Count: 2
-		PropertyTemplate: "FbxNull" {
+	ObjectType: "Geometry" {
+		Count: 1
+		PropertyTemplate: "FbxMesh" {
 			Properties70:  {
 				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
-				P: "Size", "double", "Number", "",100
-				P: "Look", "enum", "", "",1
+				P: "BBoxMin", "Vector3D", "Vector", "",0,0,0
+				P: "BBoxMax", "Vector3D", "Vector", "",0,0,0
+				P: "Primary Visibility", "bool", "", "",1
+				P: "Casts Shadows", "bool", "", "",1
+				P: "Receive Shadows", "bool", "", "",1
+			}
+		}
+	}
+	ObjectType: "Material" {
+		Count: 1
+		PropertyTemplate: "FbxSurfaceLambert" {
+			Properties70:  {
+				P: "ShadingModel", "KString", "", "", "Lambert"
+				P: "MultiLayer", "bool", "", "",0
+				P: "EmissiveColor", "Color", "", "A",0,0,0
+				P: "EmissiveFactor", "Number", "", "A",1
+				P: "AmbientColor", "Color", "", "A",0.2,0.2,0.2
+				P: "AmbientFactor", "Number", "", "A",1
+				P: "DiffuseColor", "Color", "", "A",0.8,0.8,0.8
+				P: "DiffuseFactor", "Number", "", "A",1
+				P: "Bump", "Vector3D", "Vector", "",0,0,0
+				P: "NormalMap", "Vector3D", "Vector", "",0,0,0
+				P: "BumpFactor", "double", "Number", "",1
+				P: "TransparentColor", "Color", "", "A",0,0,0
+				P: "TransparencyFactor", "Number", "", "A",0
+				P: "DisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "DisplacementFactor", "double", "Number", "",1
+				P: "VectorDisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "VectorDisplacementFactor", "double", "Number", "",1
 			}
 		}
 	}
 	ObjectType: "Model" {
-		Count: 3
+		Count: 1
 		PropertyTemplate: "FbxNode" {
 			Properties70:  {
 				P: "QuaternionInterpolate", "enum", "", "",0
@@ -192,62 +219,13 @@ Definitions:  {
 			}
 		}
 	}
-	ObjectType: "Geometry" {
-		Count: 1
-		PropertyTemplate: "FbxMesh" {
-			Properties70:  {
-				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
-				P: "BBoxMin", "Vector3D", "Vector", "",0,0,0
-				P: "BBoxMax", "Vector3D", "Vector", "",0,0,0
-				P: "Primary Visibility", "bool", "", "",1
-				P: "Casts Shadows", "bool", "", "",1
-				P: "Receive Shadows", "bool", "", "",1
-			}
-		}
-	}
-	ObjectType: "Material" {
-		Count: 1
-		PropertyTemplate: "FbxSurfaceLambert" {
-			Properties70:  {
-				P: "ShadingModel", "KString", "", "", "Lambert"
-				P: "MultiLayer", "bool", "", "",0
-				P: "EmissiveColor", "Color", "", "A",0,0,0
-				P: "EmissiveFactor", "Number", "", "A",1
-				P: "AmbientColor", "Color", "", "A",0.2,0.2,0.2
-				P: "AmbientFactor", "Number", "", "A",1
-				P: "DiffuseColor", "Color", "", "A",0.8,0.8,0.8
-				P: "DiffuseFactor", "Number", "", "A",1
-				P: "Bump", "Vector3D", "Vector", "",0,0,0
-				P: "NormalMap", "Vector3D", "Vector", "",0,0,0
-				P: "BumpFactor", "double", "Number", "",1
-				P: "TransparentColor", "Color", "", "A",0,0,0
-				P: "TransparencyFactor", "Number", "", "A",0
-				P: "DisplacementColor", "ColorRGB", "Color", "",0,0,0
-				P: "DisplacementFactor", "double", "Number", "",1
-				P: "VectorDisplacementColor", "ColorRGB", "Color", "",0,0,0
-				P: "VectorDisplacementFactor", "double", "Number", "",1
-			}
-		}
-	}
 }
 
 ; Object properties
 ;------------------------------------------------------------------
 
 Objects:  {
-	NodeAttribute: 2556451885648, "NodeAttribute::", "Null" {
-		Properties70:  {
-			P: "Look", "enum", "", "",0
-		}
-		TypeFlags: "Null"
-	}
-	NodeAttribute: 2556451887056, "NodeAttribute::", "Null" {
-		Properties70:  {
-			P: "Look", "enum", "", "",0
-		}
-		TypeFlags: "Null"
-	}
-	Geometry: 2556589281328, "Geometry::", "Mesh" {
+	Geometry: 2440204841488, "Geometry::", "Mesh" {
 		Vertices: *180 {
 			a: 25,10,75,175,10,75,25,160,75,175,160,75,25,160,-75,175,160,-75,25,10,-75,175,10,-75,175,20,-65,175,20,65,175,150,-65,175,150,65,35,150,-75,165,150,-75,165,20,-75,35,20,-75,25,20,-65,25,20,65,25,150,65,25,150,-65,35,20,75,165,20,75,165,150,75,35,150,75,35,160,65,165,160,65,165,160,-65,35,160,-65,35,10,-65,165,10,-65,165,10,65,35,10,65,35,20,75,165,20,75,165,150,75,35,150,75,35,20,65,165,20,65,165,150,65,35,150,65,165,20,-65,165,20,65,165,150,-65,165,150,65,35,150,-65,165,150,-65,165,20,-65,35,20,-65,35,20,-65,35,20,65,35,150,65,35,150,-65,35,150,65,165,150,65,165,150,-65,35,150,-65,35,20,-65,165,20,-65,165,20,65,35,20,65
 		} 
@@ -310,7 +288,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 2555765931888, "Model::Box_Wooden_Plain", "Null" {
+	Model: 2438289982448, "Model::Box_Wooden_Plain", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",100,0,0
@@ -320,38 +298,12 @@ Objects:  {
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
 			P: "DefaultAttributeIndex", "int", "Integer", "",0
 			P: "Lcl Translation", "Lcl Translation", "", "A",-100,0,0
-		}
-		Shading: Y
-		Culling: "CullingOff"
-	}
-	Model: 2555765948128, "Model::Geometry", "Null" {
-		Version: 232
-		Properties70:  {
-			P: "RotationPivot", "Vector3D", "Vector", "",100,0,0
-			P: "ScalingPivot", "Vector3D", "Vector", "",100,0,0
-			P: "RotationActive", "bool", "", "",1
-			P: "InheritType", "enum", "", "",1
-			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "DefaultAttributeIndex", "int", "Integer", "",0
-		}
-		Shading: Y
-		Culling: "CullingOff"
-	}
-	Model: 2555765917968, "Model::Box_Wooden_Plain_Mesh", "Mesh" {
-		Version: 232
-		Properties70:  {
-			P: "RotationPivot", "Vector3D", "Vector", "",100,0,0
-			P: "ScalingPivot", "Vector3D", "Vector", "",100,0,0
-			P: "RotationActive", "bool", "", "",1
-			P: "InheritType", "enum", "", "",1
-			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "DefaultAttributeIndex", "int", "Integer", "",0
 			P: "currentUVSet", "KString", "", "U", "map1"
 		}
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 2556613939936, "Material::Box_Wooden_Plain_Material", "" {
+	Material: 2440350702288, "Material::Box_Wooden_Plain_Material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -374,23 +326,11 @@ Objects:  {
 Connections:  {
 	
 	;Model::Box_Wooden_Plain, Model::RootNode
-	C: "OO",2555765931888,0
+	C: "OO",2438289982448,0
 	
-	;NodeAttribute::, Model::Box_Wooden_Plain
-	C: "OO",2556451885648,2555765931888
+	;Geometry::, Model::Box_Wooden_Plain
+	C: "OO",2440204841488,2438289982448
 	
-	;Model::Geometry, Model::Box_Wooden_Plain
-	C: "OO",2555765948128,2555765931888
-	
-	;NodeAttribute::, Model::Geometry
-	C: "OO",2556451887056,2555765948128
-	
-	;Model::Box_Wooden_Plain_Mesh, Model::Geometry
-	C: "OO",2555765917968,2555765948128
-	
-	;Geometry::, Model::Box_Wooden_Plain_Mesh
-	C: "OO",2556589281328,2555765917968
-	
-	;Material::Box_Wooden_Plain_Material, Model::Box_Wooden_Plain_Mesh
-	C: "OO",2556613939936,2555765917968
+	;Material::Box_Wooden_Plain_Material, Model::Box_Wooden_Plain
+	C: "OO",2440350702288,2438289982448
 }
