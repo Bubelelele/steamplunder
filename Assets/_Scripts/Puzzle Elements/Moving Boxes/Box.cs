@@ -13,6 +13,7 @@ public class Box : MonoBehaviour {
 
     private void Update() {
         if (_isMoving) {
+            _targetPos = _currentTile.GetPosition();
             transform.position =
                 Vector3.MoveTowards(transform.position, _targetPos, slideSpeed * Time.deltaTime);
             if (transform.position == _targetPos) {
@@ -55,7 +56,7 @@ public class Box : MonoBehaviour {
         if (instant) {
             transform.position = tile.transform.position;
         } else {
-            _targetPos = tile.transform.position;
+            _targetPos = tile.GetPosition();
             _isMoving = true;
         }
     }
@@ -71,7 +72,8 @@ public class Box : MonoBehaviour {
     private Tile FindOpenTile(Vector3 searchDirection, Vector3 rayOrigin) {
         Ray ray = new Ray(rayOrigin, searchDirection);
 
-        if (Physics.Raycast(ray, out var hit, raycastLength)) {
+        int layerMask = 1 << 8;
+        if (Physics.Raycast(ray, out var hit, raycastLength, layerMask)) {
             var tile = hit.transform.GetComponent<Tile>();
             if (tile == null) return null;
             if (tile.TileOccupied) return null;

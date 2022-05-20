@@ -13,4 +13,6 @@ public class Tile : MonoBehaviour {
 
     public virtual void ClearTile() => _currentBox = null;
 
+    public Vector3 GetPosition() => transform.position;
+
 }
