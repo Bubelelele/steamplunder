@@ -75,6 +75,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6132967917632048791}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &727250504089998322
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6475547352657458118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.66135603
+  m_Height: 1.3227121
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -0.19}
 --- !u!95 &-5793489712182359143
 Animator:
   serializedVersion: 4
@@ -95,3 +109,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1047243037497972225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6475547352657458118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53dd741258535824198a1fb138fad28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDoMultiplePress: 0
+  releaseDelay: 1
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: -5793489712182359143}
