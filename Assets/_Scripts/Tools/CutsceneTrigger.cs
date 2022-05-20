@@ -34,7 +34,7 @@ public class CutsceneTrigger : MonoBehaviour {
         
         if (isStoryCutscene) {
             //Add to list of watched cutscenes, will then get saved as watched on actual shrine save
-            PlayerData.AddToWatchedStoryCutscenes(storyCutsceneId);
+            storyCutsceneId.AddToWatchedStoryCutscenes();
         }
     }
 

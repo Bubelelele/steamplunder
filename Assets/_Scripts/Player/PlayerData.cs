@@ -89,16 +89,12 @@ public static class PlayerData {
     //SceneTransition Door
     public static int? previousDoorId;
 
-    //Story beats, ow puzzle completions
-    public enum StoryBeats {//Important events, would often be things that would happen next to a shrine
-        Tutorial_AxeGet = 0,
-        D1_HammerGet = 1,
-        Plains_StrangerEvent = 2
-    }
+    //Story beats, ow puzzle completions, watched cutscenes
+    public static List<StoryBeat> AchievedStoryBeats { get; } = new();
+    public static void AddToAchievedStoryBeats(this StoryBeat storyBeat) => AchievedStoryBeats.Add(storyBeat);
 
     private static List<string> _watchedStoryCutscenes = new();
-    
-    public static void AddToWatchedStoryCutscenes(string storyCutsceneId) => _watchedStoryCutscenes.Add(storyCutsceneId);
+    public static void AddToWatchedStoryCutscenes(this string storyCutsceneId) => _watchedStoryCutscenes.Add(storyCutsceneId);
 
     //Saving and Loading
     public static readonly string isSavedGame = nameof(isSavedGame);
@@ -119,6 +115,10 @@ public static class PlayerData {
         //world and progression related
         foreach (var watchedStoryCutscene in _watchedStoryCutscenes) {
             watchedStoryCutscene.SaveBool(true);
+        }
+
+        foreach (var achievedStoryBeat in AchievedStoryBeats) {
+            achievedStoryBeat.ToString().SaveBool(true);
         }
 
         PlayerPrefs.Save();
