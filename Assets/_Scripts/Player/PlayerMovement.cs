@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -43,11 +44,24 @@ public class PlayerMovement : MonoBehaviour {
         else RotateToMovement(movementVector);
     }
 
+#if UNITY_EDITOR
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Tab)) {
+            var ray = _cam.ScreenPointToRay(Input.mousePosition);
+            int layerMask = 1 << 6;
+            if (Physics.Raycast(ray, out var hit, Mathf.Infinity, layerMask)) {
+                Debug.Log(hit.collider.name);
+                transform.position = hit.point;
+            }
+        }
+    }
+#endif
+
     //Rotate to always look at the mouse
     private void RotateToMouse() {
         Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, maxDistance: 300f, mouseAreaLayer)) {
+        if (Physics.Raycast(ray, out var hit, maxDistance: 300f, mouseAreaLayer)) {
             LookAt(hit.point);
         }
     }
