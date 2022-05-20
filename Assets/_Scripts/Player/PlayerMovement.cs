@@ -46,11 +46,10 @@ public class PlayerMovement : MonoBehaviour {
 
 #if UNITY_EDITOR
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Tab)) {
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
             var ray = _cam.ScreenPointToRay(Input.mousePosition);
             int layerMask = 1 << 6;
             if (Physics.Raycast(ray, out var hit, Mathf.Infinity, layerMask)) {
-                Debug.Log(hit.collider.name);
                 transform.position = hit.point;
             }
         }
