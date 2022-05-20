@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2022
 		Month: 5
-		Day: 9
-		Hour: 6
-		Minute: 40
-		Second: 59
-		Millisecond: 618
+		Day: 19
+		Hour: 23
+		Minute: 21
+		Second: 13
+		Millisecond: 321
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.3"
 	OtherFlags:  {
@@ -31,21 +31,21 @@ FBXHeaderExtension:  {
 			Comment: ""
 		}
 		Properties70:  {
-			P: "DocumentUrl", "KString", "Url", "", "D:\.unity\3D Models\Assets\Models\Puzzles\Tile.fbx"
-			P: "SrcDocumentUrl", "KString", "Url", "", "D:\.unity\3D Models\Assets\Models\Puzzles\Tile.fbx"
+			P: "DocumentUrl", "KString", "Url", "", "D:\.unity\steamplunder\Assets\Models\Puzzle Elements\Moving Boxes\Tile.fbx"
+			P: "SrcDocumentUrl", "KString", "Url", "", "D:\.unity\steamplunder\Assets\Models\Puzzle Elements\Moving Boxes\Tile.fbx"
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "Maya"
 			P: "Original|ApplicationVersion", "KString", "", "", "2023"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "09/05/2022 04:40:59.616"
-			P: "Original|FileName", "KString", "", "", "D:\.unity\3D Models\Assets\Models\Puzzles\Tile.fbx"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "19/05/2022 21:21:13.320"
+			P: "Original|FileName", "KString", "", "", "D:\.unity\steamplunder\Assets\Models\Puzzle Elements\Moving Boxes\Tile.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Maya"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2023"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "09/05/2022 04:40:59.616"
-			P: "Original|ApplicationActiveProject", "KString", "", "", "D:\.unity\3D Models\Assets\Models"
-			P: "Original|ApplicationNativeFile", "KString", "", "", "D:\.maya\steamplunder\scenes\Tile.ma"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "19/05/2022 21:21:13.320"
+			P: "Original|ApplicationActiveProject", "KString", "", "", "D:\.unity\steamplunder\Assets\Models\Puzzle Elements"
+			P: "Original|ApplicationNativeFile", "KString", "", "", "D:\.maya\steamplunder\scenes\Puzzle Elements\Tile.ma"
 		}
 	}
 }
@@ -80,7 +80,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 2218681354592, "", "Scene" {
+	Document: 2262651615344, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", "Take 001"
@@ -100,22 +100,49 @@ References:  {
 
 Definitions:  {
 	Version: 100
-	Count: 8
+	Count: 4
 	ObjectType: "GlobalSettings" {
 		Count: 1
 	}
-	ObjectType: "NodeAttribute" {
-		Count: 2
-		PropertyTemplate: "FbxNull" {
+	ObjectType: "Geometry" {
+		Count: 1
+		PropertyTemplate: "FbxMesh" {
 			Properties70:  {
 				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
-				P: "Size", "double", "Number", "",100
-				P: "Look", "enum", "", "",1
+				P: "BBoxMin", "Vector3D", "Vector", "",0,0,0
+				P: "BBoxMax", "Vector3D", "Vector", "",0,0,0
+				P: "Primary Visibility", "bool", "", "",1
+				P: "Casts Shadows", "bool", "", "",1
+				P: "Receive Shadows", "bool", "", "",1
+			}
+		}
+	}
+	ObjectType: "Material" {
+		Count: 1
+		PropertyTemplate: "FbxSurfaceLambert" {
+			Properties70:  {
+				P: "ShadingModel", "KString", "", "", "Lambert"
+				P: "MultiLayer", "bool", "", "",0
+				P: "EmissiveColor", "Color", "", "A",0,0,0
+				P: "EmissiveFactor", "Number", "", "A",1
+				P: "AmbientColor", "Color", "", "A",0.2,0.2,0.2
+				P: "AmbientFactor", "Number", "", "A",1
+				P: "DiffuseColor", "Color", "", "A",0.8,0.8,0.8
+				P: "DiffuseFactor", "Number", "", "A",1
+				P: "Bump", "Vector3D", "Vector", "",0,0,0
+				P: "NormalMap", "Vector3D", "Vector", "",0,0,0
+				P: "BumpFactor", "double", "Number", "",1
+				P: "TransparentColor", "Color", "", "A",0,0,0
+				P: "TransparencyFactor", "Number", "", "A",0
+				P: "DisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "DisplacementFactor", "double", "Number", "",1
+				P: "VectorDisplacementColor", "ColorRGB", "Color", "",0,0,0
+				P: "VectorDisplacementFactor", "double", "Number", "",1
 			}
 		}
 	}
 	ObjectType: "Model" {
-		Count: 3
+		Count: 1
 		PropertyTemplate: "FbxNode" {
 			Properties70:  {
 				P: "QuaternionInterpolate", "enum", "", "",0
@@ -192,62 +219,13 @@ Definitions:  {
 			}
 		}
 	}
-	ObjectType: "Geometry" {
-		Count: 1
-		PropertyTemplate: "FbxMesh" {
-			Properties70:  {
-				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
-				P: "BBoxMin", "Vector3D", "Vector", "",0,0,0
-				P: "BBoxMax", "Vector3D", "Vector", "",0,0,0
-				P: "Primary Visibility", "bool", "", "",1
-				P: "Casts Shadows", "bool", "", "",1
-				P: "Receive Shadows", "bool", "", "",1
-			}
-		}
-	}
-	ObjectType: "Material" {
-		Count: 1
-		PropertyTemplate: "FbxSurfaceLambert" {
-			Properties70:  {
-				P: "ShadingModel", "KString", "", "", "Lambert"
-				P: "MultiLayer", "bool", "", "",0
-				P: "EmissiveColor", "Color", "", "A",0,0,0
-				P: "EmissiveFactor", "Number", "", "A",1
-				P: "AmbientColor", "Color", "", "A",0.2,0.2,0.2
-				P: "AmbientFactor", "Number", "", "A",1
-				P: "DiffuseColor", "Color", "", "A",0.8,0.8,0.8
-				P: "DiffuseFactor", "Number", "", "A",1
-				P: "Bump", "Vector3D", "Vector", "",0,0,0
-				P: "NormalMap", "Vector3D", "Vector", "",0,0,0
-				P: "BumpFactor", "double", "Number", "",1
-				P: "TransparentColor", "Color", "", "A",0,0,0
-				P: "TransparencyFactor", "Number", "", "A",0
-				P: "DisplacementColor", "ColorRGB", "Color", "",0,0,0
-				P: "DisplacementFactor", "double", "Number", "",1
-				P: "VectorDisplacementColor", "ColorRGB", "Color", "",0,0,0
-				P: "VectorDisplacementFactor", "double", "Number", "",1
-			}
-		}
-	}
 }
 
 ; Object properties
 ;------------------------------------------------------------------
 
 Objects:  {
-	NodeAttribute: 2219015603296, "NodeAttribute::", "Null" {
-		Properties70:  {
-			P: "Look", "enum", "", "",0
-		}
-		TypeFlags: "Null"
-	}
-	NodeAttribute: 2219015620720, "NodeAttribute::", "Null" {
-		Properties70:  {
-			P: "Look", "enum", "", "",0
-		}
-		TypeFlags: "Null"
-	}
-	Geometry: 2218668876000, "Geometry::", "Mesh" {
+	Geometry: 2261872034704, "Geometry::", "Mesh" {
 		Vertices: *60 {
 			a: -75,8.00020027160645,73.0001983642578,-73.0001983642578,8.00020027160645,75,-73.0001983642578,10,73.0001983642578,73.0001983642578,10,73.0001983642578,73.0001983642578,8.00020027160645,75,75,8.00020027160645,73.0001983642578,-75,8.00020027160645,-73.0001983642578,-73.0001983642578,10,-73.0001983642578,-73.0001983642578,8.00020027160645,-75,73.0001983642578,8.00020027160645,-75,73.0001983642578,10,-73.0001983642578,75,8.00020027160645,-73.0001983642578,-73.0001983642578,0,75,-75,0,73.0001983642578,75,0,73.0001983642578,73.0001983642578,0,75,-75,0,-73.0001983642578,-73.0001983642578,0,-75,73.0001983642578,0,-75,75,0,-73.0001983642578
 		} 
@@ -307,29 +285,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 2218491342288, "Model::Tile", "Null" {
-		Version: 232
-		Properties70:  {
-			P: "RotationActive", "bool", "", "",1
-			P: "InheritType", "enum", "", "",1
-			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "DefaultAttributeIndex", "int", "Integer", "",0
-		}
-		Shading: Y
-		Culling: "CullingOff"
-	}
-	Model: 2218491374768, "Model::Geometry", "Null" {
-		Version: 232
-		Properties70:  {
-			P: "RotationActive", "bool", "", "",1
-			P: "InheritType", "enum", "", "",1
-			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "DefaultAttributeIndex", "int", "Integer", "",0
-		}
-		Shading: Y
-		Culling: "CullingOff"
-	}
-	Model: 2218491367808, "Model::Tile_Mesh", "Mesh" {
+	Model: 2261915344000, "Model::Tile", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -341,7 +297,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 2218072189504, "Material::Tile_Material", "" {
+	Material: 2262653691520, "Material::Tile_Material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -364,23 +320,11 @@ Objects:  {
 Connections:  {
 	
 	;Model::Tile, Model::RootNode
-	C: "OO",2218491342288,0
+	C: "OO",2261915344000,0
 	
-	;NodeAttribute::, Model::Tile
-	C: "OO",2219015603296,2218491342288
+	;Geometry::, Model::Tile
+	C: "OO",2261872034704,2261915344000
 	
-	;Model::Geometry, Model::Tile
-	C: "OO",2218491374768,2218491342288
-	
-	;NodeAttribute::, Model::Geometry
-	C: "OO",2219015620720,2218491374768
-	
-	;Model::Tile_Mesh, Model::Geometry
-	C: "OO",2218491367808,2218491374768
-	
-	;Geometry::, Model::Tile_Mesh
-	C: "OO",2218668876000,2218491367808
-	
-	;Material::Tile_Material, Model::Tile_Mesh
-	C: "OO",2218072189504,2218491367808
+	;Material::Tile_Material, Model::Tile
+	C: "OO",2262653691520,2261915344000
 }
