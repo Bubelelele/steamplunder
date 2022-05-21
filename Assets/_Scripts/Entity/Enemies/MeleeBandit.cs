@@ -69,9 +69,11 @@ public class MeleeBandit : BanditBase
         {
             _navMeshAgent.speed = slowWalkingSpeed;
             _navMeshAgent.SetDestination(homePoint);
+            enemyAnim.SetBool("Walking", true);
             if(Vector3.Distance(gameObject.transform.position, homePoint) < 1)
             {
                 goBackHome = false;
+                enemyAnim.SetBool("Walking", false);
             }
         }
 
@@ -194,7 +196,11 @@ public class MeleeBandit : BanditBase
         tempMaterials[2] = newMat;
         swordRenderer.materials = tempMaterials;
     }
-    private void CanPivot() { pivot = true; }
+    private void CanPivot() 
+    { 
+        pivot = true; 
+        enemyAnim.SetBool("Walking", false); 
+    }
     private void CannotPivot()
     {
         pivot = false;
@@ -203,6 +209,7 @@ public class MeleeBandit : BanditBase
         pivotTrans.position = transform.position;
         pivotTrans.parent = transform;
         positionChecked = false;
+        enemyAnim.SetBool("Walking", true);
     }
     private void ChangePivotDirection()
     {

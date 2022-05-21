@@ -47,6 +47,7 @@ public abstract class BanditBase : EnemyBase {
     
     private void Start()
     {
+        idle = true;
         player = Player.GetPlayer().gameObject;
         enemyAnim = gameObject.GetComponent<Animator>();
         homePoint = transform.position;
@@ -87,22 +88,21 @@ public abstract class BanditBase : EnemyBase {
                 checkedForNerbyEnemies = false;
             }
         }
-        else
+        if (Vector3.Distance(player.transform.position, transform.position) > rangeForStopChasingPlayer)
         {
-            if (Vector3.Distance(player.transform.position, transform.position) > rangeForStopChasingPlayer)
-            {
-                calledByNerbyEnemies = false;
-                playerDetected = false;
-                alertTrigger.transform.localScale = Vector3.one;
-                idle = true;
-                EnemyOutOfSight();
+            calledByNerbyEnemies = false;
+            checkedForNerbyEnemies = false;
+            playerDetected = false;
+            alertTrigger.transform.localScale = Vector3.one;
+            idle = true;
+            EnemyOutOfSight();
 
-            }
         }
 
 
         if (playerDetected)
         {
+            Debug.Log("Yes");
             PlayerDetectedCommon();
             if (Vector3.Distance(player.transform.position, transform.position) < sightRange && Vector3.Angle(transform.forward, player.transform.position - transform.position) < FOV / 2)
             {
@@ -132,17 +132,13 @@ public abstract class BanditBase : EnemyBase {
     }
     public void Idle()
     {
-        Debug.Log("Now");
         if (idle && !goBackHome)
         {
-            Debug.Log("We");
             enemyAnim.SetBool("Idle", true);
             if (!patrol)
             {
-                Debug.Log("are");
                 if (idleTurnedDone)
                 {
-                    Debug.Log("Talking");
                     Invoke("TurnWhileIdle", Random.Range(4, 10));
                     Invoke("PlayIdleAnimation", Random.Range(2, 6));
                     idleTurnedDone = false;
