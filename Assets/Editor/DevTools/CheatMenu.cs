@@ -14,6 +14,11 @@ public static class CheatMenu {
         PlayerData.SetHealth(1);
     }
     
+    [MenuItem("DevTools/Die")]
+    public static void Die() {
+        PlayerData.Damage(99999);
+    }
+    
     [MenuItem("DevTools/Unlock All Artifacts")]
     public static void UnlockAll() {
         foreach (var artifact in PlayerData.ArtifactStatus.Keys.ToList()) {

@@ -14,12 +14,13 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody _rb;
     private Animator _animator;
     private bool _frozen;
-    
+
     private void Awake() {
         _cam = Camera.main;
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         CutsceneManager.OnCutscenePlaying += SetFreeze;
+        PlayerData.OnDie += Die;
 
         if (_cam == null) {
             Debug.LogWarning($"{nameof(PlayerMovement)} cannot find a camera!");
@@ -27,7 +28,10 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    private void OnDestroy() => CutsceneManager.OnCutscenePlaying -= SetFreeze;
+    private void OnDestroy() {
+        CutsceneManager.OnCutscenePlaying -= SetFreeze;
+        PlayerData.OnDie -= Die;
+    }
 
     private void FixedUpdate() {
         Vector3 inputVector = PlayerInput.Dir3;
@@ -110,6 +114,12 @@ public class PlayerMovement : MonoBehaviour {
     public void SetFreeze(bool freeze) {
         _frozen = freeze;
         _rb.isKinematic = freeze;
+    }
+
+    private void Die(Transform source) {
+        SetFreeze(true);
+        _animator.SetTrigger("Die");
+        if (source != null) LookAt(source.position);
     }
     
 }

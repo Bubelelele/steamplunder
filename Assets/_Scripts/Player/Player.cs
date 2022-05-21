@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,8 +23,8 @@ public class Player : MonoBehaviour {
         PlayerData.Init(maxHealth);
     }
 
-    public void Die() {
-        Debug.Log("Player dead");
+    public void DieAnimFinished() {
+        PlayerData.SetHealth(maxHealth);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
