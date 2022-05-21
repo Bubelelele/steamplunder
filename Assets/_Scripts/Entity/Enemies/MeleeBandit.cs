@@ -26,10 +26,6 @@ public class MeleeBandit : BanditBase
     private bool positionChecked;
     private bool moveBack;
 
-    //Sword
-    public Renderer swordRenderer;
-    public Material swordMat, swordMatLight;
-
 
     //Waiting to attack
     private float minWaitBeforeAttack = 1.5f;
@@ -168,19 +164,15 @@ public class MeleeBandit : BanditBase
         animationPlaying = true;
         enemyAnim.SetTrigger("Stunned");
         isStunned = true;
-        ChangeSwordMat(swordMat);
         lethal = false;
     }
     public void CanBeStunned()
     {
-        _navMeshAgent.SetDestination(player.transform.position);
         canBeStunned = true;
-        ChangeSwordMat(swordMatLight);
     }
-    public void CannnotBeStunned()
+    public void CannotBeStunned()
     {
         canBeStunned = false;
-        ChangeSwordMat(swordMat);
     }
     public void Lethal()
     {
@@ -189,12 +181,6 @@ public class MeleeBandit : BanditBase
     public void NotLethal()
     {
         lethal = false;
-    }
-    public void ChangeSwordMat(Material newMat)
-    {
-        var tempMaterials = swordRenderer.materials;
-        tempMaterials[2] = newMat;
-        swordRenderer.materials = tempMaterials;
     }
     private void CanPivot() 
     { 
