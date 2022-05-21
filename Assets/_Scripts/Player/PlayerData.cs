@@ -27,12 +27,15 @@ public static class PlayerData {
     }
 
     private static void NewSceneInit() {
+        _dead = false;
         //run all static events?
     }
 
     //Health
     public static int Health { get; private set; }
     public static int MaxHealth { get; private set; }
+
+    private static bool _dead;
 
     public static void SetHealth(int amount) {
         Health = amount;
@@ -51,6 +54,9 @@ public static class PlayerData {
     }
 
     private static void Die(Transform source) {
+        if (_dead) return;
+        
+        _dead = true;
         OnDie?.Invoke(source);
     }
     
