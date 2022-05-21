@@ -65,10 +65,14 @@ public class MeleeBandit : BanditBase
                 CannotPivot();
             }
         }
-        else if (!chasePlayer && !animationPlaying)
+        else if (!chasePlayer && !animationPlaying && goBackHome)
         {
             _navMeshAgent.speed = slowWalkingSpeed;
             _navMeshAgent.SetDestination(homePoint);
+            if(Vector3.Distance(gameObject.transform.position, homePoint) < 1)
+            {
+                goBackHome = false;
+            }
         }
 
         //Stunning the enemy

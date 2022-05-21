@@ -16,6 +16,7 @@ public abstract class BanditBase : EnemyBase {
     protected GameObject player;
     protected Animator enemyAnim;
     protected Vector3 homePoint;
+    protected bool goBackHome;
     protected bool idle;
     protected bool inAttackRange;
     protected bool chasePlayer;
@@ -78,7 +79,7 @@ public abstract class BanditBase : EnemyBase {
                 EnemyInSight();
                 playerDetected = true;
             }
-            else
+            else if(playerDetected)
             {
                 EnemyOutOfSight();
                 idle = true;
@@ -131,14 +132,17 @@ public abstract class BanditBase : EnemyBase {
     }
     public void Idle()
     {
-        if (idle)
+        Debug.Log("Now");
+        if (idle && !goBackHome)
         {
+            Debug.Log("We");
             enemyAnim.SetBool("Idle", true);
             if (!patrol)
             {
-                
+                Debug.Log("are");
                 if (idleTurnedDone)
                 {
+                    Debug.Log("Talking");
                     Invoke("TurnWhileIdle", Random.Range(4, 10));
                     Invoke("PlayIdleAnimation", Random.Range(2, 6));
                     idleTurnedDone = false;
@@ -186,7 +190,7 @@ public abstract class BanditBase : EnemyBase {
         }
     }
     public void EnemyInSight() { chasePlayer = true; distanceBeforeImidiateDetection = rangeForStopChasingPlayer; }
-    public void EnemyOutOfSight() { chasePlayer = false; idle = true; distanceBeforeImidiateDetection = 3; }
+    public void EnemyOutOfSight() { chasePlayer = false; idle = true; distanceBeforeImidiateDetection = 3; goBackHome = true; }
     public void InAttackRange() { inAttackRange = true; }
     public void StopMovingToDestination() { _navMeshAgent.isStopped = true;}
     public void CanMoveToDestination(float speed)
