@@ -42,6 +42,9 @@ ModelImporter:
   - first:
       74: -3704289112126983070
     second: Shoot
+  - first:
+      74: -4630339522487117836
+    second: Die
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -588,6 +591,43 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Die
+      takeName: Die
+      internalID: 0
+      firstFrame: 351
+      lastFrame: 400
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: Die
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 9532233845a8bd14780350b16ac6dd39,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 351
     isReadable: 0
   meshes:
     lODScreenPercentages: []
