@@ -16,6 +16,7 @@ public abstract class BanditBase : EnemyBase {
     protected GameObject player;
     protected Animator enemyAnim;
     protected Vector3 homePoint;
+    protected bool goBackHome;
     protected bool idle;
     protected bool inAttackRange;
     protected bool chasePlayer;
@@ -46,6 +47,7 @@ public abstract class BanditBase : EnemyBase {
     
     private void Start()
     {
+        idle = true;
         player = Player.GetPlayer().gameObject;
         enemyAnim = gameObject.GetComponent<Animator>();
         homePoint = transform.position;
@@ -78,25 +80,24 @@ public abstract class BanditBase : EnemyBase {
                 EnemyInSight();
                 playerDetected = true;
             }
-            else
+            else if(playerDetected)
             {
                 EnemyOutOfSight();
+                goBackHome = true;
                 idle = true;
                 playerDetected = false;
                 checkedForNerbyEnemies = false;
             }
         }
-        else
+        if (Vector3.Distance(player.transform.position, transform.position) > rangeForStopChasingPlayer)
         {
-            if (Vector3.Distance(player.transform.position, transform.position) > rangeForStopChasingPlayer)
-            {
-                calledByNerbyEnemies = false;
-                playerDetected = false;
-                alertTrigger.transform.localScale = Vector3.one;
-                idle = true;
-                EnemyOutOfSight();
+            calledByNerbyEnemies = false;
+            checkedForNerbyEnemies = false;
+            playerDetected = false;
+            alertTrigger.transform.localScale = Vector3.one;
+            idle = true;
+            EnemyOutOfSight();
 
-            }
         }
 
 
@@ -131,12 +132,11 @@ public abstract class BanditBase : EnemyBase {
     }
     public void Idle()
     {
-        if (idle)
+        if (idle && !goBackHome)
         {
             enemyAnim.SetBool("Idle", true);
             if (!patrol)
             {
-                
                 if (idleTurnedDone)
                 {
                     Invoke("TurnWhileIdle", Random.Range(4, 10));
@@ -173,8 +173,8 @@ public abstract class BanditBase : EnemyBase {
                     enemyAnim.SetBool("Walking", false);
                     if (changeDestinationNumber)
                     {
-                        Invoke("NextDestination", Random.Range(5, 15));
-                        Invoke("PlayIdleAnimation", Random.Range(2, 6));
+                        Invoke("NextDestination", Random.Range(4, 11));
+                        Invoke("PlayIdleAnimation", Random.Range(2, 5));
                         changeDestinationNumber = false;
                     }
                 }

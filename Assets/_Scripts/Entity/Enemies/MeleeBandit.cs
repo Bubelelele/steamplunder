@@ -26,10 +26,6 @@ public class MeleeBandit : BanditBase
     private bool positionChecked;
     private bool moveBack;
 
-    //Sword
-    public Renderer swordRenderer;
-    public Material swordMat, swordMatLight;
-
 
     //Waiting to attack
     private float minWaitBeforeAttack = 1.5f;
@@ -65,10 +61,16 @@ public class MeleeBandit : BanditBase
                 CannotPivot();
             }
         }
-        else if (!chasePlayer && !animationPlaying)
+        else if (!chasePlayer && !animationPlaying && goBackHome)
         {
             _navMeshAgent.speed = slowWalkingSpeed;
             _navMeshAgent.SetDestination(homePoint);
+            enemyAnim.SetBool("Walking", true);
+            if(Vector3.Distance(gameObject.transform.position, homePoint) < 1)
+            {
+                goBackHome = false;
+                enemyAnim.SetBool("Walking", false);
+            }
         }
 
         //Stunning the enemy
@@ -162,19 +164,15 @@ public class MeleeBandit : BanditBase
         animationPlaying = true;
         enemyAnim.SetTrigger("Stunned");
         isStunned = true;
-        ChangeSwordMat(swordMat);
         lethal = false;
     }
     public void CanBeStunned()
     {
-        _navMeshAgent.SetDestination(player.transform.position);
         canBeStunned = true;
-        ChangeSwordMat(swordMatLight);
     }
-    public void CannnotBeStunned()
+    public void CannotBeStunned()
     {
         canBeStunned = false;
-        ChangeSwordMat(swordMat);
     }
     public void Lethal()
     {
@@ -184,13 +182,11 @@ public class MeleeBandit : BanditBase
     {
         lethal = false;
     }
-    public void ChangeSwordMat(Material newMat)
-    {
-        var tempMaterials = swordRenderer.materials;
-        tempMaterials[2] = newMat;
-        swordRenderer.materials = tempMaterials;
+    private void CanPivot() 
+    { 
+        pivot = true; 
+        enemyAnim.SetBool("Walking", false); 
     }
-    private void CanPivot() { pivot = true; }
     private void CannotPivot()
     {
         pivot = false;
@@ -199,6 +195,7 @@ public class MeleeBandit : BanditBase
         pivotTrans.position = transform.position;
         pivotTrans.parent = transform;
         positionChecked = false;
+        enemyAnim.SetBool("Walking", true);
     }
     private void ChangePivotDirection()
     {
