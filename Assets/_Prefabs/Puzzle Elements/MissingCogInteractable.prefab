@@ -85,6 +85,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 550279540027942556}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &8271930326056850362
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820663945282640845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6323229
+  m_Height: 1.7913342
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.39566708}
 --- !u!95 &-6229804257926475220
 Animator:
   serializedVersion: 4
@@ -105,3 +119,96 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3917214096968519762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820663945282640845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80679d1c42eee0945a5d69d325d5bbe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onCogPlaced:
+    m_PersistentCalls:
+      m_Calls: []
+  cogCompleted: {fileID: 6074150272753507657}
+  cogIndicator: {fileID: 6959847692595477817}
+--- !u!1 &1197654186566530001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7549140800604908211, guid: 0fb95d8112010984c935085edd4a64ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 550279540027942556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &7460136748075844810
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197654186566530001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5292212
+  m_Height: 0.2090094
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.1045044, z: 0}
+--- !u!114 &361558608397947697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197654186566530001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c6d971484c6b94ca2db224a267f808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTriggerEnterTag: Player
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3917214096968519762}
+        m_TargetAssemblyTypeName: MissingCogInteractable, Assembly-CSharp
+        m_MethodName: CogPickedUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1197654186566530001}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTriggerExitTag: 
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &6074150272753507657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3176925397546206251, guid: 0fb95d8112010984c935085edd4a64ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 550279540027942556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6959847692595477817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7436750074358422437, guid: 0fb95d8112010984c935085edd4a64ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 550279540027942556}
+  m_PrefabAsset: {fileID: 0}
