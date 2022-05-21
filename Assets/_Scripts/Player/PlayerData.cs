@@ -39,9 +39,9 @@ public static class PlayerData {
         OnHealthChanged?.Invoke(Health, MaxHealth);
     }
     
-    public static void Damage(int amount) {
+    public static void Damage(int amount, Transform source = null) {
         SetHealth(Health - amount);
-        if (Health <= 0) Die();
+        if (Health <= 0) Die(source);
     }
 
     public static void Heal(int amount) {
@@ -50,12 +50,12 @@ public static class PlayerData {
         SetHealth(healthToSet);
     }
 
-    private static void Die() {
-        SetHealth(MaxHealth);
-        Player.GetPlayer()?.Die();
+    private static void Die(Transform source) {
+        OnDie?.Invoke(source);
     }
     
     public static event Action<int, int> OnHealthChanged;
+    public static event Action<Transform> OnDie;
 
     //Artifact
     public static Dictionary<Artifact, bool> ArtifactStatus { get; } = new();

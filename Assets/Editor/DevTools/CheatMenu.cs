@@ -16,7 +16,7 @@ public static class CheatMenu {
     
     [MenuItem("DevTools/Die")]
     public static void Die() {
-        PlayerData.SetHealth(0);
+        PlayerData.Damage(99999);
     }
     
     [MenuItem("DevTools/Unlock All Artifacts")]
