@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PipeVent
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7728de19236031b4091995e9ebc7a275,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7728de19236031b4091995e9ebc7a275, type: 3}
 --- !u!1 &2312221466352561170 stripped
@@ -88,7 +93,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 0.2, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5693645709452717796
+--- !u!114 &714073522135134216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,6 +102,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2312221466352561170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ad68fc2c92d4294db21c5d4d0179dee, type: 3}
+  m_Script: {fileID: 11500000, guid: a4ee580b1538e2e408604cb7319467f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
