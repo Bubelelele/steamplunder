@@ -110,18 +110,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4610584303541732962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375243037888693274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab0a34c06d07054aa641d6d011cb2e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1044537294402035360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 08ded05e3cf140b48b34158c823b7a03,
@@ -310,6 +298,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4432089793374413360}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6652493744113745192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2582682441072430787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd00e9920fc418645b13a7d580b82325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameter: Open
+  animator: {fileID: 8304291980118622876}
 --- !u!114 &8250442812254926962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,9 +330,9 @@ MonoBehaviour:
   onPuzzleCompletion:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4610584303541732962}
-        m_TargetAssemblyTypeName: Cage, Assembly-CSharp
-        m_MethodName: SetOpen
+      - m_Target: {fileID: 6652493744113745192}
+        m_TargetAssemblyTypeName: AnimatorRelay, Assembly-CSharp
+        m_MethodName: SetBool
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -343,9 +345,9 @@ MonoBehaviour:
   onPuzzleUndone:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4610584303541732962}
-        m_TargetAssemblyTypeName: Cage, Assembly-CSharp
-        m_MethodName: SetOpen
+      - m_Target: {fileID: 6652493744113745192}
+        m_TargetAssemblyTypeName: AnimatorRelay, Assembly-CSharp
+        m_MethodName: SetBool
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
