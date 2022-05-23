@@ -2,6 +2,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Axe : ArtifactWeaponBase {
+    
     [SerializeField] private GameObject lvl2Object;
     [SerializeField] private GameObject lvl3Object;
     [SerializeField] private int damageLvl2 = 30;
@@ -78,6 +79,8 @@ public class Axe : ArtifactWeaponBase {
     
     public override void ProcessHitboxData(Collider collider) {
         if (collider.TryGetComponent<IHittable>(out var hittable)) {
+            var hitPoint = collider.ClosestPointOnBounds(lvl2Object.transform.position);
+            EffectSpawner.SpawnBloodFX(hitPoint);
             hittable.Hit(GetDamageValue(), ArtifactType);
         }
     }
