@@ -2,10 +2,12 @@ using System;
 using UnityEngine;
 
 public class DroppedCog : MonoBehaviour {
-    private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player")) {
-            //Effect
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("Player")) {
+            EffectSpawner.SpawnPickupFX(transform.position);
+            //sound
             //Add to cog counter
+            Destroy(gameObject);
         }
     }
 }

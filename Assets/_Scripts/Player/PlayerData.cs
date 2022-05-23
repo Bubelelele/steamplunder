@@ -62,6 +62,19 @@ public static class PlayerData {
     
     public static event Action<int, int> OnHealthChanged;
     public static event Action<Transform> OnDie;
+    
+    //Syringe and Cog Counter
+    private static int _cogs, _unlockSyringes, _filledSyringes;
+    private const int cogsToFillSyringe = 5;
+
+    public static void CogPickedUp() {
+        _cogs++;
+        if (_cogs >= cogsToFillSyringe) FillSyringe();
+    }
+
+    private static void FillSyringe() {
+        //if (_unlockSyringes >)
+    }
 
     //Artifact
     public static Dictionary<Artifact, bool> ArtifactStatus { get; } = new();
