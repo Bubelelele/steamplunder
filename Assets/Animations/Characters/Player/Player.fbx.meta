@@ -45,6 +45,21 @@ ModelImporter:
   - first:
       74: -4630339522487117836
     second: Die
+  - first:
+      74: 1672085084001958510
+    second: Run_Backwards
+  - first:
+      74: -4810848800342533127
+    second: Run_Left
+  - first:
+      74: 3304999090146950619
+    second: Run_Right
+  - first:
+      74: 2216972904187992000
+    second: Run_Forward
+  - first:
+      74: -2854736237938234345
+    second: Run_Right_Variation
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -95,8 +110,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Run
-      takeName: Run
+      name: Run_Forward
+      takeName: Run_Forward
       internalID: 0
       firstFrame: 1
       lastFrame: 30
@@ -628,6 +643,93 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 351
+    - serializedVersion: 16
+      name: Run_Backwards
+      takeName: Run_Backwards
+      internalID: 0
+      firstFrame: 401
+      lastFrame: 430
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 401
+    - serializedVersion: 16
+      name: Run_Left
+      takeName: Run_Left
+      internalID: 0
+      firstFrame: 431
+      lastFrame: 450
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 431
+    - serializedVersion: 16
+      name: Run_Right
+      takeName: Run_Right
+      internalID: 0
+      firstFrame: 451
+      lastFrame: 470
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 451
     isReadable: 0
   meshes:
     lODScreenPercentages: []

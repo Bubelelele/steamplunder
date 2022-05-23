@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class PlatePuzzleController : MonoBehaviour {
 
     [SerializeField] private bool canUndoPuzzle;
-    [SerializeField] private PlateTile[] platesToCheck;
+    [SerializeField] private PressableTile[] platesToCheck;
     [SerializeField] private UnityEvent onPuzzleCompletion;
     [SerializeField] private UnityEvent onPuzzleUndone;
     [SerializeField] private UnityEvent<string> onPlatePressed;

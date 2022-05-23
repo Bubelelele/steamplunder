@@ -1,24 +1,11 @@
 using System;
 using UnityEngine;
 
-public class PlateTile : Tile {
-    
-    public event Action OnPressStateChanged;
+public class PlateTile : PressableTile {
     
     private bool _playerOn;
 
-    public bool IsPressed => _playerOn || TileOccupied;
-
-    public override Tile TakeTile(Box box) {
-        _currentBox = box;
-        StateChanged();
-        return this;
-    }
-
-    public override void ClearTile() {
-        base.ClearTile();
-        StateChanged();
-    }
+    public override bool IsPressed => _playerOn || TileOccupied;
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Player")) {
@@ -34,6 +21,5 @@ public class PlateTile : Tile {
         }
     }
     
-    private void StateChanged() => OnPressStateChanged?.Invoke();
     
 }
