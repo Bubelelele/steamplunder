@@ -1,6 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2250764173891678007
+--- !u!114 &-6217430463790471056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: 99df6835b9490ea40b24f750c47e9089
+    defaultValue: {fileID: 0}
+--- !u!114 &-6032907400849789169
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: cf83ccec7e235214292db06f61a0605c
+    defaultValue: {fileID: 0}
+--- !u!114 &-3624894172564361895
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24,14 +56,14 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 5536416542072698125}
-    m_Duration: 0.9833333333333333
+    m_Asset: {fileID: -6032907400849789169}
+    m_Duration: 1
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2250764173891678007}
+    m_ParentTrack: {fileID: -3624894172564361895}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 0.9833333333333333
+    m_BlendOutDuration: 1
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -91,15 +123,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Player VCam
   - m_Version: 1
-    m_Start: 2.683333333333333
+    m_Start: 3.5
     m_ClipIn: 0
-    m_Asset: {fileID: -1909831689461533435}
-    m_Duration: 0.8166666666666669
+    m_Asset: {fileID: 1182610087012633822}
+    m_Duration: 1
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2250764173891678007}
+    m_ParentTrack: {fileID: -3624894172564361895}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.8166666666666669
+    m_BlendInDuration: 1
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -144,14 +176,14 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 2906964403116663774}
-    m_Duration: 3.5
+    m_Asset: {fileID: -6217430463790471056}
+    m_Duration: 4.5
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -2250764173891678007}
+    m_ParentTrack: {fileID: -3624894172564361895}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.9833333333333333
-    m_BlendOutDuration: 0.8166666666666669
+    m_BlendInDuration: 1
+    m_BlendOutDuration: 1
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -209,10 +241,31 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: PuzzleSolvedCam
+    m_DisplayName: PuzzleCompleteCam
   m_Markers:
     m_Objects: []
---- !u!114 &-1909831689461533435
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
+  m_Name: PivotPuzzleCompletion
+  m_EditorClassIdentifier: 
+  m_Version: 0
+  m_Tracks:
+  - {fileID: -3624894172564361895}
+  m_FixedDuration: 0
+  m_EditorSettings:
+    m_Framerate: 60
+    m_ScenePreview: 1
+  m_DurationMode: 0
+  m_MarkerTrack: {fileID: 0}
+--- !u!114 &1182610087012633822
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,58 +279,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: 
   VirtualCamera:
-    exposedName: b35daa349831c484f8f4549fd6b00ea9
-    defaultValue: {fileID: 0}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-  m_Name: BoxAndLiftPuzzleCompletion
-  m_EditorClassIdentifier: 
-  m_Version: 0
-  m_Tracks:
-  - {fileID: -2250764173891678007}
-  m_FixedDuration: 0
-  m_EditorSettings:
-    m_Framerate: 60
-    m_ScenePreview: 1
-  m_DurationMode: 0
-  m_MarkerTrack: {fileID: 0}
---- !u!114 &2906964403116663774
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  DisplayName: 
-  VirtualCamera:
-    exposedName: 7775c2e747c11d54c908274b1b74bb13
-    defaultValue: {fileID: 0}
---- !u!114 &5536416542072698125
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  DisplayName: 
-  VirtualCamera:
-    exposedName: c5035f6d9cca68e4da73e93a84fdbb33
+    exposedName: 5b234419b06630a4c926fbf9b6189845
     defaultValue: {fileID: 0}
