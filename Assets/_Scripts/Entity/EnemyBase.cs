@@ -22,6 +22,7 @@ public abstract class EnemyBase : EntityBase {
     }
 
     protected override void Die() {
+        EffectSpawner.SpawnDroppedCog(transform.position);
         Destroy(gameObject);
     }
 
