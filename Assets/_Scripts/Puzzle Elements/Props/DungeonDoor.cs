@@ -15,4 +15,9 @@ public class DungeonDoor : MonoBehaviour {
         _animator.SetTrigger("Open");
         _collider.enabled = false;
     }
+
+    public void Close() {
+        _animator.SetTrigger("Close");
+        _collider.enabled = true;
+    }
 }
