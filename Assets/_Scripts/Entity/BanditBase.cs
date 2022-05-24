@@ -44,9 +44,13 @@ public abstract class BanditBase : EnemyBase {
     private bool canIdleTurn = false;
     private bool idleTurnedDone = true;
     private bool changeDestinationNumber = true;
-    
+
+    protected virtual void UpdateSense() { }
+    protected virtual void Initialize() { }
+
     private void Start()
     {
+        Initialize();
         idle = true;
         player = Player.GetPlayer().gameObject;
         enemyAnim = gameObject.GetComponent<Animator>();
@@ -54,7 +58,7 @@ public abstract class BanditBase : EnemyBase {
         alertTrigger = transform.GetComponentInChildren<AlertTrigger>().gameObject;
     }
 
-    protected virtual void UpdateSense() { }
+    
 
     private void Update()
     {

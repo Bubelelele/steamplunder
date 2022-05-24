@@ -2,13 +2,21 @@ using UnityEngine;
 
 public class HeavyBandit : BanditBase
 {
+    [Header("References")]
+    public GameObject leftGauntlet;
+
     [HideInInspector] public bool lethal = false;
 
     private float distanceAttack = 3f;
     private float distanceChase;
     private bool canStun;
     private bool attackInvoked;
+    private Collider weaponTrigger;
 
+    protected override void Initialize()
+    {
+        weaponTrigger = leftGauntlet.GetComponent<Collider>();
+    }
     protected override void UpdateSense()
     {
         distanceChase = distanceAttack + 1.5f;
@@ -73,10 +81,12 @@ public class HeavyBandit : BanditBase
     }
     public void Lethal()
     {
+        weaponTrigger.enabled = true;
         lethal = true;
     }
     public void NotLethal()
     {
+        weaponTrigger.enabled = false;
         lethal = false;
     }
     private void AnimationDone()
