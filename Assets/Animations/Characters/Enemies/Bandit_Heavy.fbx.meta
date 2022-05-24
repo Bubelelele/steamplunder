@@ -126,11 +126,19 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.92874116
+        functionName: IdleAnimationDone
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a50d011aa9056e14983f9ec0e4603f51,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 31
     - serializedVersion: 16
       name: Idle_3
       takeName: Idle_3
@@ -155,11 +163,19 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.93421054
+        functionName: IdleAnimationDone
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a50d011aa9056e14983f9ec0e4603f51,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 91
     - serializedVersion: 16
       name: Idle_4
       takeName: Idle_4
@@ -184,11 +200,19 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.924812
+        functionName: IdleAnimationDone
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a50d011aa9056e14983f9ec0e4603f51,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 121
     - serializedVersion: 16
       name: Block_Equip
       takeName: Block_Equip
@@ -242,7 +266,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.019002564
+        functionName: CanStun
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -271,11 +303,43 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.96912116
+        functionName: AnimationDone
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.35866967
+        functionName: CannotStun
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.31591463
+        functionName: Lethal
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.60807586
+        functionName: NotLethal
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 201
     - serializedVersion: 16
       name: Run_Forward
       takeName: Run_Forward
@@ -358,11 +422,19 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.9453679
+        functionName: AnimationDone
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 291
     - serializedVersion: 16
       name: Die
       takeName: Die
@@ -416,11 +488,43 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.96674603
+        functionName: AnimationDone
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.35629484
+        functionName: CannotStun
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.33254147
+        functionName: Lethal
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.70546275
+        functionName: NotLethal
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 374
     isReadable: 0
   meshes:
     lODScreenPercentages: []

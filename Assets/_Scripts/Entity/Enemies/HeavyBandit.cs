@@ -1,0 +1,90 @@
+using UnityEngine;
+
+public class HeavyBandit : BanditBase
+{
+    [HideInInspector] public bool lethal = false;
+
+    private float distanceAttack = 3f;
+    private float distanceChase;
+    private bool canStun;
+    private bool attackInvoked;
+
+    protected override void UpdateSense()
+    {
+        distanceChase = distanceAttack + 1.5f;
+        //Moving towards the player
+        if (chasePlayer && !animationPlaying)
+        {
+            _navMeshAgent.SetDestination(player.transform.position);
+            enemyAnim.SetBool("Walking", true);
+            if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack)
+            {
+                enemyAnim.SetBool("Blocking", true);
+                InAttackRange();
+                ChangeSpeed(slowWalkingSpeed);
+            }
+            else if (Vector3.Distance(player.transform.position, transform.position) > distanceChase && !idle)
+            {
+                enemyAnim.SetBool("Blocking", false);
+                CanMoveToDestination(movementSpeed);
+            }
+        }
+        else if (!chasePlayer && !animationPlaying)
+        {
+            _navMeshAgent.speed = slowWalkingSpeed;
+            _navMeshAgent.SetDestination(homePoint);
+        }
+        if (inAttackRange)
+        {
+            if (!attackInvoked)
+            {
+                Invoke("Attack", Random.Range(0.1f, 1f));
+                attackInvoked = true;
+            }
+        }
+
+    }
+    public void Attack()
+    {
+        enemyAnim.SetBool("Walking", false);
+        enemyAnim.SetInteger("AttackNumber", Random.Range(1, 3));
+        _navMeshAgent.SetDestination(transform.position);
+        animationPlaying = true;
+
+    }
+    public override void Stun()
+    {
+        
+        if (canStun)
+        {
+            NotLethal();
+            rotationSpeed = 0;
+            enemyAnim.SetTrigger("Stunned");
+            animationPlaying = true;
+        }
+    }
+    private void CanStun()
+    {
+        canStun = true;
+    }
+    private void CannotStun()
+    {
+        canStun = false;
+    }
+    public void Lethal()
+    {
+        lethal = true;
+    }
+    public void NotLethal()
+    {
+        lethal = false;
+    }
+    private void AnimationDone()
+    {
+        enemyAnim.SetInteger("AttackNumber", 0);
+        animationPlaying = false;
+        rotationSpeed = 10;
+        attackInvoked = false;
+    }
+
+}
