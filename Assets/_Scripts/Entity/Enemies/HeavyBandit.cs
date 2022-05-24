@@ -19,7 +19,6 @@ public class HeavyBandit : BanditBase
     }
     protected override void UpdateSense()
     {
-        Debug.Log(animationPlaying);
         distanceChase = distanceAttack + 1.5f;
         //Moving towards the player
         if (chasePlayer && !animationPlaying)
