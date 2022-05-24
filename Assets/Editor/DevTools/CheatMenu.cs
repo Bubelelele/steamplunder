@@ -19,6 +19,22 @@ public static class CheatMenu {
         PlayerData.Damage(99999);
     }
     
+    [MenuItem("DevTools/Increase Cog Count")]
+    public static void IncreaseCogCount() {
+        PlayerData.CogPickedUp();
+    }
+    
+    [MenuItem("DevTools/Increase Cog Count x5")]
+    public static void IncreaseCogCount5() {
+        for (int i = 0; i < 5; i++)
+            PlayerData.CogPickedUp();
+    }
+    
+    [MenuItem("DevTools/Unlock Syringe Slot")]
+    public static void UnlockSyringeSlot() {
+        PlayerData.UnlockSyringeSlot();
+    }
+    
     [MenuItem("DevTools/Unlock All Artifacts")]
     public static void UnlockAll() {
         foreach (var artifact in PlayerData.ArtifactStatus.Keys.ToList()) {

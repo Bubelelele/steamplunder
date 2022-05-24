@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public static class PlayerData {
     /*
-     * Data which needs to travel between scenes gets stored here
+     * Data which needs to travel between scenes lives here
     */
 
-    //Initialization
-
+    #region Initialization
+    
     private static bool _initialized;
 
     public static void Init(int maxHealth) {
@@ -30,8 +30,11 @@ public static class PlayerData {
         _dead = false;
         //run all static events?
     }
+    
+    #endregion
 
-    //Health
+    #region Health
+
     public static int Health { get; private set; }
     public static int MaxHealth { get; private set; }
 
@@ -62,21 +65,62 @@ public static class PlayerData {
     
     public static event Action<int, int> OnHealthChanged;
     public static event Action<Transform> OnDie;
-    
-    //Syringe and Cog Counter
-    private static int _cogs, _unlockSyringes, _filledSyringes;
-    private const int cogsToFillSyringe = 5;
 
+    #endregion
+
+    #region Syringe and Cog Count
+
+    public const int CogsToFillSyringe = 5;
+    public const int MaxSyringeSlots = 4;
+
+    private static int _cogCount, _syringeSlots, _filledSyringes;
+    
     public static void CogPickedUp() {
-        _cogs++;
-        if (_cogs >= cogsToFillSyringe) FillSyringe();
+        Debug.Log("New cog");
+        _cogCount++;
+        OnCogCountIncreased?.Invoke(_cogCount);
+        if (_cogCount >= CogsToFillSyringe) FillSyringe();
+    }
+    
+    public static void UnlockSyringeSlot() {
+        if (_syringeSlots >= MaxSyringeSlots) {
+            Debug.Log("Max syringe slots already!");
+            return;
+        }
+
+        Debug.Log("New syringe");
+        _syringeSlots++;
+        OnSyringeSlotUnlocked?.Invoke(_syringeSlots);
+    }
+
+    public static void ResetCogCount() {
+        _cogCount = 0;
+        OnCogCountIncreased?.Invoke(_cogCount);
     }
 
     private static void FillSyringe() {
-        //if (_unlockSyringes >)
+        if (_syringeSlots == 0) {
+            Debug.Log("Cannot fill any syringes as none are unlocked!");
+            return;
+        }
+        if (_filledSyringes >= _syringeSlots) {
+            Debug.Log("No more syringes to fill!");
+            return;
+        }
+
+        Debug.Log("Fill syringe");
+        _filledSyringes++;
+        OnSyringeFilled?.Invoke(_filledSyringes);
     }
 
-    //Artifact
+    public static event Action<int> OnCogCountIncreased;
+    public static event Action<int> OnSyringeSlotUnlocked;
+    public static event Action<int> OnSyringeFilled;
+
+    #endregion
+
+    #region Artifacts
+
     public static Dictionary<Artifact, bool> ArtifactStatus { get; } = new();
 
     private static void SetupArtifactStatus() {
@@ -105,6 +149,10 @@ public static class PlayerData {
 
     public static event Action<Artifact> OnArtifactUnlocked;
 
+    #endregion
+
+    #region Misc
+
     //SceneTransition Door
     public static int? previousDoorId;
 
@@ -115,10 +163,16 @@ public static class PlayerData {
     private static List<string> _watchedStoryCutscenes = new();
     public static void AddToWatchedStoryCutscenes(this string storyCutsceneId) => _watchedStoryCutscenes.Add(storyCutsceneId);
 
-    //Saving and Loading
+    #endregion
+
+    #region Saving & Loading
+
     public static readonly string isSavedGame = nameof(isSavedGame);
     private static readonly string savedScene = nameof(savedScene);
     private static readonly string savedHealth = nameof(savedHealth);
+    private static readonly string savedCogCount = nameof(savedCogCount);
+    private static readonly string savedSyringeSlots = nameof(savedSyringeSlots);
+    private static readonly string savedFilledSyringes = nameof(savedFilledSyringes);
 
     public static void Save() {
         isSavedGame.SaveBool(true);
@@ -130,6 +184,10 @@ public static class PlayerData {
             //PlayerPrefs key for these is the name of the artifact enum value
             pair.Key.ToString().SaveBool(pair.Value);
         }
+        
+        savedCogCount.SaveInt(_cogCount);
+        savedSyringeSlots.SaveInt(_syringeSlots);
+        savedFilledSyringes.SaveInt(_filledSyringes);
         
         //world and progression related
         foreach (var watchedStoryCutscene in _watchedStoryCutscenes) {
@@ -150,9 +208,14 @@ public static class PlayerData {
             if (artifact.ToString().GetSavedBool()) UnlockArtifact(artifact);
         }
 
+        _cogCount = savedCogCount.GetSavedInt();
+        _syringeSlots = savedSyringeSlots.GetSavedInt();
+        _filledSyringes = savedFilledSyringes.GetSavedInt();
+
         SceneManager.LoadScene(savedScene.GetSavedString());
     }
 
+    //Saving and loading extension methods
     private static void SaveInt(this string key, int value) => PlayerPrefs.SetInt(key, value);
     private static void SaveString(this string key, string value) => PlayerPrefs.SetString(key, value);
     private static void SaveBool(this string key, bool value) => PlayerPrefs.SetInt(key, value ? 1 : 0);
@@ -161,5 +224,6 @@ public static class PlayerData {
     public static string GetSavedString(this string key) => PlayerPrefs.GetString(key);
     public static bool GetSavedBool(this string key) => PlayerPrefs.GetInt(key) == 1;
 
+    #endregion
 
 }

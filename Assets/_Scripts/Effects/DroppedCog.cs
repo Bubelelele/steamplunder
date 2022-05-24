@@ -6,7 +6,7 @@ public class DroppedCog : MonoBehaviour {
         if (other.gameObject.CompareTag("Player")) {
             EffectSpawner.SpawnPickupFX(transform.position);
             //sound
-            //Add to cog counter
+            PlayerData.CogPickedUp();
             Destroy(gameObject);
         }
     }
