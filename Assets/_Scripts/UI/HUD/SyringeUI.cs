@@ -37,11 +37,11 @@ public class SyringeUI : MonoBehaviour {
     }
     
     private void SyringeSlotUnlocked(int syringeSlot) {
-        
+        //unimplemented for now
     }
     
     private void FillSyringe(int syringeSlot) {
-        
+        cogIndicatorAnim.SetInteger("Count", PlayerData.CogsToFillSyringe+1);
     }
 
     private void Heal() {

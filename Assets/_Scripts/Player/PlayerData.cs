@@ -22,6 +22,7 @@ public static class PlayerData {
         MaxHealth = maxHealth;
         SetHealth(maxHealth);
         SetupArtifactStatus();
+        _syringeSlots = 4;
 
         _initialized = true;
     }
@@ -70,6 +71,7 @@ public static class PlayerData {
 
     #region Syringe and Cog Count
 
+    //Do not change the constants, only there for readability
     public const int CogsToFillSyringe = 5;
     public const int MaxSyringeSlots = 4;
 
@@ -78,8 +80,9 @@ public static class PlayerData {
     public static void CogPickedUp() {
         Debug.Log("New cog");
         _cogCount++;
+        if (_cogCount > CogsToFillSyringe) _cogCount = CogsToFillSyringe;
         OnCogCountIncreased?.Invoke(_cogCount);
-        if (_cogCount >= CogsToFillSyringe) FillSyringe();
+        if (_cogCount == CogsToFillSyringe) FillSyringe();
     }
     
     public static void UnlockSyringeSlot() {
