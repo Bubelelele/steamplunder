@@ -78,6 +78,8 @@ public static class PlayerData {
     private static int _cogCount, _syringeSlots, _filledSyringes;
     
     public static void CogPickedUp() {
+        if (_cogCount >= CogsToFillSyringe || _syringeSlots == _filledSyringes) return;
+        
         Debug.Log("New cog");
         _cogCount++;
         if (_cogCount > CogsToFillSyringe) _cogCount = CogsToFillSyringe;
@@ -99,6 +101,18 @@ public static class PlayerData {
     public static void ResetCogCount() {
         _cogCount = 0;
         OnCogCountIncreased?.Invoke(_cogCount);
+    }
+
+    public static int UseSyringe() {
+        if (_filledSyringes <= 0) {
+            Debug.Log("No syringes to heal with");
+            return 0;
+        }
+        //Prevent heal when at max hp?
+        int slotToUse = _filledSyringes;
+        _filledSyringes--;
+
+        return slotToUse;
     }
 
     private static void FillSyringe() {

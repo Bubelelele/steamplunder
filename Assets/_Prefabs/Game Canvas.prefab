@@ -1007,8 +1007,13 @@ MonoBehaviour:
   healKey: 120
   healAmount: 50
   cogIndicatorAnim: {fileID: 7285171220872934383}
+  syringeCanisterAnims:
+  - {fileID: 5078300717712575299}
+  - {fileID: 2252080034814689879}
+  - {fileID: 1977074378799246865}
+  - {fileID: 3671633850462575675}
   canHealText: {fileID: 4580245333757485316}
-  syringeAnimator: {fileID: 4580245335202758007}
+  syringeHealAnim: {fileID: 4580245335202758007}
 --- !u!1 &4580245333409973679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5479,7 +5484,7 @@ GameObject:
   - component: {fileID: 4580245335202758000}
   - component: {fileID: 4580245335202758007}
   m_Layer: 5
-  m_Name: Syringe
+  m_Name: SyringeHealIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

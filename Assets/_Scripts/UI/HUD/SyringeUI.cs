@@ -10,8 +10,9 @@ public class SyringeUI : MonoBehaviour {
 
     [Header("UI elements")]
     [SerializeField] private Animator cogIndicatorAnim;
+    [SerializeField] private Animator[] syringeCanisterAnims;
     [SerializeField] private GameObject canHealText;
-    [SerializeField] private Animator syringeAnimator;
+    [SerializeField] private Animator syringeHealAnim;
 
 
     private void Awake() {
@@ -42,11 +43,16 @@ public class SyringeUI : MonoBehaviour {
     
     private void FillSyringe(int syringeSlot) {
         cogIndicatorAnim.SetInteger("Count", PlayerData.CogsToFillSyringe+1);
+        syringeCanisterAnims[syringeSlot-1].SetBool("Filled", true);
     }
 
     private void Heal() {
+        int slotToUse = PlayerData.UseSyringe();
+        if (slotToUse == 0) return;
+        
         PlayerData.Heal(healAmount);
-        syringeAnimator.Play("SyringeFade");
+        syringeHealAnim.Play("SyringeFade");
+        syringeCanisterAnims[slotToUse-1].SetBool("Filled", false);
     }
     
 }
