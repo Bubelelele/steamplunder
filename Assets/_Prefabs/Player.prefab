@@ -337,6 +337,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2989862055847571953}
     m_Modifications:
+    - target: {fileID: 2885173856483384814, guid: 2424f9b0a6a68a74fb3169a2e3f9b7e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.1054274e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885173856483384814, guid: 2424f9b0a6a68a74fb3169a2e3f9b7e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.16751307
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885173856483384814, guid: 2424f9b0a6a68a74fb3169a2e3f9b7e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.35978732
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885173856483384814, guid: 2424f9b0a6a68a74fb3169a2e3f9b7e4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 6282375623571903175, guid: 2424f9b0a6a68a74fb3169a2e3f9b7e4,
         type: 3}
       propertyPath: m_Name
@@ -410,8 +430,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3685364136219306187}
   m_PrefabAsset: {fileID: 0}
---- !u!1773428102 &1466732553547754988
-ParentConstraint:
+--- !u!1818360608 &4897290849861579634
+PositionConstraint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -419,18 +439,11 @@ ParentConstraint:
   m_GameObject: {fileID: 327114106548576817}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: -0, y: 0.16751292, z: 0.35978732}
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffsets:
-  - {x: 0, y: 0, z: 0}
-  m_RotationOffsets:
-  - {x: 0, y: 0, z: 0}
+  m_TranslationAtRest: {x: 0, y: 0.16751292, z: 0.35978732}
+  m_TranslationOffset: {x: 0, y: 0, z: -0.23103204}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
   m_IsContraintActive: 1
   m_IsLocked: 1
   m_Sources:
