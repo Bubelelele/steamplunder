@@ -27,10 +27,12 @@ public class WeaponTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (_isMelee && _meleeBandit.lethal && other.CompareTag("Player")) {
             PlayerData.Damage(_meleeBandit.attackDamage, transform);
+            EffectSpawner.SpawnBloodFX(other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position));
         }
         if (_isHeavy && _heavyBandit.lethal && other.CompareTag("Player"))
         {
             PlayerData.Damage(_heavyBandit.attackDamage, transform);
+            EffectSpawner.SpawnBloodFX(other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position));
         }
     }
 }

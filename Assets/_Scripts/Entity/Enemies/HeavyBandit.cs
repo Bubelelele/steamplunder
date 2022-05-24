@@ -19,10 +19,12 @@ public class HeavyBandit : BanditBase
     }
     protected override void UpdateSense()
     {
+        Debug.Log(animationPlaying);
         distanceChase = distanceAttack + 1.5f;
         //Moving towards the player
         if (chasePlayer && !animationPlaying)
         {
+            Debug.Log("yes");
             _navMeshAgent.SetDestination(player.transform.position);
             enemyAnim.SetBool("Walking", true);
             if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack)
@@ -37,10 +39,16 @@ public class HeavyBandit : BanditBase
                 CanMoveToDestination(movementSpeed);
             }
         }
-        else if (!chasePlayer && !animationPlaying)
+        else if (!chasePlayer && !animationPlaying && goBackHome)
         {
             _navMeshAgent.speed = slowWalkingSpeed;
             _navMeshAgent.SetDestination(homePoint);
+            enemyAnim.SetBool("Walking", true);
+            if (Vector3.Distance(gameObject.transform.position, homePoint) < 1)
+            {
+                goBackHome = false;
+                enemyAnim.SetBool("Walking", false);
+            }
         }
         if (inAttackRange)
         {
