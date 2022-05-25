@@ -80,8 +80,10 @@ public class Axe : ArtifactWeaponBase {
     public override void ProcessHitboxData(Collider collider) {
         if (collider.TryGetComponent<IHittable>(out var hittable)) {
             hittable.Hit(GetDamageValue(), ArtifactType);
-            var hitPoint = collider.ClosestPointOnBounds(lvl2Object.transform.position);
-            EffectSpawner.SpawnBloodFX(hitPoint);
+            if (collider.TryGetComponent<EnemyBase>(out _)) {
+                var hitPoint = collider.ClosestPointOnBounds(lvl2Object.transform.position);
+                EffectSpawner.SpawnBloodFX(hitPoint);
+            }
         }
     }
     

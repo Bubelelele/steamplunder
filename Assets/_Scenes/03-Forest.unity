@@ -9171,17 +9171,17 @@ PrefabInstance:
     - target: {fileID: 167718441927317229, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.43713757
+      value: 0.43713754
       objectReference: {fileID: 0}
     - target: {fileID: 167718441927317229, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015475331
+      value: 0.000000015475324
       objectReference: {fileID: 0}
     - target: {fileID: 167718441927317229, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000075215585
+      value: -0.000000007521554
       objectReference: {fileID: 0}
     - target: {fileID: 167718442290198862, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
@@ -9266,17 +9266,17 @@ PrefabInstance:
     - target: {fileID: 167718442428995536, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.43713757
+      value: 0.43713754
       objectReference: {fileID: 0}
     - target: {fileID: 167718442428995536, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015475331
+      value: 0.000000015475324
       objectReference: {fileID: 0}
     - target: {fileID: 167718442428995536, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000075215585
+      value: -0.000000007521554
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f5894d8bdbe76749a3f0e74f95414ff, type: 3}
@@ -22952,7 +22952,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5658238418120623874}
+      objectReference: {fileID: 1899408770}
     - target: {fileID: 9097691966136592421, guid: f6ccd273385c9574085857d5fec58b85,
         type: 3}
       propertyPath: onCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -27898,6 +27898,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29f4cbdf81003784686954ec3069a0a5, type: 3}
+--- !u!1 &1899408770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5820728033860023415, guid: 9468535ce4273104c8032ac605a08cef,
+    type: 3}
+  m_PrefabInstance: {fileID: 5658238418120623873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1901251864
 GameObject:
   m_ObjectHideFlags: 0
@@ -29606,6 +29612,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1413477088}
     m_Modifications:
+    - target: {fileID: 4507742638438176159, guid: 9468535ce4273104c8032ac605a08cef,
+        type: 3}
+      propertyPath: textToDisplay
+      value: "Whoever reads this, please read <b>carefully</b>. I have found a way
+        to appease these disgusting machines, however I cannot do it myself so if
+        you are reading this you\u2019ll have to find the kings <b>vault</b> and........"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820728033860023415, guid: 9468535ce4273104c8032ac605a08cef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8266029927947374569, guid: 9468535ce4273104c8032ac605a08cef,
         type: 3}
       propertyPath: m_Name
@@ -29668,9 +29686,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9468535ce4273104c8032ac605a08cef, type: 3}
---- !u!1 &5658238418120623874 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4775909131999504725, guid: 9468535ce4273104c8032ac605a08cef,
-    type: 3}
-  m_PrefabInstance: {fileID: 5658238418120623873}
-  m_PrefabAsset: {fileID: 0}

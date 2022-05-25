@@ -44,6 +44,7 @@ public abstract class BanditBase : EnemyBase {
     private bool canIdleTurn = false;
     private bool idleTurnedDone = true;
     private bool changeDestinationNumber = true;
+    private bool _died;
 
     protected virtual void UpdateSense() { }
     protected virtual void Initialize() { }
@@ -60,8 +61,8 @@ public abstract class BanditBase : EnemyBase {
 
     
 
-    private void Update()
-    {
+    private void Update() {
+        if (_died) return;
         UpdateSense();
         Idle();
         timeSinceLastMoved += Time.deltaTime;
@@ -241,6 +242,8 @@ public abstract class BanditBase : EnemyBase {
 
     protected override void Die() {
         base.Die();
+        _died = true;
+        GetComponent<Collider>().enabled = false;
         enemyAnim.SetTrigger("Die");
     }
 
