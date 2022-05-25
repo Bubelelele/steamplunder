@@ -23,7 +23,6 @@ public class HeavyBandit : BanditBase
         //Moving towards the player
         if (chasePlayer && !animationPlaying)
         {
-            Debug.Log("yes");
             _navMeshAgent.SetDestination(player.transform.position);
             enemyAnim.SetBool("Walking", true);
             if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack)
@@ -53,7 +52,7 @@ public class HeavyBandit : BanditBase
         {
             if (!attackInvoked)
             {
-                Invoke("Attack", Random.Range(0.1f, 1f));
+                Invoke("Attack", Random.Range(0.5f, 1.5f));
                 attackInvoked = true;
             }
         }
