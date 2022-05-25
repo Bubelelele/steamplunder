@@ -255,12 +255,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff1970076f67017468f2bbc9bb74e8b4, type: 3}
---- !u!23 &2365947585653284173 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 8953335296567700118, guid: ff1970076f67017468f2bbc9bb74e8b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 6671286564417239003}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4311480565030272152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7440051535235369795, guid: ff1970076f67017468f2bbc9bb74e8b4,
@@ -603,7 +597,7 @@ MonoBehaviour:
   sightRange: 8
   rangeForStopChasingPlayer: 20
   FOV: 80
-  attackDamage: 7
+  attackDamage: 4
   patrol: 1
   patrolRange: 10
   lethal: 0
@@ -612,6 +606,3 @@ MonoBehaviour:
   pivotTrans: {fileID: 8082070786863857742}
   zigZagForward: {fileID: 8897204300792251565}
   zigZagBackward: {fileID: 267594631161800173}
-  swordRenderer: {fileID: 2365947585653284173}
-  swordMat: {fileID: 0}
-  swordMatLight: {fileID: 0}
