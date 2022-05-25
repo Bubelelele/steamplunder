@@ -52,7 +52,8 @@ public class HeavyBandit : BanditBase
         {
             if (!attackInvoked)
             {
-                Invoke("Attack", Random.Range(0.5f, 1.5f));
+                Debug.Log("lol");
+                Invoke("Attack", Random.Range(1f, 1.5f));
                 attackInvoked = true;
             }
         }
@@ -64,7 +65,7 @@ public class HeavyBandit : BanditBase
         enemyAnim.SetInteger("AttackNumber", Random.Range(1, 3));
         _navMeshAgent.SetDestination(transform.position);
         animationPlaying = true;
-
+        rotationSpeed = 0;
     }
     public override void Stun()
     {
@@ -72,9 +73,13 @@ public class HeavyBandit : BanditBase
         if (canStun)
         {
             NotLethal();
+            animationPlaying = true;
             rotationSpeed = 0;
             enemyAnim.SetTrigger("Stunned");
-            animationPlaying = true;
+            enemyAnim.SetBool("Blocking", false);
+            enemyAnim.SetBool("Walking", false);
+            enemyAnim.SetInteger("AttackNumber", 0);
+            
         }
     }
     private void CanStun()
