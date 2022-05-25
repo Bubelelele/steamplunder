@@ -22,7 +22,6 @@ public static class PlayerData {
         MaxHealth = maxHealth;
         SetHealth(maxHealth);
         SetupArtifactStatus();
-        _syringeSlots = 2;
 
         _initialized = true;
     }
