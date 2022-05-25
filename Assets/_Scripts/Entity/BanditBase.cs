@@ -239,4 +239,6 @@ public abstract class BanditBase : EnemyBase {
         base.Die();
         enemyAnim.SetTrigger("Die");
     }
+
+    private void Destroy() => Destroy(gameObject);
 }

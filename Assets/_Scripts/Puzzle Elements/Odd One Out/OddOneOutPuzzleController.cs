@@ -89,9 +89,18 @@ public class OddOneOutPuzzleController : MonoBehaviour {
             OneIsDifferent(rowIndex);
             int randomInPair;
             do {
-                
+                randomInPair = Random.Range(0, 5);
             } while (randomInPair == correctPillars[rowIndex]);
-            oddOneOutPillars[].SetSymbolSprite(correctSymbol, rowIndex);
+            oddOneOutPillars[randomInPair].SetSymbolSprite(correctSymbol, rowIndex);
+            int randomUnique;
+            do {
+                randomUnique = Random.Range(0, 5);
+            } while (randomUnique == correctPillars[rowIndex]);
+            oddOneOutPillars[randomInPair].SetSymbolSprite(correctSymbol, rowIndex);
+            List<int> pillars = new List<int> {0, 1, 2, 3, 4};
+            for (int i = 0; i < 5; i++) {
+                correctPillars[i] = GetRandomFromListAndRemove(pillars);
+            }
         }
     }
     
