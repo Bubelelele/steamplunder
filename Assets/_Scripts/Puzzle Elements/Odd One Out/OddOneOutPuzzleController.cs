@@ -39,7 +39,7 @@ public class OddOneOutPuzzleController : MonoBehaviour {
         FillRest(3);
         
         //Row 5 - 3 different symbols (2 pairs and 1 unique). Correct one is in one of the pairs
-        TwoPairs(4);
+        FillRest(4);
         
         void AssignRandomCorrectPillars() {
             List<int> rowIndexes = new List<int> {0, 1, 2, 3, 4};
@@ -81,25 +81,6 @@ public class OddOneOutPuzzleController : MonoBehaviour {
 
             for (int i = 0; i < rowIndex; i++) {
                 oddOneOutPillars[correctPillars[i]].SetSymbolSprite(incorrectSymbol, rowIndex);
-            }
-        }
-
-        void TwoPairs(int rowIndex) {
-            ResetSymbols();
-            OneIsDifferent(rowIndex);
-            int randomInPair;
-            do {
-                randomInPair = Random.Range(0, 5);
-            } while (randomInPair == correctPillars[rowIndex]);
-            oddOneOutPillars[randomInPair].SetSymbolSprite(correctSymbol, rowIndex);
-            int randomUnique;
-            do {
-                randomUnique = Random.Range(0, 5);
-            } while (randomUnique == correctPillars[rowIndex]);
-            oddOneOutPillars[randomInPair].SetSymbolSprite(correctSymbol, rowIndex);
-            List<int> pillars = new List<int> {0, 1, 2, 3, 4};
-            for (int i = 0; i < 5; i++) {
-                correctPillars[i] = GetRandomFromListAndRemove(pillars);
             }
         }
     }
