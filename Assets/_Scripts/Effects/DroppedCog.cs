@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class DroppedCog : MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag("Player")) {
+        if (other.gameObject.CompareTag("Player") && !PlayerData.AllSlotsFull) {
             EffectSpawner.SpawnPickupFX(transform.position);
             //sound
-            //Add to cog counter
+            PlayerData.CogPickedUp();
             Destroy(gameObject);
         }
     }

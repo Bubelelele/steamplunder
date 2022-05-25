@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public abstract class EnemyBase : EntityBase {
     
     [SerializeField] private Healthbar healthbar;
+    [SerializeField] private int numCogsDroppedOnDeath = 1;
     
     protected NavMeshAgent _navMeshAgent;
 
@@ -22,7 +23,8 @@ public abstract class EnemyBase : EntityBase {
     }
 
     protected override void Die() {
-        EffectSpawner.SpawnDroppedCog(transform.position);
+        for (int i = 0; i < numCogsDroppedOnDeath; i++) 
+            EffectSpawner.SpawnDroppedCog(transform.position);
         Destroy(gameObject);
     }
 
