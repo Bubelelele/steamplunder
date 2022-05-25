@@ -44,15 +44,17 @@ public class SyringeUI : MonoBehaviour {
     private void FillSyringe(int syringeSlot) {
         cogIndicatorAnim.SetInteger("Count", PlayerData.CogsToFillSyringe+1);
         syringeCanisterAnims[syringeSlot-1].SetBool("Filled", true);
+        canHealText.SetActive(true);
     }
 
     private void Heal() {
         int slotToUse = PlayerData.UseSyringe();
         if (slotToUse == 0) return;
         
+        if (slotToUse == 1) canHealText.SetActive(false);
         PlayerData.Heal(healAmount);
         syringeHealAnim.Play("SyringeFade");
         syringeCanisterAnims[slotToUse-1].SetBool("Filled", false);
     }
-    
+
 }

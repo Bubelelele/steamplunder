@@ -22,7 +22,7 @@ public static class PlayerData {
         MaxHealth = maxHealth;
         SetHealth(maxHealth);
         SetupArtifactStatus();
-        _syringeSlots = 4;
+        _syringeSlots = 2;
 
         _initialized = true;
     }
@@ -76,6 +76,8 @@ public static class PlayerData {
     public const int MaxSyringeSlots = 4;
 
     private static int _cogCount, _syringeSlots, _filledSyringes;
+
+    public static bool AllSlotsFull => _filledSyringes >= _syringeSlots;
     
     public static void CogPickedUp() {
         if (_cogCount >= CogsToFillSyringe || _syringeSlots == _filledSyringes) return;
