@@ -10,13 +10,6 @@ public class FractureRock : MonoBehaviour
 
 	private bool isPressed;
 
-	void Update()
-    {
-		if (Input.GetMouseButtonDown (0))
-		{
-			SpawnFracturedObject();
-		}
-    }
 	public void SpawnFracturedObject()
 	{
 		
@@ -28,7 +21,6 @@ public class FractureRock : MonoBehaviour
 			
 
 			isPressed = true;
-			print(isPressed);
 		}
 		
 		

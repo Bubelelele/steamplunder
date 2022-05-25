@@ -15,7 +15,7 @@ public class PlayerArtifacts : MonoBehaviour {
 
         foreach (var artifact in _artifacts) {
             artifact.OnActionFinished += ArtifactActionEnded;
-            Debug.Log($"Found {artifact.GetType()}");
+            //Debug.Log($"Found {artifact.GetType()}");
         }
         
         if (ArtifactKeyCodes == null) {

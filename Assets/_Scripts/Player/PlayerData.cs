@@ -154,13 +154,13 @@ public static class PlayerData {
     public static void UnlockArtifact(Artifact artifactType) {
         if (ArtifactStatus.ContainsKey(artifactType)) {
             if (ArtifactStatus[artifactType]) {
-                Debug.Log($"{artifactType} tried to be unlocked, but already is!");
+                //Debug.Log($"{artifactType} tried to be unlocked, but already is!");
                 return;
             }
 
             ArtifactStatus[artifactType] = true;
             OnArtifactUnlocked?.Invoke(artifactType);
-            Debug.Log($"{artifactType} unlocked");
+            //Debug.Log($"{artifactType} unlocked");
         } else {
             Debug.Log($"No {artifactType} in the system yet!");
         }
