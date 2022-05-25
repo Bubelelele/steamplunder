@@ -1,31 +1,25 @@
 using System;
-using System.Collections.Generic;
-using SpriteGlow;
 using UnityEngine;
 
 public class OddOneOutPillar : MonoBehaviour, IInteractable {
 
     [SerializeField] private SpriteRenderer[] symbolSpriteRenderers;
+    [SerializeField] private Animator[] symbolAnimators;
+    
+    public event Action<OddOneOutPillar> OnPillarTouched;
 
-    private List<SpriteGlowEffect> _spriteGlows = new();
-
-    private void Awake() {
-        foreach (var sprite in symbolSpriteRenderers) {
-            _spriteGlows.Add(sprite.GetComponent<SpriteGlowEffect>());
-        }
-    }
-
-    private void Start() {
-        Glow(false);
-    }
+    private bool _active;
 
     public bool HoldToInteract { get; }
     
     public void Interact() {
-        
+        if (_active) return;
+        _active = true;
+        Glow(true);
+        OnPillarTouched?.Invoke(this);
     }
 
-    public string GetDescription() => "Touch";
+    public string GetDescription() => _active ? "(Activated)" : "Touch";
 
     public string GetKeyText() => null;
 
@@ -33,9 +27,17 @@ public class OddOneOutPillar : MonoBehaviour, IInteractable {
         symbolSpriteRenderers[rowIndex].sprite = sprite;
     }
 
-    public void Glow(bool glow) {
-        foreach (var spriteGlow in _spriteGlows) {
-            spriteGlow.enabled = glow;
+    public void Deactivate() {
+        _active = false;
+        Glow(false);
+    }
+    
+    private void Glow(bool glow) {
+        foreach (var animator in symbolAnimators) {
+            if (!glow) {
+                animator.SetTrigger("Deactivate");
+            }
+            animator.SetBool("Glow", glow);
         }
     }
 }

@@ -25,7 +25,6 @@ public abstract class EnemyBase : EntityBase {
     protected override void Die() {
         for (int i = 0; i < numCogsDroppedOnDeath; i++) 
             EffectSpawner.SpawnDroppedCog(transform.position);
-        Destroy(gameObject);
     }
 
     public virtual void Stun() {

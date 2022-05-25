@@ -239,4 +239,10 @@ public abstract class BanditBase : EnemyBase {
         enemyAnim.SetInteger("IdleNumber", 0);
     }
 
+    protected override void Die() {
+        base.Die();
+        enemyAnim.SetTrigger("Die");
+    }
+
+    private void Destroy() => Destroy(gameObject);
 }
