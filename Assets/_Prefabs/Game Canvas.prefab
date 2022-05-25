@@ -935,7 +935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3116884876295896002}
-  - component: {fileID: 2956278800713919995}
+  - component: {fileID: 4381883292237644709}
   m_Layer: 5
   m_Name: BossHealthUI
   m_TagString: Untagged
@@ -966,7 +966,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &2956278800713919995
+--- !u!114 &4381883292237644709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -975,9 +975,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2736424959654039077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4353c72cfe86ec24cad68460febdb8eb, type: 3}
+  m_Script: {fileID: 11500000, guid: c054b709780aac04fb137323a217d9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbarImage: {fileID: 8342840034079487238}
+  reduceSpeed: 2
+  healthText: {fileID: 5579604762320103566}
 --- !u!1 &3936232402580244360
 GameObject:
   m_ObjectHideFlags: 0

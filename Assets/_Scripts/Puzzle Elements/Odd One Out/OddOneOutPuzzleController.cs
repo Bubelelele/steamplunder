@@ -11,16 +11,23 @@ public class OddOneOutPuzzleController : MonoBehaviour {
     [SerializeField] private OddOneOutPillar[] oddOneOutPillars;
     [SerializeField] private List<Sprite> symbolSprites;
 
+    private int[] _correctPillars;
+    private int _currentRow;
+
     private void Awake() {
         if (oddOneOutPillars.Length < 5) {
             Debug.Log("Odd One Out puzzle needs at least 5 pillars!");
             Destroy(this);
         }
         Scramble();
+
+        foreach (var pillar in oddOneOutPillars) {
+            pillar.OnPillarTouched += PillarTouched;
+        }
     }
 
     private void Scramble() {
-        int[] correctPillars = new int[5];
+        _correctPillars = new int[5];
         AssignRandomCorrectPillars();
         List<Sprite> symbolsList;
         Sprite correctSymbol;
@@ -38,13 +45,13 @@ public class OddOneOutPuzzleController : MonoBehaviour {
         //Row 4 - two are different. they are the two remaining ones, meaning that you have to look at the row beneath to know which to choose here
         FillRest(3);
         
-        //Row 5 - 3 different symbols (2 pairs and 1 unique). Correct one is in one of the pairs
+        //Row 5 - 1 unique
         FillRest(4);
         
         void AssignRandomCorrectPillars() {
             List<int> rowIndexes = new List<int> {0, 1, 2, 3, 4};
-            for (int i = 0; i < correctPillars.Length; i++) {
-                correctPillars[i] = GetRandomFromListAndRemove(rowIndexes);
+            for (int i = 0; i < _correctPillars.Length; i++) {
+                _correctPillars[i] = GetRandomFromListAndRemove(rowIndexes);
             }
         }
 
@@ -59,7 +66,7 @@ public class OddOneOutPuzzleController : MonoBehaviour {
             foreach (var pillar in oddOneOutPillars) {
                 pillar.SetSymbolSprite(incorrectSymbol, rowIndex);
             }
-            oddOneOutPillars[correctPillars[rowIndex]].SetSymbolSprite(correctSymbol, rowIndex);
+            oddOneOutPillars[_correctPillars[rowIndex]].SetSymbolSprite(correctSymbol, rowIndex);
         }
 
         void TwoAreDifferent(int rowIndex) {
@@ -69,7 +76,7 @@ public class OddOneOutPuzzleController : MonoBehaviour {
                 return;
             }
             OneIsDifferent(rowIndex);
-            int impostorPillar = correctPillars[Random.Range(0, rowIndex)];
+            int impostorPillar = _correctPillars[Random.Range(0, rowIndex)];
             oddOneOutPillars[impostorPillar].SetSymbolSprite(correctSymbol, rowIndex);
         }
 
@@ -80,7 +87,27 @@ public class OddOneOutPuzzleController : MonoBehaviour {
             }
 
             for (int i = 0; i < rowIndex; i++) {
-                oddOneOutPillars[correctPillars[i]].SetSymbolSprite(incorrectSymbol, rowIndex);
+                oddOneOutPillars[_correctPillars[i]].SetSymbolSprite(incorrectSymbol, rowIndex);
+            }
+        }
+    }
+
+    private void PillarTouched(OddOneOutPillar touchedPillar) {
+        int pillarIndex = 0;
+        for (var i = 0; i < oddOneOutPillars.Length; i++) {
+            var pillar = oddOneOutPillars[i];
+            if (pillar == touchedPillar) pillarIndex = i;
+        }
+
+        if (_correctPillars[_currentRow] == pillarIndex) {
+            //Correct pillar touched
+            _currentRow++;
+            if (_currentRow == 5) onCompletion.Invoke();
+        } else {
+            //Incorrect pillar touched
+            _currentRow = 0;
+            foreach (var pillar in oddOneOutPillars) {
+                pillar.Deactivate();
             }
         }
     }

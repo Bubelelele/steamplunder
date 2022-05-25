@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1564906124809181511}
   - component: {fileID: 1564906124809181508}
   - component: {fileID: 1564906124809181509}
+  - component: {fileID: 6312388289905419324}
   m_Layer: 0
   m_Name: GlowWorldSymbol
   m_TagString: Untagged
@@ -98,8 +99,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glowColor: {r: 1, g: 1, b: 1, a: 1}
-  glowBrightness: 2
+  glowBrightness: 1
   outlineWidth: 4
   alphaThreshold: 0.01
   drawOutside: 0
   enableInstancing: 0
+--- !u!95 &6312388289905419324
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564906124809181506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2394cdf0d6c56ae41a18751ad7e1fc0c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
