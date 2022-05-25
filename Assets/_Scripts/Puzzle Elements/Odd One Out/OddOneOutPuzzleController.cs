@@ -27,20 +27,19 @@ public class OddOneOutPuzzleController : MonoBehaviour {
         Sprite incorrectSymbol;
 
         //Row 1 - one is different
-        ResetSymbols();
         OneIsDifferent(0);
         
         //Row 2 - one is different, cant be same as row 1
-        ResetSymbols();
         OneIsDifferent(1);
         
         //Row 3 - two are different, but one of them should be on the same pillar as correct row 1 or 2
-        ResetSymbols();
         TwoAreDifferent(2);
         
         //Row 4 - two are different. they are the two remaining ones, meaning that you have to look at the row beneath to know which to choose here
-        ResetSymbols();
         FillRest(3);
+        
+        //Row 5 - 3 different symbols (2 pairs and 1 unique). Correct one is in one of the pairs
+        TwoPairs(4);
         
         void AssignRandomCorrectPillars() {
             List<int> rowIndexes = new List<int> {0, 1, 2, 3, 4};
@@ -56,6 +55,7 @@ public class OddOneOutPuzzleController : MonoBehaviour {
         }
 
         void OneIsDifferent(int rowIndex) {
+            ResetSymbols();
             foreach (var pillar in oddOneOutPillars) {
                 pillar.SetSymbolSprite(incorrectSymbol, rowIndex);
             }
@@ -63,6 +63,7 @@ public class OddOneOutPuzzleController : MonoBehaviour {
         }
 
         void TwoAreDifferent(int rowIndex) {
+            ResetSymbols();
             if (rowIndex < 1) {
                 Debug.Log("TwoAreDifferent cannot be used earlier than line 2");
                 return;
@@ -73,6 +74,7 @@ public class OddOneOutPuzzleController : MonoBehaviour {
         }
 
         void FillRest(int rowIndex) {
+            ResetSymbols();
             foreach (var pillar in oddOneOutPillars) {
                 pillar.SetSymbolSprite(correctSymbol, rowIndex);
             }
@@ -80,6 +82,16 @@ public class OddOneOutPuzzleController : MonoBehaviour {
             for (int i = 0; i < rowIndex; i++) {
                 oddOneOutPillars[correctPillars[i]].SetSymbolSprite(incorrectSymbol, rowIndex);
             }
+        }
+
+        void TwoPairs(int rowIndex) {
+            ResetSymbols();
+            OneIsDifferent(rowIndex);
+            int randomInPair;
+            do {
+                
+            } while (randomInPair == correctPillars[rowIndex]);
+            oddOneOutPillars[].SetSymbolSprite(correctSymbol, rowIndex);
         }
     }
     
