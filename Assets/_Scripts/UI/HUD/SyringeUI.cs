@@ -11,6 +11,7 @@ public class SyringeUI : MonoBehaviour {
     [Header("UI elements")]
     [SerializeField] private Animator cogIndicatorAnim;
     [SerializeField] private Animator[] syringeCanisterAnims;
+    [SerializeField] private GameObject[] syringeGlassElements;
     [SerializeField] private GameObject canHealText;
     [SerializeField] private Animator syringeHealAnim;
 
@@ -38,7 +39,9 @@ public class SyringeUI : MonoBehaviour {
     }
     
     private void SyringeSlotUnlocked(int syringeSlot) {
-        //unimplemented for now
+        for (int i = 0; i < syringeSlot; i++) {
+            syringeGlassElements[i].SetActive(true);
+        }
     }
     
     private void FillSyringe(int syringeSlot) {

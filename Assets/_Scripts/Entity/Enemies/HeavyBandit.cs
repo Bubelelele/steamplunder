@@ -108,4 +108,8 @@ public class HeavyBandit : BanditBase
         attackInvoked = false;
     }
 
+    public override void Hit(int damage, Artifact source) {
+        if (canStun) damage = 0;
+        base.Hit(damage, source);
+    }
 }
