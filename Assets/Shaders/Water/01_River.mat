@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: River
+  m_Name: 01_River
   m_Shader: {fileID: -6465566751694194690, guid: ab1b00b7e48de63469eb5ac47d45e13f,
     type: 3}
   m_ValidKeywords: []
@@ -54,7 +54,7 @@ Material:
     m_Floats:
     - _ColorPower: 0.3
     - _DisstortAmount: 0.1
-    - _FoamAmount: 10
+    - _FoamAmount: 2000000
     - _MainTextSpeed: 7.39
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -64,6 +64,7 @@ Material:
     - _Color2: {r: 0, g: 0.019607844, b: 0.7490196, a: 1}
     - _DissolveSpeed: {r: -0.5, g: 0, b: 0, a: 0}
     - _FoamColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0}
+    - _FoamSpeed: {r: 0, g: 0.15, b: 0, a: 0}
     - _MainTextSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _MainTextSpeed_1: {r: 0, g: -0.25, b: 0, a: 0}
     - _MainTextSpeed_2: {r: 0, g: -1.05, b: 0, a: 0}
