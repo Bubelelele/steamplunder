@@ -25,6 +25,7 @@ public class MeleeBandit : BanditBase
     private bool pivot;
     private bool positionChecked;
     private bool moveBack;
+    private bool runningAfter;
 
 
     //Waiting to attack
@@ -49,14 +50,16 @@ public class MeleeBandit : BanditBase
         if (chasePlayer && !animationPlaying)
         {
             _navMeshAgent.SetDestination(player.transform.position);
-            if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack)
+            if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack - 2f)
             {
+                
                 InAttackRange();
                 StopMovingToDestination();
                 CanPivot();
             }
             else if (Vector3.Distance(player.transform.position, transform.position) > distanceChase && !idle)
             {
+                runningAfter = true;
                 CanMoveToDestination(movementSpeed);
                 CannotPivot();
             }
@@ -88,6 +91,14 @@ public class MeleeBandit : BanditBase
             if (!animationPlaying)
             {
                 _navMeshAgent.speed = slowWalkingSpeed;
+                if (runningAfter)
+                {
+                    animationPlaying = true;
+                    enemyAnim.SetInteger("Swing", 3);
+                    CanMoveToDestination(movementSpeed);
+                    CannotPivot();
+                    runningAfter = false;
+                }
 
                 //Pivoting around the player
                 if (pivot)
