@@ -23,6 +23,10 @@ public class Player : MonoBehaviour {
         PlayerData.Init(maxHealth);
     }
 
+    private void Start() {
+        PlayerData.Start();
+    }
+
     public void DieAnimFinished() {
         PlayerData.SetHealth(maxHealth);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

@@ -27,11 +27,25 @@ public static class PlayerData {
         _initialized = true;
     }
 
+    public static void Start() {
+        if (!_initialized) return;
+        //run all static events
+        OnHealthChanged?.Invoke(Health, MaxHealth);
+        OnCogCountIncreased?.Invoke(_cogCount);
+        OnSyringeSlotUnlocked?.Invoke(_syringeSlots);
+        for (int i = 1; i <= _filledSyringes; i++) {
+            OnSyringeFilled?.Invoke(i);
+        }
+        foreach (var keyValuePair in ArtifactStatus) {
+            OnArtifactUnlocked?.Invoke(keyValuePair.Key);
+        }
+    }
+
     private static void NewSceneInit() {
         _dead = false;
-        //run all static events?
+        
     }
-    
+
     #endregion
 
     #region Health
