@@ -6,7 +6,6 @@ public class AttackScript : MonoBehaviour
     [HideInInspector] public int attackDamage;
     [HideInInspector] public bool leathal = false;
     [HideInInspector] public bool lastStage = false;
-    [HideInInspector] public bool pushBack = false;
 
     //Gun
     [SerializeField] private GameObject gearBoomerang;
@@ -66,7 +65,6 @@ public class AttackScript : MonoBehaviour
                     bossAnim.SetTrigger("ShootGear");
                     bossAnim.SetBool("Charge", true);
                     attackDamage = 7;
-                    pushBack = false;
                 }
             }
 
@@ -81,7 +79,6 @@ public class AttackScript : MonoBehaviour
                     bossMovement.WalkToPlayer(false);
                     bossMovement.LookAtPlayer(false);
                     bossAnim.SetBool("Charge", false);
-                    pushBack = true;
                 }
 
                 if (!animationIsPlaying)
@@ -93,14 +90,12 @@ public class AttackScript : MonoBehaviour
                         bossMovement.SetSpeed(1.5f);
                         bossAnim.SetTrigger("SlashSpree");
                         attackDamage = 7;
-                        pushBack = true;
                     }
                     else if (whichAttack == 1) //Single slash
                     {
                         bossMovement.SetSpeed(1.5f);
                         bossAnim.SetTrigger("SingleSlash");
                         attackDamage = 7;
-                        pushBack = true;
                     }
                     else if (whichAttack == 2 || whichAttack == 3)
                     {
@@ -108,12 +103,10 @@ public class AttackScript : MonoBehaviour
                         {
                             Punch();
                             attackDamage = 5;
-                            pushBack = false;
                         }
                         else // Gearpunch
                         {
                             GearPunch();
-                            pushBack = false;
                             attackDamage = 7;
                         }
                         bossMovement.WalkToPlayer(false);
@@ -131,7 +124,6 @@ public class AttackScript : MonoBehaviour
                         {
                             bossAnim.SetTrigger("GearAttack");
                             attackDamage = 13;
-                            pushBack = true;
                             bossMovement.WalkToPlayer(false);
                         }
 
@@ -149,7 +141,6 @@ public class AttackScript : MonoBehaviour
     {
         bossMovement.SetSpeed(1.5f);
         bossAnim.SetBool("Block", false);
-        pushBack = true;
     }
     private void Punch()
     {
@@ -226,7 +217,6 @@ public class AttackScript : MonoBehaviour
         bossMovement.WalkToPlayer(true);
         bossMovement.LookAtPlayer(true);
         bossMovement.SetSpeed(7);
-        pushBack = false;
     }
     public void AnimationDelay()
     {

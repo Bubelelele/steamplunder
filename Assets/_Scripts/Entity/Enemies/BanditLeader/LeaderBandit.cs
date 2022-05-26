@@ -10,6 +10,13 @@ public class LeaderBandit : EnemyBase
 
     private bool firstDone = false;
 
+    private AttackScript attackScript;
+    private BossMovement bossMovement;
+    private void Start()
+    {
+        attackScript = GetComponent<AttackScript>();
+        bossMovement = GetComponent<BossMovement>();
+    }
     public override void Hit(int damage, Artifact source)
     {
         base.Hit(damage, source);
@@ -17,20 +24,15 @@ public class LeaderBandit : EnemyBase
         {
             GetComponent<BossStages>().Stage2();
             firstDone = true;
-            Debug.Log("2");
         }
-    }
-
-    private AttackScript attackScript;
-    private void Start()
-    {
-        attackScript = GetComponent<AttackScript>();
     }
     public void ActivateBoss()
     {
         healthCanvas.SetActive(true);
+        bossMovement.WalkToPlayer(true);
         isActive = true;
         CanBeHarmed(true);
+        
     }
     public void DeactivateBoss()
     {
