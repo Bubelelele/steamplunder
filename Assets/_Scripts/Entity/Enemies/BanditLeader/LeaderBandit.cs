@@ -6,7 +6,7 @@ public class LeaderBandit : EnemyBase
     public GameObject healthCanvas;
 
     [HideInInspector] public bool isActive = false;
-    [HideInInspector] public bool canBeHarmed = true;
+    [HideInInspector] public bool canBeHarmed;
 
     private bool firstDone = false;
 
@@ -19,12 +19,16 @@ public class LeaderBandit : EnemyBase
     }
     public override void Hit(int damage, Artifact source)
     {
+        if (!canBeHarmed) damage = 0;
         base.Hit(damage, source);
+
         if (_health <= maxHealth / 2 && !firstDone)
         {
             GetComponent<BossStages>().Stage2();
             firstDone = true;
         }
+
+        
     }
     public void ActivateBoss()
     {
@@ -45,5 +49,11 @@ public class LeaderBandit : EnemyBase
     public void CanBeHarmed(bool state)
     {
         canBeHarmed = state;
+    }
+    protected override void Die()
+    {
+        base.Die();
+        healthCanvas.SetActive(false);
+        Destroy(gameObject);
     }
 }
