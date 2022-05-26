@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 public class AttackScript : MonoBehaviour
 {
     [HideInInspector] public int attackDamage;
-    [HideInInspector] public bool leathal = false;
+    [HideInInspector] public bool lethal = false;
     [HideInInspector] public bool lastStage = false;
 
     //Gun
@@ -17,7 +17,6 @@ public class AttackScript : MonoBehaviour
 
 
     private bool animationIsPlaying = false;
-    private bool canShoot = true;
     private bool isCharging = false;
     private bool canBeStunned = false;
 
@@ -47,17 +46,13 @@ public class AttackScript : MonoBehaviour
             //Shooting and charging
             float dist = Vector3.Distance(transform.position, Player.GetPosition());
 
-            if (dist > 8f && !animationIsPlaying && canShoot)
+            if (dist > 6f && !animationIsPlaying)
             {
                 bossMovement.WalkToPlayer(false);
                 animationIsPlaying = true;
                 if (!lastStage)
                 {
-                    //Shooting
-                    canShoot = false;
                     bossAnim.SetBool("Charge", true);
-                    bossAnim.SetTrigger("Shoot");
-                    Invoke("ShootCoolDown", 5f);
                 }
                 else
                 {
@@ -136,7 +131,6 @@ public class AttackScript : MonoBehaviour
     }
 
     //Functions called from this script
-    private void ShootCoolDown() { canShoot = true; }
     private void Slash()
     {
         bossMovement.SetSpeed(1.5f);
@@ -189,10 +183,10 @@ public class AttackScript : MonoBehaviour
         leaderBandit.CanBeHarmed(true);
 
     }
-    public void NotLeathal() { leathal = false; }
-    public void IsLeathal()
+    public void NotLethal() { lethal = false; }
+    public void IsLethal()
     {
-        leathal = true;
+        lethal = true;
     }
     public void ChargeSpeed()
     {

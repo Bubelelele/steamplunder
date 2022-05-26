@@ -5,7 +5,7 @@ public class LeaderBandit : EnemyBase
 
     public GameObject healthCanvas;
 
-    [HideInInspector] public bool isActive = false;
+    [HideInInspector] public bool isActive;
     [HideInInspector] public bool canBeHarmed;
 
     private bool firstDone = false;
@@ -16,6 +16,7 @@ public class LeaderBandit : EnemyBase
     {
         attackScript = GetComponent<AttackScript>();
         bossMovement = GetComponent<BossMovement>();
+        DeactivateBoss();
     }
     public override void Hit(int damage, Artifact source)
     {
@@ -36,7 +37,7 @@ public class LeaderBandit : EnemyBase
         bossMovement.WalkToPlayer(true);
         isActive = true;
         CanBeHarmed(true);
-        
+
     }
     public void DeactivateBoss()
     {
@@ -55,5 +56,9 @@ public class LeaderBandit : EnemyBase
         base.Die();
         healthCanvas.SetActive(false);
         Destroy(gameObject);
+    }
+    public override void Stun()
+    {
+        attackScript.Stunned();
     }
 }

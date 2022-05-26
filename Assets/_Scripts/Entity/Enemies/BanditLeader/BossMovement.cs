@@ -24,13 +24,11 @@ public class BossMovement : MonoBehaviour
         playerPos = Player.GetPosition();
         if (leaderBandit.isActive && lookAtPlayer)
         {
-            
             var targetRotation = Quaternion.LookRotation(new Vector3(playerPos.x, transform.position.y, playerPos.z) - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * damping);
 
             if (Vector3.Distance(transform.position, playerPos) > distanceBeforeAttack && walkToPlayer)
             {
-                Debug.Log("yes");
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(playerPos.x, transform.position.y, playerPos.z), movementSpeed * Time.deltaTime);
             }
         }

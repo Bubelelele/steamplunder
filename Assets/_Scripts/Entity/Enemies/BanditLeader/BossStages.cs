@@ -4,9 +4,6 @@ public class BossStages : MonoBehaviour
 {
 
     [HideInInspector] public bool secondStage = false;
-
-
-    [SerializeField] private Transform[] bossLocation;
     [SerializeField] private Transform targetLocation;
 
     private NavMeshAgent agent;
@@ -30,7 +27,6 @@ public class BossStages : MonoBehaviour
     {
         if (secondStage)
         {
-            targetLocation.position = bossLocation[0].position;
             agent.SetDestination(targetLocation.position);
 
 
