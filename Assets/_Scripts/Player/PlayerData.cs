@@ -22,7 +22,6 @@ public static class PlayerData {
         MaxHealth = maxHealth;
         SetHealth(maxHealth);
         SetupArtifactStatus();
-        _syringeSlots = 2;
 
         _initialized = true;
     }
@@ -36,7 +35,7 @@ public static class PlayerData {
         for (int i = 1; i <= _filledSyringes; i++) {
             OnSyringeFilled?.Invoke(i);
         }
-        foreach (var keyValuePair in ArtifactStatus) {
+        foreach (var keyValuePair in ArtifactStatus.Where(keyValuePair => keyValuePair.Value)) {
             OnArtifactUnlocked?.Invoke(keyValuePair.Key);
         }
     }

@@ -3222,6 +3222,11 @@ PrefabInstance:
       propertyPath: patrol
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8250186000317362734, guid: 08f9f32dc64c9dd4fbdb6d9802c5e9a8,
+        type: 3}
+      propertyPath: sightRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8580630369930475815, guid: 08f9f32dc64c9dd4fbdb6d9802c5e9a8,
         type: 3}
       propertyPath: m_RootOrder
@@ -16536,7 +16541,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7746581, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -19035,7 +19040,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7746581, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -22225,12 +22230,12 @@ PrefabInstance:
     - target: {fileID: 8164949201382134669, guid: e2b240ef2d82f1c4d83f34a035a8bcf8,
         type: 3}
       propertyPath: startAsUnlockedOverride.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8164949201382134669, guid: e2b240ef2d82f1c4d83f34a035a8bcf8,
         type: 3}
       propertyPath: startAsUnlockedOverride.Array.data[0]
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8164949201382134669, guid: e2b240ef2d82f1c4d83f34a035a8bcf8,
         type: 3}
@@ -48053,6 +48058,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8250186000317362734, guid: 08f9f32dc64c9dd4fbdb6d9802c5e9a8,
+        type: 3}
+      propertyPath: sightRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8250186000317362734, guid: 08f9f32dc64c9dd4fbdb6d9802c5e9a8,
         type: 3}
       propertyPath: patrolRange
