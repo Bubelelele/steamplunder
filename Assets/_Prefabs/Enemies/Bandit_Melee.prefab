@@ -193,6 +193,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8580630369930475815}
     m_Modifications:
+    - target: {fileID: 6289381871243244681, guid: ff1970076f67017468f2bbc9bb74e8b4,
+        type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 8961975754792510365}
     - target: {fileID: 7440051535235369795, guid: ff1970076f67017468f2bbc9bb74e8b4,
         type: 3}
       propertyPath: m_Name
@@ -253,41 +258,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -61.986244
       objectReference: {fileID: 0}
+    - target: {fileID: 8408185475663284545, guid: ff1970076f67017468f2bbc9bb74e8b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff1970076f67017468f2bbc9bb74e8b4, type: 3}
---- !u!1 &4311480565030272152 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7440051535235369795, guid: ff1970076f67017468f2bbc9bb74e8b4,
+--- !u!136 &2898853526928015002 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 8408185475663284545, guid: ff1970076f67017468f2bbc9bb74e8b4,
     type: 3}
   m_PrefabInstance: {fileID: 6671286564417239003}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &8408185475663284545
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4311480565030272152}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.46438986
-  m_Height: 3.009205
-  m_Direction: 1
-  m_Center: {x: 0.0000006556511, y: 1.5046058, z: 0.00000047683716}
---- !u!114 &6289381871243244681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4311480565030272152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f52ec101a2166041ae3598e4fac4a08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 8961975754792510365}
 --- !u!1001 &6694228923731980894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -449,17 +432,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1e347d39e8b34604c932ca2c67ab70a1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -19.80429
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e347d39e8b34604c932ca2c67ab70a1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.9140377
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e347d39e8b34604c932ca2c67ab70a1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 39.878143
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e347d39e8b34604c932ca2c67ab70a1,
         type: 3}
@@ -469,17 +452,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1e347d39e8b34604c932ca2c67ab70a1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e347d39e8b34604c932ca2c67ab70a1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e347d39e8b34604c932ca2c67ab70a1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e347d39e8b34604c932ca2c67ab70a1,
         type: 3}
@@ -860,10 +843,11 @@ MonoBehaviour:
   FOV: 80
   attackDamage: 4
   patrol: 1
-  patrolRange: 10
+  patrolRange: 5
   lethal: 0
   pivotSpeed: 30
   zigZagSpeed: 1
   pivotTrans: {fileID: 8082070786863857742}
   zigZagForward: {fileID: 8897204300792251565}
   zigZagBackward: {fileID: 267594631161800173}
+  maceCollider: {fileID: 2898853526928015002}

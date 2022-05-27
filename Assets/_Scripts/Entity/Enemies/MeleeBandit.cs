@@ -15,6 +15,7 @@ public class MeleeBandit : BanditBase
     public Transform pivotTrans;
     public Transform zigZagForward;
     public Transform zigZagBackward;
+    public Collider maceCollider;
 
 
     private float distanceAttack = 3f;
@@ -26,6 +27,7 @@ public class MeleeBandit : BanditBase
     private bool positionChecked;
     private bool moveBack;
     private bool runningAfter;
+    private bool isAttacking;
 
 
     //Waiting to attack
@@ -40,9 +42,14 @@ public class MeleeBandit : BanditBase
     private bool isStunned = false;
     private bool canBeStunned = false;
 
+    protected override void Initialize()
+    {
+        base.Initialize();
+        maceCollider.enabled = false;
+    }
+
     protected override void UpdateSense()
     {
-
         //Distance control
         distanceChase = distanceAttack + 1.5f;
 
@@ -50,7 +57,14 @@ public class MeleeBandit : BanditBase
         if (chasePlayer && !animationPlaying)
         {
             _navMeshAgent.SetDestination(player.transform.position);
-            if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack - 2f)
+            if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack - 2f && runningAfter)
+            {
+                
+                InAttackRange();
+                StopMovingToDestination();
+                CanPivot();
+            }
+            else if(Vector3.Distance(player.transform.position, transform.position) < distanceAttack)
             {
                 
                 InAttackRange();
@@ -84,6 +98,13 @@ public class MeleeBandit : BanditBase
                 Stun();
             }
         }
+
+        //To not bump into the player
+        if(isAttacking && Vector3.Distance(player.transform.position, transform.position) < 1.1f)
+        {
+            _navMeshAgent.SetDestination(transform.position);
+        }
+
 
         //In attack range
         if (inAttackRange && !moveBack)
@@ -167,6 +188,7 @@ public class MeleeBandit : BanditBase
         enemyAnim.SetInteger("Swing", Random.Range(1, 4));
         CanMoveToDestination(movementSpeed);
         CannotPivot();
+        isAttacking = true;
     }
 
     //Other functions
@@ -188,10 +210,12 @@ public class MeleeBandit : BanditBase
     public void Lethal()
     {
         lethal = true;
+        maceCollider.enabled = true;
     }
     public void NotLethal()
     {
         lethal = false;
+        maceCollider.enabled = false;
     }
     private void CanPivot() 
     { 
