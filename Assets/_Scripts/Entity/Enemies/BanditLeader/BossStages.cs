@@ -5,7 +5,10 @@ public class BossStages : MonoBehaviour
 
     [HideInInspector] public bool secondStage = false;
     [SerializeField] private Transform targetLocation;
+    [SerializeField] private DungeonDoor door;
+    [SerializeField] private DungeonDoor door2;
 
+    private bool invokedOnce;
     private NavMeshAgent agent;
     private AttackScript attackScript;
     private LeaderBandit leaderBandit;
@@ -15,28 +18,43 @@ public class BossStages : MonoBehaviour
         attackScript = GetComponent<AttackScript>();
         leaderBandit = GetComponent<LeaderBandit>();
         agent = GetComponent<NavMeshAgent>();
+        door2.Open();
     }
 
     public void Stage2()
     {
         secondStage = true;
-        agent.enabled = true;
         leaderBandit.DeactivateBoss();
+        door.Open();
+        
     }
     private void Update()
     {
         if (secondStage)
         {
-            agent.SetDestination(targetLocation.position);
+            if (!invokedOnce)
+            {
+                Invoke("MoveDelay", 1.5f);
+                Invoke("DoorClose", 4.5f);
+                invokedOnce = true;
+            }
 
 
             if (Vector3.Distance(transform.position, targetLocation.position) < 2)
             {
                 secondStage = false;
-                gameObject.GetComponent<NavMeshAgent>().enabled = false;
+                agent.ResetPath();
                 attackScript.LastStage();
             }
         }
+    }
+    private void MoveDelay()
+    {
+        agent.SetDestination(targetLocation.position);
+    }
+    private void DoorClose()
+    {
+        door2.Close();
     }
 
 

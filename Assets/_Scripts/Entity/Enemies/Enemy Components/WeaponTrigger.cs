@@ -44,7 +44,6 @@ public class WeaponTrigger : MonoBehaviour {
         if (_isBanditLeader && _attackScript.lethal && other.CompareTag("Player"))
         {
             PlayerData.Damage(_attackScript.attackDamage, transform);
-            Debug.Log("hit");
             EffectSpawner.SpawnBloodFX(other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position));
         }
     }
