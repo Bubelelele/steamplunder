@@ -6,6 +6,7 @@ public class SyringeUnlock : MonoBehaviour {
 
     public void UnlockSlot() {
         if (_used) return;
+        _used = true;
         PlayerData.UnlockSyringeSlot();
     }
 
