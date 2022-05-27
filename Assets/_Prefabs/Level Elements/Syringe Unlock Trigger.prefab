@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 8683283624102890568, guid: 43c05c9bae235864a956f6cadfaf55c1,
         type: 3}
       propertyPath: m_Name
-      value: Syringe Unlock Trigger
+      value: Syringe Unlock Trigger Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
         type: 3}
@@ -75,11 +75,16 @@ PrefabInstance:
     - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
         type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
         type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
+        type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
@@ -89,7 +94,17 @@ PrefabInstance:
       objectReference: {fileID: 2921280564830911929}
     - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
         type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8995246338311640218}
+    - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
+        type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
+        type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
@@ -99,12 +114,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
         type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: AchieveStoryBeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
+        type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SyringeUnlock, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
         type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: StoryBeatAchieve, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
+        type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683283624102890571, guid: 43c05c9bae235864a956f6cadfaf55c1,
+        type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -127,5 +157,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ee167635bae9c4386fbe128d11f4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  first: 0
-  second: 0
+--- !u!114 &5571736003679462175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103894618426036553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1ecb1ff0799f94c81d26d33d6bb0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyBeat: 1
+  onIfStoryBeatAchieved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2103894618426036553}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8995246338311640218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103894618426036553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbc347e03a53e44c84eeba0e066e217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyBeat: 1

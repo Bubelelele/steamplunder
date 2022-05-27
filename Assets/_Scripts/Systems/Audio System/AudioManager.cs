@@ -49,9 +49,6 @@ public class AudioManager : MonoBehaviour {
         Setup();
     }
 
-    private void OnDisable() => Dispose();
-
-
     public static void PlayAudio(AudioType type, bool fade = false, float delay = 0.0F) {
         if (_instance != null) {
             Debug.LogWarning("No instance of AudioManager!");
@@ -82,14 +79,6 @@ public class AudioManager : MonoBehaviour {
         _audioTable = new Hashtable();
         _jobTable = new Hashtable();
         GenerateAudioTable();
-    }
-
-    private void Dispose() {
-        //cancel all jobs in progress
-        foreach (DictionaryEntry kvp in _jobTable) {
-            Coroutine job = (Coroutine) kvp.Value;
-            StopCoroutine(job);
-        }
     }
 
     private void AddJob(AudioJob job) {

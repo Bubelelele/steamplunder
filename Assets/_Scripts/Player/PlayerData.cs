@@ -190,12 +190,14 @@ public static class PlayerData {
     public static int? previousDoorId;
 
     //Story beats, ow puzzle completions, watched cutscenes
-    public static List<StoryBeat> AchievedStoryBeats { get; } = new();
-    public static void AddToAchievedStoryBeats(this StoryBeat storyBeat) => AchievedStoryBeats.Add(storyBeat);
+    private static List<StoryBeat> _achievedStoryBeats = new();
+    public static void AddToAchievedStoryBeats(this StoryBeat storyBeat) => _achievedStoryBeats.Add(storyBeat);
+    public static bool CheckAchievedStoryBeats(this StoryBeat storyBeat) => _achievedStoryBeats.Contains(storyBeat);
 
     private static List<string> _watchedStoryCutscenes = new();
     public static void AddToWatchedStoryCutscenes(this string storyCutsceneId) => _watchedStoryCutscenes.Add(storyCutsceneId);
-
+    public static bool CheckWatchedStoryCutscenes(this string storyCutsceneId) => _watchedStoryCutscenes.Contains(storyCutsceneId);
+    
     #endregion
 
     #region Saving & Loading
@@ -227,7 +229,7 @@ public static class PlayerData {
             watchedStoryCutscene.SaveBool(true);
         }
 
-        foreach (var achievedStoryBeat in AchievedStoryBeats) {
+        foreach (var achievedStoryBeat in _achievedStoryBeats) {
             achievedStoryBeat.ToString().SaveBool(true);
         }
 

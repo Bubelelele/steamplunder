@@ -7,7 +7,8 @@ public class StoryBeatCheck : MonoBehaviour {
     [SerializeField] private StoryBeat storyBeat;
     [SerializeField] private UnityEvent onIfStoryBeatAchieved;
 
-    private void Awake() {
-        if (storyBeat.ToString().GetSavedBool()) onIfStoryBeatAchieved.Invoke();
+    private void Start() {
+        if (storyBeat.ToString().GetSavedBool()) storyBeat.AddToAchievedStoryBeats(); 
+        if (storyBeat.CheckAchievedStoryBeats()) onIfStoryBeatAchieved.Invoke();
     }
 }

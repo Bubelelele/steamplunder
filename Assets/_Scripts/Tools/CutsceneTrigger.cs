@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
@@ -6,14 +7,18 @@ public class CutsceneTrigger : MonoBehaviour {
     
     [SerializeField] private PlayableDirector playableDirector;
     [SerializeField] private bool playOnStart;
+    [SerializeField] private bool inactiveOnStart;
     [SerializeField] private bool isStoryCutscene;
     [SerializeField] private string storyCutsceneId;
     [SerializeField] private UnityEvent onCutsceneFinished;
 
     private bool _played;
-    
-    private void Start() {
-        if (storyCutsceneId.GetSavedBool())
+    private bool _disabled;
+
+    private void Awake() {
+        _disabled = inactiveOnStart;
+        if (storyCutsceneId.GetSavedBool()) storyCutsceneId.AddToWatchedStoryCutscenes();
+        if (storyCutsceneId.CheckWatchedStoryCutscenes())
             _played = true;
         if (playableDirector.playableAsset == null)
             Debug.LogWarning($"{gameObject.name} needs a timeline asset!");
@@ -28,7 +33,7 @@ public class CutsceneTrigger : MonoBehaviour {
     private void OnDestroy() => CutsceneManager.OnCutscenePlaying -= OnCutscenePlaying;
 
     private void OnTriggerEnter(Collider other) {
-        if (_played || !other.CompareTag("Player")) return;
+        if (_played || _disabled || !other.CompareTag("Player")) return;
         CutsceneManager.PlayCutscene(playableDirector);
         _played = true;
         
@@ -41,5 +46,9 @@ public class CutsceneTrigger : MonoBehaviour {
     private void OnCutscenePlaying(bool isPlaying) {
         if (isPlaying) return;
         onCutsceneFinished.Invoke();
+    }
+
+    public void EnableTrigger() {
+        _disabled = false;
     }
 }

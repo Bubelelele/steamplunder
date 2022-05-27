@@ -21,7 +21,7 @@ public class EffectSpawner : MonoBehaviour {
     private void DroppedCog(Vector3 position) {
         var cog = Instantiate(droppedCog, position + Vector3.up, Quaternion.identity);
         if (cog.TryGetComponent<Rigidbody>(out var rb)) {
-            rb.AddForce(Random.Range(-3f, 3f), 4f, Random.Range(-3f, 3f), ForceMode.Impulse);
+            rb.AddForce(Random.Range(-3f, 3f), 6f, Random.Range(-3f, 3f), ForceMode.Impulse);
         }
     }
     
