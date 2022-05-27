@@ -12,10 +12,12 @@ public class BossMovement : MonoBehaviour
     private Vector3 playerPos;
 
     private LeaderBandit leaderBandit;
+    private Animator bossAnim;
 
     private void Start()
     {
         leaderBandit = GetComponent<LeaderBandit>();
+        bossAnim = GetComponent<Animator>();
     }
 
 
@@ -36,6 +38,14 @@ public class BossMovement : MonoBehaviour
     public void WalkToPlayer(bool state)
     {
         walkToPlayer = state;
+        if (state)
+        {
+            bossAnim.SetBool("Walking", true);
+        }
+        else
+        {
+            bossAnim.SetBool("Walking", false);
+        }
     }
     public void LookAtPlayer(bool state)
     {

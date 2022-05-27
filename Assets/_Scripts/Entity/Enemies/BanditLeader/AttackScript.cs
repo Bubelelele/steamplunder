@@ -7,11 +7,12 @@ public class AttackScript : MonoBehaviour
     [HideInInspector] public bool lethal = false;
     [HideInInspector] public bool lastStage = false;
 
+    public Collider gauntletCollider;
+
     //Gun
     [SerializeField] private GameObject gearBoomerang;
 
 
-    [SerializeField] private GameObject gauntlet;
     [SerializeField] private GameObject gearGauntlet;
     [SerializeField] private GameObject boomerangStuff;
 
@@ -39,8 +40,6 @@ public class AttackScript : MonoBehaviour
         {
             if (lastStage)
             {
-                gauntlet.SetActive(false);
-                gearGauntlet.SetActive(true);
                 boomerangStuff.SetActive(true);
             }
             //Shooting and charging
@@ -101,7 +100,7 @@ public class AttackScript : MonoBehaviour
                         }
                         else // Gearpunch
                         {
-                            GearPunch();
+                            Punch();
                             attackDamage = 7;
                         }
                         bossMovement.WalkToPlayer(false);
@@ -118,7 +117,7 @@ public class AttackScript : MonoBehaviour
                         else // Gearattack
                         {
                             bossAnim.SetTrigger("GearAttack");
-                            attackDamage = 13;
+                            attackDamage = 3;
                             bossMovement.WalkToPlayer(false);
                         }
 
@@ -145,21 +144,9 @@ public class AttackScript : MonoBehaviour
         else if (punchChance == 1) { bossAnim.SetInteger("PunchInt", 2); }
         else { bossAnim.SetInteger("PunchInt", 3); }
     }
-    private void GearPunch()
-    {
-        //Randomize amount of punches
-        int punchChance = Random.Range(0, 3);
-
-        if (punchChance == 0) { bossAnim.SetInteger("GearPunchInt", 1); }
-        else if (punchChance == 1) { bossAnim.SetInteger("GearPunchInt", 2); }
-        else { bossAnim.SetInteger("GearPunchInt", 3); }
-    }
-
-
 
     //Functions called from other scripts
-    public void Abort() { bossAnim.SetBool("Abort", true); }
-    public void LastStage() { lastStage = true; }
+    public void LastStage() { lastStage = true; gearGauntlet.SetActive(true); }
     public void Stunned()
     {
         if (canBeStunned)
@@ -183,10 +170,11 @@ public class AttackScript : MonoBehaviour
         leaderBandit.CanBeHarmed(true);
 
     }
-    public void NotLethal() { lethal = false; }
+    public void NotLethal() { lethal = false; gauntletCollider.enabled = false; }
     public void IsLethal()
     {
         lethal = true;
+        gauntletCollider.enabled = true;
     }
     public void ChargeSpeed()
     {
@@ -198,16 +186,15 @@ public class AttackScript : MonoBehaviour
     {
         gearBoomerang.GetComponent<GearBoomerang>().ActivateBoomerang();
     }
+
     public void ActionOver()
     {
         Invoke("AnimationDelay", 0f);
         bossAnim.SetInteger("PunchInt", 0);
-        bossAnim.SetInteger("GearPunchInt", 0);
         isCharging = false;
         canBeStunned = false;
         bossAnim.SetBool("Block", false);
         bossAnim.SetBool("Stunned", false);
-        bossAnim.SetBool("Abort", false);
         bossMovement.WalkToPlayer(true);
         bossMovement.LookAtPlayer(true);
         bossMovement.SetSpeed(7);
