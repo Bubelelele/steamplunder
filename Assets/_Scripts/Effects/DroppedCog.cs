@@ -20,7 +20,6 @@ public class DroppedCog : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player") && !PlayerData.AllSlotsFull) {
             EffectSpawner.SpawnPickupFX(transform.position);
-            //sound
             PlayerData.CogPickedUp();
             onPickedUp.Invoke();
             Destroy(rb.gameObject);
