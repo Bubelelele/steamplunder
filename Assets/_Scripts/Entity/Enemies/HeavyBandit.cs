@@ -12,21 +12,33 @@ public class HeavyBandit : BanditBase
     private bool canStun;
     private bool attackInvoked;
     private Collider weaponTrigger;
+    private CapsuleCollider _collider;
 
     protected override void Initialize()
     {
         weaponTrigger = leftGauntlet.GetComponent<Collider>();
+        _collider = GetComponent<CapsuleCollider>();
     }
     protected override void UpdateSense()
     {
-        Debug.Log(canStun);
+        Debug.Log(_collider.radius);
 
         distanceChase = distanceAttack + 1.5f;
         //Moving towards the player
         if (chasePlayer && !animationPlaying)
         {
-            _navMeshAgent.SetDestination(player.transform.position);
-            enemyAnim.SetBool("Walking", true);
+            if(Vector3.Distance(player.transform.position, transform.position) > _collider.radius + 0.6)
+            {
+                _navMeshAgent.SetDestination(player.transform.position);
+                enemyAnim.SetBool("Walking", true);
+            }
+            else
+            {
+                _navMeshAgent.SetDestination(transform.position);
+                enemyAnim.SetBool("Walking", false);
+
+            }
+
             if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack)
             {
                 enemyAnim.SetBool("Blocking", true);
