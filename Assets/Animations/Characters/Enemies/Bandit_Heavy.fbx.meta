@@ -393,11 +393,19 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.028011193
+        functionName: CannotStun
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 261
     - serializedVersion: 16
       name: StandUp
       takeName: StandUp
@@ -423,7 +431,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.89339656
+      - time: 0.9718279
         functionName: AnimationDone
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,

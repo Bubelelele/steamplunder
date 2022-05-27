@@ -19,6 +19,8 @@ public class HeavyBandit : BanditBase
     }
     protected override void UpdateSense()
     {
+        Debug.Log(lethal);
+
         distanceChase = distanceAttack + 1.5f;
         //Moving towards the player
         if (chasePlayer && !animationPlaying)
@@ -28,12 +30,19 @@ public class HeavyBandit : BanditBase
             if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack)
             {
                 enemyAnim.SetBool("Blocking", true);
-                InAttackRange();
                 ChangeSpeed(slowWalkingSpeed);
+                if (!attackInvoked)
+                {
+                    Invoke("Attack", Random.Range(1f, 1.5f));
+                    attackInvoked = true;
+                }
+
             }
             else if (Vector3.Distance(player.transform.position, transform.position) > distanceChase && !idle)
             {
                 enemyAnim.SetBool("Blocking", false);
+                NotLethal();
+                CannotStun();
                 CanMoveToDestination(movementSpeed);
             }
         }
@@ -46,15 +55,6 @@ public class HeavyBandit : BanditBase
             {
                 goBackHome = false;
                 enemyAnim.SetBool("Walking", false);
-            }
-        }
-        if (inAttackRange)
-        {
-            if (!attackInvoked)
-            {
-                Debug.Log("lol");
-                Invoke("Attack", Random.Range(1f, 1.5f));
-                attackInvoked = true;
             }
         }
 
@@ -72,13 +72,14 @@ public class HeavyBandit : BanditBase
         
         if (canStun)
         {
+            CancelInvoke();
             NotLethal();
-            animationPlaying = true;
             rotationSpeed = 0;
             enemyAnim.SetTrigger("Stunned");
             enemyAnim.SetBool("Blocking", false);
             enemyAnim.SetBool("Walking", false);
             enemyAnim.SetInteger("AttackNumber", 0);
+            animationPlaying = true;
         }
     }
     private void CanStun()
@@ -102,9 +103,14 @@ public class HeavyBandit : BanditBase
     private void AnimationDone()
     {
         enemyAnim.SetInteger("AttackNumber", 0);
-        animationPlaying = false;
         rotationSpeed = 10;
         attackInvoked = false;
+        animationPlaying = false;
+    }
+    public override void Hit(int damage, Artifact source)
+    {
+        if (canStun) damage = 0;
+        base.Hit(damage, source);
     }
 
 }
