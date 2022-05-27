@@ -21,7 +21,7 @@ public class HeavyBandit : BanditBase
     }
     protected override void UpdateSense()
     {
-        Debug.Log(_collider.radius);
+        Debug.Log(animationPlaying);
 
         distanceChase = distanceAttack + 1.5f;
         //Moving towards the player
