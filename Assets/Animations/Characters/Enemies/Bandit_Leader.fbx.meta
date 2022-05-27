@@ -346,11 +346,19 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: ActionOver
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 191
     - serializedVersion: 16
       name: Punch
       takeName: Punch
