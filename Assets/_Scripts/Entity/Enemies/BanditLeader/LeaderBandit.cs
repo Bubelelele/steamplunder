@@ -17,6 +17,7 @@ public class LeaderBandit : EnemyBase
         attackScript = GetComponent<AttackScript>();
         bossMovement = GetComponent<BossMovement>();
         DeactivateBoss();
+        bossMovement.WalkToPlayer(false);
     }
     public override void Hit(int damage, Artifact source)
     {
@@ -44,7 +45,6 @@ public class LeaderBandit : EnemyBase
         healthCanvas.SetActive(false);
         isActive = false;
         CanBeHarmed(false);
-        attackScript.Abort();
         attackScript.ActionOver();
     }
     public void CanBeHarmed(bool state)
