@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DroppedCog : MonoBehaviour {
 
     [SerializeField] private Collider triggerCollider;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private UnityEvent onPickedUp;
 
     private bool _activated;
     
@@ -20,6 +22,7 @@ public class DroppedCog : MonoBehaviour {
             EffectSpawner.SpawnPickupFX(transform.position);
             //sound
             PlayerData.CogPickedUp();
+            onPickedUp.Invoke();
             Destroy(rb.gameObject);
         }
     }
