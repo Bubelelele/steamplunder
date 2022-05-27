@@ -19,7 +19,7 @@ public class HeavyBandit : BanditBase
     }
     protected override void UpdateSense()
     {
-        Debug.Log(lethal);
+        Debug.Log(canStun);
 
         distanceChase = distanceAttack + 1.5f;
         //Moving towards the player
