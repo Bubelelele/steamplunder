@@ -8,6 +8,7 @@ public class BossStages : MonoBehaviour
     [SerializeField] private DungeonDoor door;
     [SerializeField] private DungeonDoor door2;
 
+    private bool invokedOnce;
     private NavMeshAgent agent;
     private AttackScript attackScript;
     private LeaderBandit leaderBandit;
@@ -31,8 +32,13 @@ public class BossStages : MonoBehaviour
     {
         if (secondStage)
         {
-            Invoke("MoveDelay", 1.5f);
-            Invoke("DoorClose", 4.5f);
+            if (!invokedOnce)
+            {
+                Invoke("MoveDelay", 1.5f);
+                Invoke("DoorClose", 4.5f);
+                invokedOnce = true;
+            }
+
 
             if (Vector3.Distance(transform.position, targetLocation.position) < 2)
             {
