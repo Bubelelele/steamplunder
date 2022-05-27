@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour {
 
     [SerializeField] private int maxHealth = 100;
-    
+    [SerializeField] private GameObject fadeDeathPanel;
+
     private static Player _currentPlayer;
 
     public static Player GetPlayer() {
@@ -28,6 +29,9 @@ public class Player : MonoBehaviour {
     }
 
     public void DieAnimFinished() {
+        if (fadeDeathPanel != null) {
+            Instantiate(fadeDeathPanel, Vector3.zero, Quaternion.identity);
+        }
         PlayerData.SetHealth(maxHealth);
         PlayerData.ReloadScene();
         AudioManager.PlayAudio(AudioType.Death_Player);

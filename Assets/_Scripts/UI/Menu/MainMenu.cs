@@ -10,7 +10,9 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private GameObject logo;
 
     public void PlayButton() {
-        if (PlayerData.isSavedGame.GetSavedBool()) {
+        bool compatibleSaveData = PlayerData.isSavedGame.GetSavedBool()
+                                  && PlayerData.savedGameVersion.GetSavedString() == Application.version;
+        if (compatibleSaveData) {
             mainScreen.SetActive(false);
             saveScreen.SetActive(true);
             return;

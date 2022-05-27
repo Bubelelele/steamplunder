@@ -22,7 +22,6 @@ public static class PlayerData {
         MaxHealth = maxHealth;
         SetHealth(maxHealth);
         SetupArtifactStatus();
-        _syringeSlots = 1;
 
         _initialized = true;
     }
@@ -203,6 +202,7 @@ public static class PlayerData {
     #region Saving & Loading
 
     public static readonly string isSavedGame = nameof(isSavedGame);
+    public static readonly string savedGameVersion = nameof(savedGameVersion);
     private static readonly string savedScene = nameof(savedScene);
     private static readonly string savedHealth = nameof(savedHealth);
     private static readonly string savedCogCount = nameof(savedCogCount);
@@ -211,6 +211,7 @@ public static class PlayerData {
 
     public static void Save() {
         isSavedGame.SaveBool(true);
+        savedGameVersion.SaveString(Application.version);
         
         //Player related
         savedScene.SaveString(SceneManager.GetActiveScene().name);

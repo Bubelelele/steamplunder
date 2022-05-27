@@ -11,10 +11,12 @@ public class Axe : ArtifactWeaponBase {
 
     private float _queuedTime;
     private AxeHitbox _hitbox;
+    private float _currentDamageMultiplier;
 
     public override void Use() {
         base.Use();
         _animator.SetTrigger("Attack 1");
+        _currentDamageMultiplier = 1f;
         if (artifactObject.TryGetComponent<AxeHitbox>(out var axeHitbox)) {
             _hitbox = axeHitbox;
         }
@@ -34,21 +36,17 @@ public class Axe : ArtifactWeaponBase {
         if (Input.GetKeyDown(InputKey)) _queuedTime = comboTimingWindow;
     }
 
-    private void Attack1Ended() {
+    private void Attack1Ended(bool interrupt = false) {
         if (_queuedTime > 0f) {
             _animator.SetTrigger("Attack 2");
-        } else
+            _currentDamageMultiplier = 1.2f;
+        } else if (!interrupt)
             ActionEnded();
-    }
-    
-    private void Attack1InterruptCheck() {
-        if (_queuedTime > 0f) {
-            _animator.SetTrigger("Attack 2");
-        }
     }
 
     private void Attack2Ended() {
         if (_queuedTime > 0f) {
+            _currentDamageMultiplier = 1.5f;
             if (PlayerData.ArtifactStatus[Artifact.Spin])
                 // 50/50 for spin or bash attack
                 if (Random.value > .5f) {
@@ -79,7 +77,8 @@ public class Axe : ArtifactWeaponBase {
     
     public override void ProcessHitboxData(Collider collider) {
         if (collider.TryGetComponent<IHittable>(out var hittable)) {
-            hittable.Hit(GetDamageValue(), ArtifactType);
+            int damageToDeal = Mathf.RoundToInt(GetDamageValue() * _currentDamageMultiplier);
+            hittable.Hit(damageToDeal, ArtifactType);
             if (collider.TryGetComponent<EnemyBase>(out _)) {
                 var hitPoint = collider.ClosestPointOnBounds(lvl2Object.transform.position);
                 EffectSpawner.SpawnBloodFX(hitPoint);
