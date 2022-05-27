@@ -22,16 +22,24 @@ public class Player : MonoBehaviour {
     private void Awake() {
         _currentPlayer = this;
         PlayerData.Init(maxHealth);
+        PlayerData.OnDie += OnDie;
     }
 
     private void Start() {
         PlayerData.Start();
     }
 
-    public void DieAnimFinished() {
+    private void OnDestroy() {
+        PlayerData.OnDie -= OnDie;
+    }
+
+    private void OnDie(Transform source) {
         if (fadeDeathPanel != null) {
             Instantiate(fadeDeathPanel, Vector3.zero, Quaternion.identity);
         }
+    }
+
+    public void DieAnimFinished() {
         PlayerData.SetHealth(maxHealth);
         PlayerData.ReloadScene();
         AudioManager.PlayAudio(AudioType.Death_Player);

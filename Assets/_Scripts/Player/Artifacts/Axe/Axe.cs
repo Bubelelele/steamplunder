@@ -7,7 +7,6 @@ public class Axe : ArtifactWeaponBase {
     [SerializeField] private GameObject lvl3Object;
     [SerializeField] private int damageLvl2 = 30;
     [SerializeField] private float comboTimingWindow = .3f;
-    //add support for different damage multipliers based which attack
 
     private float _queuedTime;
     private AxeHitbox _hitbox;
@@ -36,11 +35,11 @@ public class Axe : ArtifactWeaponBase {
         if (Input.GetKeyDown(InputKey)) _queuedTime = comboTimingWindow;
     }
 
-    private void Attack1Ended(bool interrupt = false) {
+    private void Attack1Ended() {
         if (_queuedTime > 0f) {
             _animator.SetTrigger("Attack 2");
             _currentDamageMultiplier = 1.2f;
-        } else if (!interrupt)
+        } else
             ActionEnded();
     }
 
