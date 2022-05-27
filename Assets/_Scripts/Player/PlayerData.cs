@@ -250,6 +250,11 @@ public static class PlayerData {
         SceneManager.LoadScene(savedScene.GetSavedString());
     }
 
+    public static void ReloadScene() {
+        if (isSavedGame.GetSavedBool()) Load();
+        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
     //Saving and loading extension methods
     private static void SaveInt(this string key, int value) => PlayerPrefs.SetInt(key, value);
     private static void SaveString(this string key, string value) => PlayerPrefs.SetString(key, value);
