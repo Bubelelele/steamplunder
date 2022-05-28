@@ -53,6 +53,7 @@ public class HeavyBandit : BanditBase
             else if (Vector3.Distance(player.transform.position, transform.position) > distanceChase && !idle)
             {
                 enemyAnim.SetBool("Blocking", false);
+                animationPlaying = false;
                 NotLethal();
                 CannotStun();
                 CanMoveToDestination(movementSpeed);
@@ -73,6 +74,7 @@ public class HeavyBandit : BanditBase
     }
     public void Attack()
     {
+        CannotStun();
         enemyAnim.SetBool("Walking", false);
         enemyAnim.SetInteger("AttackNumber", Random.Range(1, 3));
         _navMeshAgent.SetDestination(transform.position);
@@ -87,6 +89,7 @@ public class HeavyBandit : BanditBase
             CancelInvoke();
             NotLethal();
             rotationSpeed = 0;
+            movementSpeed = 0;
             enemyAnim.SetTrigger("Stunned");
             enemyAnim.SetBool("Blocking", false);
             enemyAnim.SetBool("Walking", false);
@@ -114,6 +117,7 @@ public class HeavyBandit : BanditBase
     }
     private void AnimationDone()
     {
+        movementSpeed = 4;
         enemyAnim.SetInteger("AttackNumber", 0);
         rotationSpeed = 10;
         attackInvoked = false;
