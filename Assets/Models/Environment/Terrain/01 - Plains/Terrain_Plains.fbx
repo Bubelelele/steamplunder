@@ -8,13 +8,13 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2022
 		Month: 5
-		Day: 13
-		Hour: 15
-		Minute: 13
-		Second: 57
-		Millisecond: 229
+		Day: 28
+		Hour: 11
+		Minute: 42
+		Second: 59
+		Millisecond: 955
 	}
-	Creator: "FBX SDK/FBX Plugins version 2020.1"
+	Creator: "FBX SDK/FBX Plugins version 2020.3"
 	OtherFlags:  {
 		TCDefinition: 127
 	}
@@ -31,21 +31,21 @@ FBXHeaderExtension:  {
 			Comment: ""
 		}
 		Properties70:  {
-			P: "DocumentUrl", "KString", "Url", "", "C:\Users\edvar\OneDrive\Dokumenter\Unity\steamplunder\Assets\Models\Environment\Terrain\PlainsTerrain.fbx"
-			P: "SrcDocumentUrl", "KString", "Url", "", "C:\Users\edvar\OneDrive\Dokumenter\Unity\steamplunder\Assets\Models\Environment\Terrain\PlainsTerrain.fbx"
+			P: "DocumentUrl", "KString", "Url", "", "D:\.unity\steamplunder\Assets\Models\Environment\Terrain\01 - Plains\Terrain_Plains.fbx"
+			P: "SrcDocumentUrl", "KString", "Url", "", "D:\.unity\steamplunder\Assets\Models\Environment\Terrain\01 - Plains\Terrain_Plains.fbx"
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "Maya"
-			P: "Original|ApplicationVersion", "KString", "", "", "2022"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "13/05/2022 13:13:57.228"
-			P: "Original|FileName", "KString", "", "", "C:\Users\edvar\OneDrive\Dokumenter\Unity\steamplunder\Assets\Models\Environment\Terrain\PlainsTerrain.fbx"
+			P: "Original|ApplicationVersion", "KString", "", "", "2023"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "28/05/2022 09:42:59.953"
+			P: "Original|FileName", "KString", "", "", "D:\.unity\steamplunder\Assets\Models\Environment\Terrain\01 - Plains\Terrain_Plains.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Maya"
-			P: "LastSaved|ApplicationVersion", "KString", "", "", "2022"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "13/05/2022 13:13:57.228"
-			P: "Original|ApplicationActiveProject", "KString", "", "", "C:\Users\edvar\OneDrive\Dokumenter\Maya\Steamplunder\Terrains"
-			P: "Original|ApplicationNativeFile", "KString", "", "", "C:\Users\edvar\OneDrive\Dokumenter\Maya\Steamplunder\Terrains\Plains.ma"
+			P: "LastSaved|ApplicationVersion", "KString", "", "", "2023"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "28/05/2022 09:42:59.953"
+			P: "Original|ApplicationActiveProject", "KString", "", "", "D:\.unity\steamplunder\Assets\Models\Environment\Terrain"
+			P: "Original|ApplicationNativeFile", "KString", "", "", "C:\Users\Vitoldas\Downloads\Plains.ma"
 		}
 	}
 }
@@ -63,7 +63,7 @@ GlobalSettings:  {
 		P: "UnitScaleFactor", "double", "Number", "",1
 		P: "OriginalUnitScaleFactor", "double", "Number", "",1
 		P: "AmbientColor", "ColorRGB", "Color", "",0,0,0
-		P: "DefaultCamera", "KString", "", "", "Producer Top"
+		P: "DefaultCamera", "KString", "", "", "Producer Perspective"
 		P: "TimeMode", "enum", "", "",11
 		P: "TimeProtocol", "enum", "", "",2
 		P: "SnapOnFrameMode", "enum", "", "",0
@@ -80,7 +80,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1513068953728, "", "Scene" {
+	Document: 2157748829552, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", "Take 001"
@@ -225,7 +225,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 1513103301488, "Geometry::", "Mesh" {
+	Geometry: 2159097084848, "Geometry::", "Mesh" {
 		Vertices: *1080 {
 			a: 13012.822265625,-2559.41845703125,-814.6298828125,13012.822265625,-1528.26489257813,-814.6298828125,13012.822265625,-3612.4091796875,-814.6298828125,7930.44580078125,-130.323699951172,-2099.24560546875,9064.21875,-130.323699951172,-1884.8564453125,11626.58203125,-130.323699951172,-964.818359375,4888.87353515625,-251.439178466797,-2687.07958984375,6696.91064453125,-251.439178466797,-2488.6064453125,2031.50817871094,-130.323699951172,-2532.7470703125,2137.26220703125,-251.821197509766,-2524.84912109375,2445.982421875,-251.821197509766,-2484.84814453125,4321.38427734375,-251.439178466797,-2468.9072265625,-142.100952148438,-933.881469726563,-2358.6181640625,121.420532226563,-933.881469726563,-2275.50146484375,-877.723205566406,-146.655181884766,-2242.29248046875,-1981.599609375,-144.944854736328,-1561.55517578125,405.632934570313,-893.615112304688,-2145.52587890625,-3610.71484375,-1528.26489257813,-1630.994140625,-3604.92919921875,-1143.40466308594,-1630.24609375,-3610.71484375,-2559.41918945313,-1630.994140625,-3610.71484375,-3612.41015625,-1630.994140625,-2775.634765625,-143.232940673828,-1584.2939453125,13012.822265625,-1528.26489257813,1176.8740234375,13012.822265625,-2559.41845703125,1176.8740234375,13012.822265625,-3612.4091796875,1176.8740234375,8140.5244140625,-130.323699951172,-253.276428222656,9064.21875,-130.323699951172,106.6474609375,11626.58203125,-130.323699951172,1026.685546875,6815.27734375,271.915496826172,-807.961120605469,4944.03564453125,109.27001953125,-2031.87377929688,1558.59350585938,-130.323699951172,-1657.69738769531,1643.56994628906,-251.821197509766,-1605.70446777344,1917.41857910156,-251.821197509766,-1457.66760253906,-343.709106445313,160.887969970703,-283.112609863281,-80.1876220703125,160.887969970703,-283.99755859375,204.024780273438,161.870880126953,-284.089080810547,-433.444702148438,161.927215576172,444.248046875,1009.341796875,-251.821197509766,-345.004638671875,1318.06176757813,-251.821197509766,-305.003662109375,3969.3212890625,-135.747222900391,-289.063232421875,
 -84.2835693359375,160.887969970703,450.1572265625,1040.13024902344,-130.323699951172,-873.963928222656,1131.14294433594,-251.821197509766,-849.452209472656,1425.91430664063,-251.821197509766,-766.236511230469,-734.997436523438,172.928802490234,637.761962890625,-1331.23852539063,-1547.31286621094,642.185546875,-1388.14770507813,-2578.46728515625,642.185546875,-1494.35192871094,-3631.4580078125,604.237426757813,-1331.23852539063,-1547.31286621094,1334.595703125,-1388.14770507813,-2578.46728515625,1334.595703125,-1494.35192871094,-3631.4580078125,1287.61694335938,374.224487304688,163.985626220703,1254.74438476563,793.076293945313,-251.821197509766,1194.22045898438,-433.444702148438,161.927215576172,1268.74853515625,-84.2835693359375,160.887969970703,1274.65771484375,-734.997436523438,172.928802490234,1301.52685546875,3969.3212890625,-251.393981933594,1230.70166015625,-1331.23852539063,-1547.31286621094,1916.00805664063,-1388.14770507813,-2578.46728515625,1916.00805664063,-1494.35192871094,-3631.4580078125,1869.029296875,374.224487304688,163.985626220703,1836.15673828125,793.076293945313,-251.821197509766,1775.6328125,-433.444702148438,161.927215576172,1850.16088867188,-84.2835693359375,160.887969970703,1856.07006835938,-734.997436523438,172.928802490234,1882.93920898438,901.209045410156,-251.821197509766,424.60791015625,1235.18237304688,-252.531112670898,449.89794921875,3944.14990234375,-134.366851806641,263.534790039063,975.186157226563,17.8883666992188,-337.760986328125,472.895324707031,163.985656738281,3955.28466796875,795.47705078125,-251.821166992188,3954.4130859375,-334.773864746094,161.92724609375,3969.28857421875,14.3872680664063,160.888000488281,3975.19775390625,-636.326599121094,172.928833007813,4002.06689453125,-1331.23852539063,-1547.31286621094,4648.1591796875,-1388.14770507813,-2578.46728515625,4648.1591796875,-1494.35192871094,-3631.4580078125,4601.18017578125,374.224487304688,163.985656738281,4568.30810546875,795.47705078125,-251.821166992188,4567.4365234375,-433.444702148438,161.92724609375,4582.31201171875,
@@ -361,7 +361,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 1513106166208, "Model::PlainsTerrain", "Mesh" {
+	Model: 2159269566672, "Model::Terrain_Plains", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",-2189.56465002622,-230.005283650076,-1132.41346328203
@@ -376,18 +376,18 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 1513006399392, "Material::lambert1", "" {
+	Material: 2159099887472, "Material::Terrain_Plains_Material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
 		Properties70:  {
 			P: "AmbientColor", "Color", "", "A",0,0,0
-			P: "DiffuseColor", "Color", "", "A",0.5,0.5,0.5
+			P: "DiffuseColor", "Color", "", "A",1,1,1
 			P: "DiffuseFactor", "Number", "", "A",0.800000011920929
 			P: "TransparencyFactor", "Number", "", "A",1
 			P: "Emissive", "Vector3D", "Vector", "",0,0,0
 			P: "Ambient", "Vector3D", "Vector", "",0,0,0
-			P: "Diffuse", "Vector3D", "Vector", "",0.400000005960464,0.400000005960464,0.400000005960464
+			P: "Diffuse", "Vector3D", "Vector", "",0.800000011920929,0.800000011920929,0.800000011920929
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
@@ -398,12 +398,12 @@ Objects:  {
 
 Connections:  {
 	
-	;Model::PlainsTerrain, Model::RootNode
-	C: "OO",1513106166208,0
+	;Model::Terrain_Plains, Model::RootNode
+	C: "OO",2159269566672,0
 	
-	;Geometry::, Model::PlainsTerrain
-	C: "OO",1513103301488,1513106166208
+	;Geometry::, Model::Terrain_Plains
+	C: "OO",2159097084848,2159269566672
 	
-	;Material::lambert1, Model::PlainsTerrain
-	C: "OO",1513006399392,1513106166208
+	;Material::Terrain_Plains_Material, Model::Terrain_Plains
+	C: "OO",2159099887472,2159269566672
 }
