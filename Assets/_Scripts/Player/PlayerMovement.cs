@@ -41,8 +41,8 @@ public class PlayerMovement : MonoBehaviour {
             var normalizedMovementVector = _frozen ? Vector3.zero : movementVector.normalized;
             float directionX = Vector3.Dot(normalizedMovementVector, transform.right);
             float directionZ = Vector3.Dot(normalizedMovementVector, transform.forward);
-            _animator.SetFloat("MoveX", directionX);
-            _animator.SetFloat("MoveZ", directionZ);
+            _animator.SetFloat("MoveX", directionX, 0.1f, Time.fixedDeltaTime);
+            _animator.SetFloat("MoveZ", directionZ, 0.1f, Time.fixedDeltaTime);
         }
 
         if (_frozen) return;
