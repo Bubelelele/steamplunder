@@ -38,7 +38,6 @@ public class AttackScript : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(canBeStunned);
         if (leaderBandit.isActive)
         {
             //Shooting and charging
@@ -176,7 +175,6 @@ public class AttackScript : MonoBehaviour
     {
         if (canBeStunned)
         {
-            Debug.Log("hit");
             CancelInvoke();
             bossAnim.SetBool("Stunned", true);
             bossMovement.LookAtPlayer(false);

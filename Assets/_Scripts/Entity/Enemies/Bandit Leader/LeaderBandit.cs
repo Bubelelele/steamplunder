@@ -4,6 +4,7 @@ public class LeaderBandit : EnemyBase
 {
 
     public GameObject healthCanvas;
+    public GameObject level2Gear;
 
     [HideInInspector] public bool isActive;
     [HideInInspector] public bool canBeHarmed;
@@ -55,7 +56,10 @@ public class LeaderBandit : EnemyBase
     {
         base.Die();
         healthCanvas.SetActive(false);
+        level2Gear.SetActive(true);
+        level2Gear.transform.parent = null;
         Destroy(gameObject);
+        
     }
     public override void Stun()
     {
