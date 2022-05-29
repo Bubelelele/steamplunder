@@ -12,11 +12,13 @@ public class BossStages : MonoBehaviour
     private NavMeshAgent agent;
     private AttackScript attackScript;
     private LeaderBandit leaderBandit;
+    private BossMovement bossMovement;
 
     private void Start()
     {
         attackScript = GetComponent<AttackScript>();
         leaderBandit = GetComponent<LeaderBandit>();
+        bossMovement = GetComponent<BossMovement>();
         agent = GetComponent<NavMeshAgent>();
         door2.Open();
     }
@@ -26,6 +28,7 @@ public class BossStages : MonoBehaviour
         secondStage = true;
         leaderBandit.DeactivateBoss();
         door.Open();
+        bossMovement.WalkToPlayer(false);
         
     }
     private void Update()
@@ -45,11 +48,13 @@ public class BossStages : MonoBehaviour
                 secondStage = false;
                 agent.ResetPath();
                 attackScript.LastStage();
+                bossMovement.WalkToPlayer(false);
             }
         }
     }
     private void MoveDelay()
     {
+        bossMovement.WalkToPlayer(true);
         agent.SetDestination(targetLocation.position);
     }
     private void DoorClose()
