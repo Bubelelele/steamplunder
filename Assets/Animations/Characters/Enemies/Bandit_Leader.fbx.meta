@@ -347,8 +347,32 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.42036057
+        functionName: IsLethal
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 1
         functionName: ActionOver
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7244655
+        functionName: NotLethal
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.054631848
+        functionName: NoShield
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
           type: 3}
@@ -909,16 +933,24 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.38081744
-        functionName: NotLethal
+      - time: 0.2605167
+        functionName: GaunletColliderOn
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
           type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.4432139
-        functionName: IsLethal
+      - time: 0.3325418
+        functionName: GaunletColliderOff
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.42065752
+        functionName: GaunletColliderOn
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
           type: 3}
@@ -926,7 +958,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.50969493
-        functionName: NotLethal
+        functionName: GaunletColliderOff
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
           type: 3}
@@ -934,7 +966,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.5540161
-        functionName: IsLethal
+        functionName: GaunletColliderOn
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
           type: 3}
@@ -942,7 +974,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.62603843
-        functionName: NotLethal
+        functionName: GaunletColliderOff
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
           type: 3}
@@ -950,7 +982,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.6786708
-        functionName: IsLethal
+        functionName: GaunletColliderOn
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
           type: 3}
@@ -958,7 +990,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.7590031
-        functionName: NotLethal
+        functionName: GaunletColliderOff
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
           type: 3}
@@ -966,14 +998,22 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.82548416
-        functionName: IsLethal
+        functionName: GaunletColliderOn
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
           type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.8725766
+      - time: 0.90855134
+        functionName: GaunletColliderOff
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9308473
         functionName: NotLethal
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a363ae63783ef8f49b6067d3d701853f,

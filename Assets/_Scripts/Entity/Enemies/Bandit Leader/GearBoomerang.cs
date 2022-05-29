@@ -26,6 +26,7 @@ public class GearBoomerang : MonoBehaviour
                 gameObject.GetComponent<MeshRenderer>().enabled = false;
                 gearInGauntlet.SetActive(true);
                 gameObject.GetComponent<Collider>().enabled = false;
+                gameObject.transform.parent = gearPosition;
             }
         }
 

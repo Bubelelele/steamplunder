@@ -8,6 +8,7 @@ public class AttackScript : MonoBehaviour
     [HideInInspector] public bool lastStage = false;
 
     public Collider gauntletCollider;
+    public Collider maceCollider;
 
     //GearBoomerang
     [SerializeField] private GameObject gearBoomerang;
@@ -29,12 +30,15 @@ public class AttackScript : MonoBehaviour
         bossMovement = GetComponent<BossMovement>();
         leaderBandit = GetComponent<LeaderBandit>();
         bossAnim = GetComponent<Animator>();
+        GaunletColliderOff();
+        MaceColliderOff();
     }
 
 
 
     private void Update()
     {
+        Debug.Log(canBeStunned);
         if (leaderBandit.isActive)
         {
             //Shooting and charging
@@ -76,6 +80,7 @@ public class AttackScript : MonoBehaviour
                     
                     if (whichAttack == 0) //Slash three times
                     {
+                        MaceColliderOn();
                         bossMovement.SetSpeed(1.5f);
                         bossAnim.SetTrigger("SlashSpree");
                         attackDamage = 7;
@@ -84,6 +89,7 @@ public class AttackScript : MonoBehaviour
                     }
                     else if (whichAttack == 1) //Single slash
                     {
+                        MaceColliderOn();
                         bossMovement.SetSpeed(1.5f);
                         bossAnim.SetTrigger("SingleSlash");
                         attackDamage = 7;
@@ -117,6 +123,7 @@ public class AttackScript : MonoBehaviour
                         }
                         else // Gearattack
                         {
+                            GaunletColliderOn();
                             bossAnim.SetTrigger("GearAttack");
                             attackDamage = 3;
                             bossMovement.WalkToPlayer(false);
@@ -143,6 +150,7 @@ public class AttackScript : MonoBehaviour
     //Functions called from this script
     private void Slash()
     {
+        maceCollider.enabled = true;
         bossMovement.SetSpeed(1.5f);
         bossAnim.SetBool("Block", false);
     }
@@ -151,6 +159,7 @@ public class AttackScript : MonoBehaviour
         //Randomize amount of punches
         int punchChance = Random.Range(0, 3);
 
+        GaunletColliderOn();
         if (punchChance == 0) { bossAnim.SetInteger("PunchInt", 1); }
         else if (punchChance == 1) { bossAnim.SetInteger("PunchInt", 2); }
         else { bossAnim.SetInteger("PunchInt", 3); }
@@ -167,8 +176,14 @@ public class AttackScript : MonoBehaviour
     {
         if (canBeStunned)
         {
+            Debug.Log("hit");
+            CancelInvoke();
             bossAnim.SetBool("Stunned", true);
             bossMovement.LookAtPlayer(false);
+            NotLethal();
+            MaceColliderOff();
+            GaunletColliderOff();
+            animationIsPlaying = false;
         }
 
     }
@@ -182,18 +197,20 @@ public class AttackScript : MonoBehaviour
     }
     public void NoShield()
     {
+        canBeStunned = false;
         bossAnim.SetBool("Block", false);
         leaderBandit.CanBeHarmed(true);
 
     }
-    public void NotLethal() { lethal = false; gauntletCollider.enabled = false; }
-    public void IsLethal()
-    {
-        lethal = true;
-        gauntletCollider.enabled = true;
-    }
+    public void NotLethal() { lethal = false; }
+    public void IsLethal() {  lethal = true;  }
+    public void GaunletColliderOff() { gauntletCollider.enabled = false; }
+    public void GaunletColliderOn() { gauntletCollider.enabled = true;  }
+    public void MaceColliderOff() { maceCollider.enabled = false; }
+    public void MaceColliderOn() { maceCollider.enabled = true; }
     public void ChargeSpeed()
     {
+        MaceColliderOn();
         isCharging = true;
         bossMovement.WalkToPlayer(true);
         bossMovement.SetSpeed(16);
@@ -214,6 +231,8 @@ public class AttackScript : MonoBehaviour
         bossMovement.WalkToPlayer(true);
         bossMovement.LookAtPlayer(true);
         bossMovement.SetSpeed(7);
+        MaceColliderOff();
+        GaunletColliderOff();
     }
     public void AnimationDelay()
     {
