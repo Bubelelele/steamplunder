@@ -4,7 +4,7 @@ public class BossMovement : MonoBehaviour
 {
     public float movementSpeed = 4f;
     public float distanceBeforeAttack = 2f;
-    public float damping = 20;
+    public float rotationSpeed = 20;
 
 
     private bool walkToPlayer = true;
@@ -27,7 +27,7 @@ public class BossMovement : MonoBehaviour
         if (leaderBandit.isActive && lookAtPlayer)
         {
             var targetRotation = Quaternion.LookRotation(new Vector3(playerPos.x, transform.position.y, playerPos.z) - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * damping);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
 
             if (Vector3.Distance(transform.position, playerPos) > distanceBeforeAttack && walkToPlayer)
             {

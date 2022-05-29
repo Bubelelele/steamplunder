@@ -9,10 +9,8 @@ public class AttackScript : MonoBehaviour
 
     public Collider gauntletCollider;
 
-    //Gun
+    //GearBoomerang
     [SerializeField] private GameObject gearBoomerang;
-
-
     [SerializeField] private GameObject gearGauntlet;
     [SerializeField] private GameObject boomerangStuff;
 
@@ -20,6 +18,7 @@ public class AttackScript : MonoBehaviour
     private bool animationIsPlaying = false;
     private bool isCharging = false;
     private bool canBeStunned = false;
+    private float dist;
 
     private BossMovement bossMovement;
     private LeaderBandit leaderBandit;
@@ -38,12 +37,8 @@ public class AttackScript : MonoBehaviour
     {
         if (leaderBandit.isActive)
         {
-            if (lastStage)
-            {
-                boomerangStuff.SetActive(true);
-            }
             //Shooting and charging
-            float dist = Vector3.Distance(transform.position, Player.GetPosition());
+            dist = Vector3.Distance(transform.position, Player.GetPosition());
 
             if (dist > 6f && !animationIsPlaying)
             {
@@ -78,18 +73,22 @@ public class AttackScript : MonoBehaviour
                 if (!animationIsPlaying)
                 {
                     int whichAttack = Random.Range(0, 6);
-
+                    
                     if (whichAttack == 0) //Slash three times
                     {
                         bossMovement.SetSpeed(1.5f);
                         bossAnim.SetTrigger("SlashSpree");
                         attackDamage = 7;
+                        bossMovement.LookAtPlayer(false);
+                        bossMovement.WalkToPlayer(false);
                     }
                     else if (whichAttack == 1) //Single slash
                     {
                         bossMovement.SetSpeed(1.5f);
                         bossAnim.SetTrigger("SingleSlash");
                         attackDamage = 7;
+                        bossMovement.LookAtPlayer(false);
+                        bossMovement.WalkToPlayer(false);
                     }
                     else if (whichAttack == 2 || whichAttack == 3)
                     {
@@ -104,12 +103,14 @@ public class AttackScript : MonoBehaviour
                             attackDamage = 7;
                         }
                         bossMovement.WalkToPlayer(false);
+                        bossMovement.LookAtPlayer(false);
                     }
                     else
                     {
                         if (!lastStage) // Block
-                        {
+                        {                          
                             bossAnim.SetBool("Block", true);
+                            bossMovement.LookAtPlayer(true);
                             Invoke("Slash", Random.Range(30, 40f) * 0.1f);
                             attackDamage = 10;
 
@@ -119,14 +120,24 @@ public class AttackScript : MonoBehaviour
                             bossAnim.SetTrigger("GearAttack");
                             attackDamage = 3;
                             bossMovement.WalkToPlayer(false);
+                            bossMovement.LookAtPlayer(false);
                         }
 
                     }
                     animationIsPlaying = true;
                 }
+                
             }
-        }
+            if(dist <= bossMovement.distanceBeforeAttack && canBeStunned)
+            {
+                bossMovement.WalkToPlayer(false);
+            }
+            else if (dist > bossMovement.distanceBeforeAttack && canBeStunned)
+            {
+                bossMovement.WalkToPlayer(true);
+            }
 
+        }
     }
 
     //Functions called from this script
@@ -146,7 +157,12 @@ public class AttackScript : MonoBehaviour
     }
 
     //Functions called from other scripts
-    public void LastStage() { lastStage = true; gearGauntlet.SetActive(true); }
+    public void LastStage() 
+    { 
+        lastStage = true;
+        gearGauntlet.SetActive(true);
+        boomerangStuff.SetActive(true);
+    }
     public void Stunned()
     {
         if (canBeStunned)
@@ -189,7 +205,7 @@ public class AttackScript : MonoBehaviour
 
     public void ActionOver()
     {
-        Invoke("AnimationDelay", 0f);
+        Invoke("AnimationDelay", 0.5f);
         bossAnim.SetInteger("PunchInt", 0);
         isCharging = false;
         canBeStunned = false;
