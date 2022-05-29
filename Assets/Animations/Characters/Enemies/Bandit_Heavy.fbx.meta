@@ -269,15 +269,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.019002564
-        functionName: CanStun
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -315,14 +307,6 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.35491028
-        functionName: CannotStun
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.60807586
         functionName: NotLethal
         data: 
@@ -331,7 +315,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.91714984
+      - time: 1
         functionName: AnimationDone
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
@@ -397,14 +381,6 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.19327728
-        functionName: CannotStun
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.32492995
         functionName: NotLethal
         data: 
@@ -442,7 +418,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.8308505
+      - time: 0.86278194
+        functionName: RaisedUp
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.89100087
         functionName: AnimationDone
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
@@ -524,14 +508,6 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.36569333
-        functionName: CannotStun
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.70546275
         functionName: NotLethal
         data: 
@@ -540,7 +516,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9147747
+      - time: 1
         functionName: AnimationDone
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
