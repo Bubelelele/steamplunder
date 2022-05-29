@@ -10,6 +10,7 @@ public class HeavyBandit : BanditBase
     private float distanceAttack = 3f;
     private float distanceChase;
     private bool canStun;
+    private bool isStunned;
     private bool attackInvoked;
     private Collider weaponTrigger;
     private CapsuleCollider _collider;
@@ -21,8 +22,7 @@ public class HeavyBandit : BanditBase
     }
     protected override void UpdateSense()
     {
-        Debug.Log(animationPlaying);
-
+        Debug.Log(isStunned);
         distanceChase = distanceAttack + 1.5f;
         //Moving towards the player
         if (chasePlayer && !animationPlaying)
@@ -41,7 +41,12 @@ public class HeavyBandit : BanditBase
 
             if (Vector3.Distance(player.transform.position, transform.position) < distanceAttack)
             {
-                enemyAnim.SetBool("Blocking", true);
+                if (!isStunned)
+                {
+                    enemyAnim.SetBool("Blocking", true);
+                    CanStun();
+                }
+                
                 ChangeSpeed(slowWalkingSpeed);
                 if (!attackInvoked)
                 {
@@ -70,6 +75,11 @@ public class HeavyBandit : BanditBase
                 enemyAnim.SetBool("Walking", false);
             }
         }
+        if (isStunned)
+        {
+            rotationSpeed = 0;
+            movementSpeed = 0;
+        }
 
     }
     public void Attack()
@@ -86,12 +96,13 @@ public class HeavyBandit : BanditBase
         
         if (canStun)
         {
+            isStunned = true;
             CancelInvoke();
             NotLethal();
-            rotationSpeed = 0;
-            movementSpeed = 0;
-            enemyAnim.SetTrigger("Stunned");
+            CannotStun();
+            
             enemyAnim.SetBool("Blocking", false);
+            enemyAnim.SetTrigger("Stunned");
             enemyAnim.SetBool("Walking", false);
             enemyAnim.SetInteger("AttackNumber", 0);
             animationPlaying = true;
@@ -115,11 +126,15 @@ public class HeavyBandit : BanditBase
         weaponTrigger.enabled = false;
         lethal = false;
     }
+    private void RaisedUp()
+    {
+        isStunned = false;
+    }
     private void AnimationDone()
     {
         movementSpeed = 4;
-        enemyAnim.SetInteger("AttackNumber", 0);
         rotationSpeed = 10;
+        enemyAnim.SetInteger("AttackNumber", 0);
         attackInvoked = false;
         animationPlaying = false;
     }
