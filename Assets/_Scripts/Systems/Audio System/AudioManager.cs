@@ -50,7 +50,7 @@ public class AudioManager : MonoBehaviour {
     }
 
     public static void PlayAudio(AudioType type, bool fade = false, float delay = 0.0F) {
-        if (_instance != null) {
+        if (_instance == null) {
             Debug.LogWarning("No instance of AudioManager!");
             return;
         }
@@ -87,17 +87,15 @@ public class AudioManager : MonoBehaviour {
 
         Coroutine jobRunner = StartCoroutine(RunAudioJob(job));
         _jobTable.Add(job.type, jobRunner);
-        Debug.Log("Starting job on [" + job.type + "] with operation: " + job.action);
     }
 
     private void RemoveJob(AudioType type) {
         if (!_jobTable.ContainsKey(type)) {
-            Debug.Log("Trying to stop a job [" + type + "] that is not running.");
             return;
         }
 
         Coroutine runningJob = (Coroutine) _jobTable[type];
-        StopCoroutine(runningJob);
+        if (runningJob != null) StopCoroutine(runningJob);
         _jobTable.Remove(type);
     }
 
@@ -170,17 +168,13 @@ public class AudioManager : MonoBehaviour {
         }
 
         _jobTable.Remove(job.type);
-        Debug.Log("Job count: " + _jobTable.Count);
     }
 
     private void GenerateAudioTable() {
         foreach (AudioTrack track in tracks) {
             foreach (AudioObject obj in track.audioTrackSO.audio) {
                 //do not duplicate keys
-                if (_audioTable.ContainsKey(obj.type)) {
-                    Debug.LogWarning("You are trying to register audio [" + obj.type +
-                               "] that has already been registered.");
-                } else {
+                if (!_audioTable.ContainsKey(obj.type)) {
                     _audioTable.Add(obj.type, track);
                 }
             }
@@ -189,8 +183,6 @@ public class AudioManager : MonoBehaviour {
 
     private AudioTrack GetAudioTrack(AudioType type, string job = "") {
         if (!_audioTable.ContainsKey(type)) {
-            Debug.LogWarning("You are trying to <color=#fff>" + job + "</color> for [" + type +
-                       "] but no track was found supporting this audio type.");
             return null;
         }
 
