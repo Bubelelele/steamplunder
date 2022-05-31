@@ -3,5 +3,6 @@ public enum StoryBeat {
     Plains_StrangerEvent1,
     D1_HammerGet,
     Plains_StrangerEvent2,
-    D2_SpinGet
+    D2_SpinGet,
+    D3_GrappleGet,
 }
