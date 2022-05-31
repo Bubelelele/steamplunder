@@ -40,8 +40,8 @@ public class Player : MonoBehaviour {
     }
 
     public void DieAnimFinished() {
-        PlayerData.SetHealth(maxHealth);
         PlayerData.ReloadScene();
+        PlayerData.SetHealth(maxHealth);
         //AudioManager.PlayAudio(AudioType.Death_Player);
     }
 }
