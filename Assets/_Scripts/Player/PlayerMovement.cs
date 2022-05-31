@@ -127,6 +127,7 @@ public class PlayerMovement : MonoBehaviour {
     private void Die(Transform source) {
         SetFreeze(true);
         _animator.SetTrigger("Die");
+        GetComponent<PlayerArtifacts>().enabled = false; //Prevent player from zombie attacking
         if (source != null) LookAt(source.position);
     }
     
