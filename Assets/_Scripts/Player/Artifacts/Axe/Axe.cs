@@ -16,7 +16,7 @@ public class Axe : ArtifactWeaponBase {
         base.Use();
         _animator.SetTrigger("Attack 1");
         EffectSpawner.SpawnSlashFX(0, transform);
-        AudioManager.PlayAudio(AudioType.Attack1_Player, false, .35f);
+        AudioManager.PlayAudio(AudioType.Attack1_Player, false, .25f);
         _currentDamageMultiplier = 1f;
         if (artifactObject.TryGetComponent<AxeHitbox>(out var axeHitbox)) {
             _hitbox = axeHitbox;
