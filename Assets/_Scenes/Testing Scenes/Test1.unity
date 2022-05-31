@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5238657, g: 0.5617042, b: 0.47704506, a: 1}
+  m_IndirectSpecularColor: {r: 0.52386564, g: 0.56170434, b: 0.47704506, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -302,6 +302,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1464924723650043411, guid: e2b240ef2d82f1c4d83f34a035a8bcf8,
+        type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2465104100900399947, guid: e2b240ef2d82f1c4d83f34a035a8bcf8,
         type: 3}
       propertyPath: m_Name
@@ -1847,7 +1852,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onCogPlaced.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1975365927}
+      objectReference: {fileID: 0}
     - target: {fileID: 3917214096968519762, guid: 15e260adc102fa74facc74697ed16d1f,
         type: 3}
       propertyPath: onCogPlaced.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -2413,7 +2418,19 @@ MonoBehaviour:
   maxHealth: 1
   onDestroy:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1196471397}
+        m_TargetAssemblyTypeName: Destructible, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1196833742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4001072174029150305, guid: 0261bc1a0f04b0c45b844f4cc337fdad,
@@ -3414,12 +3431,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 11335062943072631, guid: 15e260adc102fa74facc74697ed16d1f,
     type: 3}
   m_PrefabInstance: {fileID: 855703215}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1975365927 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8735452982963747645, guid: ed3fedef79fa27047a29a96b3b3c31f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1510494330}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1975365929 stripped
 MonoBehaviour:

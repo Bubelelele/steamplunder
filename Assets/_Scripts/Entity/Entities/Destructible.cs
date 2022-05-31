@@ -7,4 +7,8 @@ public class Destructible : EntityBase {
     protected override void Die() {
         onDestroy.Invoke();
     }
+
+    public void Destroy() {
+        Destroy(gameObject);
+    }
 }
