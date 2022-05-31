@@ -33,7 +33,7 @@ public class EffectSpawner : MonoBehaviour {
     private void PickupFX(Vector3 position) => SpawnFX(pickupFX, position);
 
     private void SlashFX(int index, Transform followTransform) {
-        // var handler = Instantiate(slashFX[index], followTransform.position, followTransform.rotation).GetComponent<VisualEffectHandler>();
-        // handler.follow = followTransform;
+        var handler = Instantiate(slashFX[index], followTransform.position, followTransform.rotation).GetComponent<VisualEffectHandler>();
+        handler.follow = followTransform;
     }
 }
