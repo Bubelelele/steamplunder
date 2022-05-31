@@ -13,12 +13,13 @@ public class EffectSpawner : MonoBehaviour {
     private static EffectSpawner _instance;
     private void Awake() => _instance = this;
 
+    //Public static method call relayers
     public static void SpawnDroppedCog(Vector3 position) => _instance.DroppedCog(position);
     public static void SpawnBloodFX(Vector3 position) => _instance.BloodFX(position);
     public static void SpawnPickupFX(Vector3 position) => _instance.PickupFX(position);
+    public static void SpawnSlashFX(int index, Transform followTransform) => _instance.SlashFX(index, followTransform);
 
-    public static void SpawnSlashFX(int index, Vector3 position, Quaternion rotation) => _instance.SlashFX(index, position, rotation);
-
+    //Local instantiates
     private void SpawnFX(GameObject prefab, Vector3 position) => Instantiate(prefab, position, Quaternion.identity);
 
     private void DroppedCog(Vector3 position) {
@@ -31,7 +32,8 @@ public class EffectSpawner : MonoBehaviour {
     private void BloodFX(Vector3 position) => SpawnFX(bloodFX, position);
     private void PickupFX(Vector3 position) => SpawnFX(pickupFX, position);
 
-    private void SlashFX(int index, Vector3 position, Quaternion rotation) {
-        Instantiate(slashFX[index], position, rotation);
+    private void SlashFX(int index, Transform followTransform) {
+        var handler = Instantiate(slashFX[index], followTransform.position, followTransform.rotation).GetComponent<VisualEffectHandler>();
+        handler.follow = followTransform;
     }
 }
