@@ -248,12 +248,12 @@ public static class PlayerData {
         _syringeSlots = savedSyringeSlots.GetSavedInt();
         _filledSyringes = savedFilledSyringes.GetSavedInt();
 
-        SceneManager.LoadScene(savedScene.GetSavedString());
+        SceneManager.LoadSceneAsync(savedScene.GetSavedString());
     }
 
     public static void ReloadScene() {
         if (isSavedGame.GetSavedBool()) Load();
-        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        else SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
     
     //Saving and loading extension methods

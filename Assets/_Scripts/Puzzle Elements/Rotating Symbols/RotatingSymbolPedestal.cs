@@ -19,6 +19,10 @@ public class RotatingSymbolPedestal : MonoBehaviour, IInteractable {
     [SerializeField] private List<Sprite> symbols;
     public UnityEvent onCorrect;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] audioClips;
+    
     public bool Solved => _currentSide == _correctSide;
 
     private bool _isRotating;
@@ -35,6 +39,7 @@ public class RotatingSymbolPedestal : MonoBehaviour, IInteractable {
         if (_isRotating) return;
         
         _isRotating = true;
+        PlaySound();
         StartCoroutine(Rotate());
     }
     
@@ -74,5 +79,11 @@ public class RotatingSymbolPedestal : MonoBehaviour, IInteractable {
         if (_currentSide >= symbolImages.Length) _currentSide = 0;
         if (Solved) onCorrect.Invoke();
         _isRotating = false;
+    }
+
+    private void PlaySound() {
+        var clipToPlay = audioClips[Random.Range(0, audioClips.Length-1)];
+        audioSource.clip = clipToPlay;
+        audioSource.Play();
     }
 }

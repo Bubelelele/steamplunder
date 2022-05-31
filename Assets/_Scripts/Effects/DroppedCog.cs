@@ -17,7 +17,7 @@ public class DroppedCog : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerStay(Collider other) {
         if (other.CompareTag("Player") && !PlayerData.AllSlotsFull) {
             EffectSpawner.SpawnPickupFX(transform.position);
             PlayerData.CogPickedUp();
