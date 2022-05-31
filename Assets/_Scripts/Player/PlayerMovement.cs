@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody _rb;
     private Animator _animator;
     private bool _frozen;
+    private Vector3 _moveVector;
 
     private void Awake() {
         _cam = Camera.main;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate() {
         Vector3 inputVector = PlayerInput.Dir3;
         Vector3 movementVector = GetMovementVector(inputVector);
+        _moveVector = movementVector;
 
         if (_animator != null) {
             var normalizedMovementVector = _frozen ? Vector3.zero : movementVector.normalized;
@@ -119,6 +121,8 @@ public class PlayerMovement : MonoBehaviour {
         _frozen = freeze;
         _rb.isKinematic = freeze;
     }
+
+    public bool IsSleeping() => _moveVector == Vector3.zero;
 
     private void Die(Transform source) {
         SetFreeze(true);
