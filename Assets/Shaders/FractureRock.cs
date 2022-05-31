@@ -18,7 +18,7 @@ public class FractureRock : MonoBehaviour
 			originalGameObject.SetActive(false);
 			int randomNumber = Random.Range(0, 3);
 			fracturedObject[randomNumber].SetActive(true);
-			EffectSpawner.SpawnDroppedCog(transform.position + Vector3.up);
+			EffectSpawner.SpawnDroppedCog(transform.position);
 
 			isPressed = true;
 		}

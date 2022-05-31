@@ -7,9 +7,11 @@ public class WeaponTrigger : MonoBehaviour {
 
     private MeleeBandit _meleeBandit;
     private HeavyBandit _heavyBandit;
+    private AttackScript _attackScript;
 
     private bool _isMelee;
     private bool _isHeavy;
+    private bool _isBanditLeader;
 
     private void Awake() {
         if(enemy.GetComponent<MeleeBandit>() != null)
@@ -21,7 +23,12 @@ public class WeaponTrigger : MonoBehaviour {
         {
             _heavyBandit = enemy.GetComponent<HeavyBandit>();
             _isHeavy = true;
-        }  
+        }
+        else if (enemy.GetComponent<AttackScript>() != null)
+        {
+            _attackScript = enemy.GetComponent<AttackScript>();
+            _isBanditLeader = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -32,6 +39,11 @@ public class WeaponTrigger : MonoBehaviour {
         if (_isHeavy && _heavyBandit.lethal && other.CompareTag("Player"))
         {
             PlayerData.Damage(_heavyBandit.attackDamage, transform);
+            EffectSpawner.SpawnBloodFX(other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position));
+        }
+        if (_isBanditLeader && _attackScript.lethal && other.CompareTag("Player"))
+        {
+            PlayerData.Damage(_attackScript.attackDamage, transform);
             EffectSpawner.SpawnBloodFX(other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position));
         }
     }

@@ -40,14 +40,8 @@ ModelImporter:
       74: 2877651632924608919
     second: Block_Bash
   - first:
-      74: 1672085084001958510
-    second: Run_Backwards
-  - first:
-      74: -4810848800342533127
-    second: Run_Left
-  - first:
-      74: 3304999090146950619
-    second: Run_Right
+      74: 3868965696693903178
+    second: Block_Down
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -136,7 +130,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
+      - time: 0.92874116
         functionName: IdleAnimationDone
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a50d011aa9056e14983f9ec0e4603f51,
@@ -173,7 +167,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
+      - time: 0.93421054
         functionName: IdleAnimationDone
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a50d011aa9056e14983f9ec0e4603f51,
@@ -210,7 +204,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
+      - time: 0.924812
         functionName: IdleAnimationDone
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a50d011aa9056e14983f9ec0e4603f51,
@@ -275,15 +269,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0
-        functionName: CanStun
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -315,14 +301,6 @@ ModelImporter:
       events:
       - time: 0.31591463
         functionName: Lethal
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.35866967
-        functionName: CannotStun
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
           type: 3}
@@ -402,11 +380,19 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.32492995
+        functionName: NotLethal
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 261
     - serializedVersion: 16
       name: StandUp
       takeName: StandUp
@@ -432,7 +418,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
+      - time: 0.86278194
+        functionName: RaisedUp
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.89100087
         functionName: AnimationDone
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
@@ -514,14 +508,6 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.35629484
-        functionName: CannotStun
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.70546275
         functionName: NotLethal
         data: 
@@ -543,18 +529,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 374
     - serializedVersion: 16
-      name: Run_Backwards
-      takeName: Run_Backwards
+      name: Block_Down
+      takeName: Block_Equip
       internalID: 0
-      firstFrame: 404
-      lastFrame: 433
+      firstFrame: 151
+      lastFrame: 175
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -566,69 +552,19 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.18527324
+        functionName: AnimationDone
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 31803bd1b679c2e4589dddb58b14e07e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 404
-    - serializedVersion: 16
-      name: Run_Left
-      takeName: Run_Left
-      internalID: 0
-      firstFrame: 434
-      lastFrame: 453
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 434
-    - serializedVersion: 16
-      name: Run_Right
-      takeName: Run_Right
-      internalID: 0
-      firstFrame: 454
-      lastFrame: 473
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 454
+      additiveReferencePoseFrame: 175
     isReadable: 0
   meshes:
     lODScreenPercentages: []

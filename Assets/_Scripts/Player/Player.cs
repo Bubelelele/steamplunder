@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour {
 
     [SerializeField] private int maxHealth = 100;
-    
+    [SerializeField] private GameObject fadeDeathPanel;
+
     private static Player _currentPlayer;
 
     public static Player GetPlayer() {
@@ -21,14 +22,26 @@ public class Player : MonoBehaviour {
     private void Awake() {
         _currentPlayer = this;
         PlayerData.Init(maxHealth);
+        PlayerData.OnDie += OnDie;
     }
 
     private void Start() {
         PlayerData.Start();
     }
 
+    private void OnDestroy() {
+        PlayerData.OnDie -= OnDie;
+    }
+
+    private void OnDie(Transform source) {
+        if (fadeDeathPanel != null) {
+            Instantiate(fadeDeathPanel, Vector3.zero, Quaternion.identity);
+        }
+    }
+
     public void DieAnimFinished() {
         PlayerData.SetHealth(maxHealth);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PlayerData.ReloadScene();
+        AudioManager.PlayAudio(AudioType.Death_Player);
     }
 }

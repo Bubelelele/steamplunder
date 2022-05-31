@@ -36,11 +36,11 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate() {
         Vector3 inputVector = PlayerInput.Dir3;
         Vector3 movementVector = GetMovementVector(inputVector);
-        float directionX = Vector3.Dot(movementVector.normalized, transform.right);
-        float directionZ = Vector3.Dot(movementVector.normalized, transform.forward);
 
         if (_animator != null) {
-            var movementVectorMagnitude = _frozen ? 0f : movementVector.magnitude;
+            var normalizedMovementVector = _frozen ? Vector3.zero : movementVector.normalized;
+            float directionX = Vector3.Dot(normalizedMovementVector, transform.right);
+            float directionZ = Vector3.Dot(normalizedMovementVector, transform.forward);
             _animator.SetFloat("MoveX", directionX, 0.1f, Time.fixedDeltaTime);
             _animator.SetFloat("MoveZ", directionZ, 0.1f, Time.fixedDeltaTime);
         }

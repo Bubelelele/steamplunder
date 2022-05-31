@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour {
 
     public void RestartScene() {
         Resume();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PlayerData.ReloadScene();
     }
 
     public void ExitApplication() => Application.Quit();
