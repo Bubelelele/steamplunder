@@ -13,7 +13,7 @@ public class WalkingAudio : MonoBehaviour {
     }
 
     public void Step(AnimationEvent animationEvent) {
-        var canDoStepSound = _playerMovement.IsSleeping() || animationEvent.animatorClipInfo.weight > .5f;
+        var canDoStepSound = _playerMovement.IsSleeping() || animationEvent.animatorClipInfo.weight < .5f;
         if (canDoStepSound) return;
 
         var clipToPlay = walkingAudioClips[Random.Range(0, walkingAudioClips.Length-1)];
