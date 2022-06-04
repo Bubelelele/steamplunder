@@ -22,7 +22,8 @@ public class Grapple : ArtifactBase {
     private PlayerMovement _playerMovement;
     private GrappleState _currentGrappleState;
     private GrapplePoint _whichPointToGrapple;
-    private Vector3 _lerpTo;
+    private Transform _lerpTo;
+    private Vector3 _lerpToLocal;
     private Vector3 _clawLocalOrigin;
 
     private bool IsGrappling => _currentGrappleState != GrappleState.Idle;
@@ -39,17 +40,18 @@ public class Grapple : ArtifactBase {
 
         if (_currentGrappleState == GrappleState.Extending) {
             clawTransform.position =
-                Vector3.MoveTowards(clawTransform.position, _lerpTo, extendSpeed * Time.deltaTime);
-            if (clawTransform.position == _lerpTo) Extended();
+                Vector3.MoveTowards(clawTransform.position, _lerpTo.position, extendSpeed * Time.deltaTime);
+            if (clawTransform.position == _lerpTo.position) Extended();
         } else if (_currentGrappleState == GrappleState.Flying) {
+            _playerMovement.LookAt(_lerpTo.position);
             transform.position =
-                Vector3.MoveTowards(transform.position, _lerpTo, flyingSpeed * Time.deltaTime);
-            clawTransform.position = _lerpTo;
-            if (Vector3.Distance(_lerpTo, transform.position) < howCloseBeforeDetach) StopFlying();
+                Vector3.MoveTowards(transform.position, _lerpTo.position, flyingSpeed * Time.deltaTime);
+            clawTransform.position = _lerpTo.position;
+            if (Vector3.Distance(_lerpTo.position, transform.position) < howCloseBeforeDetach) StopFlying();
         } else if (_currentGrappleState == GrappleState.Retracting) {
             clawTransform.localPosition =
-                Vector3.MoveTowards(clawTransform.localPosition, _lerpTo, retractSpeed * Time.deltaTime);
-            if (clawTransform.localPosition == _lerpTo) Retracted();
+                Vector3.MoveTowards(clawTransform.localPosition, _lerpToLocal, retractSpeed * Time.deltaTime);
+            if (clawTransform.localPosition == _lerpToLocal) Retracted();
         }
     }
 
@@ -69,10 +71,10 @@ public class Grapple : ArtifactBase {
     
     private void StartGrapple() {
         _whichPointToGrapple = GrapplePoint.Current;
-        _lerpTo = _whichPointToGrapple.transform.position;
+        _lerpTo = _whichPointToGrapple.transform;
         lineRenderer.positionCount = 0; //Reset LineRenderer
         _playerMovement.SetFreeze(true);
-        _playerMovement.LookAt(_lerpTo);
+        _playerMovement.LookAt(_lerpTo.position);
         UpdateState(GrappleState.WaitingToShoot);
         _animator.SetTrigger("Grapple");
     }
@@ -121,7 +123,7 @@ public class Grapple : ArtifactBase {
             //Grapple lever
             Debug.Log("GRAPPLING LEVER");
             UpdateState(GrappleState.Retracting);
-            _lerpTo = _clawLocalOrigin;
+            _lerpToLocal = _clawLocalOrigin;
             grappleLever.PullLever();
         } else {
             //Normal grapple to point
