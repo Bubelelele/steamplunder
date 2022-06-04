@@ -151,7 +151,7 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.85, z: 0}
   m_TimeToStationary: 0.5
---- !u!82 &8777836431346072938
+--- !u!82 &6270460504327185174
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,7 +207,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -261,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slideSpeed: 15
   raycastLength: 1.5
+  audioSource: {fileID: 6270460504327185174}
   description: Push
 --- !u!114 &4507077619033315385
 MonoBehaviour:

@@ -4,6 +4,7 @@ public class Box : MonoBehaviour {
     
     [SerializeField] private float slideSpeed = 10f;
     [SerializeField] private float raycastLength = 1.5f;
+    [SerializeField] private AudioSource audioSource;
 
     private bool _isMoving;
     private Vector3 _targetPos;
@@ -58,6 +59,7 @@ public class Box : MonoBehaviour {
         } else {
             _targetPos = tile.GetPosition();
             _isMoving = true;
+            audioSource.Play(); //only play sound if box is actually sliding
         }
     }
 

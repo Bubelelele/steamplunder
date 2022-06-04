@@ -35,6 +35,7 @@ public class Barricade : MonoBehaviour {
                 var randomPlank = planks[Random.Range(0, planks.Length)];
                 if (randomPlank.activeSelf) {
                     randomPlank.SetActive(false);
+                    EffectSpawner.SpawnBarricadeFX(randomPlank.transform.position);
                     break;
                 }
             }

@@ -4,8 +4,6 @@ public class Player : MonoBehaviour {
 
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private GameObject fadeDeathPanel;
-    [SerializeField] private AudioClip[] deathSounds;
-    [SerializeField] private AudioSource audioSource;
 
     private static Player _currentPlayer;
 
@@ -37,15 +35,12 @@ public class Player : MonoBehaviour {
         if (fadeDeathPanel != null) {
             Instantiate(fadeDeathPanel, Vector3.zero, Quaternion.identity);
         }
+        
+        AudioManager.PlayAudio(AudioType.Death_Player);
     }
 
     public void DieAnimFinished() {
         PlayerData.ReloadScene();
         PlayerData.SetHealth(maxHealth);
-        
-        //Death sound
-        var clipToPlay = deathSounds[Random.Range(0, deathSounds.Length-1)];
-        audioSource.clip = clipToPlay;
-        audioSource.Play();
     }
 }

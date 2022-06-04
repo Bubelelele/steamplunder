@@ -22,7 +22,10 @@ public static class PlayerData {
         MaxHealth = maxHealth;
         SetHealth(maxHealth);
         SetupArtifactStatus();
-
+#if UNITY_EDITOR
+        UnlockSyringeSlot();
+#endif
+        
         _initialized = true;
     }
 

@@ -22,6 +22,7 @@ public class DroppedCog : MonoBehaviour {
             EffectSpawner.SpawnPickupFX(transform.position);
             PlayerData.CogPickedUp();
             onPickedUp.Invoke();
+            AudioManager.PlayAudio(AudioType.Pickup_Cog);
             Destroy(rb.gameObject);
         }
     }
