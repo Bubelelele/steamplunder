@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Shrine : MonoBehaviour, IInteractable {
-
-    [SerializeField] private float saveDelay = 1f;
+    
+    [Tooltip("Use an unique shrine ID if there are multiple shrines in the scene")]
+    [SerializeField] private int shrineId;
     [SerializeField] private UnityEvent onSave;
-
+    [SerializeField] private float saveDelay = 1f;
+    [SerializeField] private Transform spawnpoint;
+    
     private bool _onSaveTimeout;
     
     public bool HoldToInteract { get; }
@@ -16,9 +20,14 @@ public class Shrine : MonoBehaviour, IInteractable {
         StartCoroutine(Save());
     }
 
+    private void Start() {
+        if (PlayerData.ShouldSpawnAtShrine(shrineId))
+            Player.GetPlayer().transform.position = spawnpoint.position;
+    }
+
     private IEnumerator Save() {
         onSave.Invoke();
-        PlayerData.Save();
+        PlayerData.Save(shrineId);
         _onSaveTimeout = true;
         yield return new WaitForSeconds(saveDelay);
         _onSaveTimeout = false;
