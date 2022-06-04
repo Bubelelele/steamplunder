@@ -8,13 +8,13 @@ public class SyringeUI : MonoBehaviour {
     [SerializeField] private KeyCode healKey = KeyCode.X;
     [SerializeField] private int healAmount = 50;
 
-    [Header("UI elements")]
+    [Header("References")]
     [SerializeField] private Animator cogIndicatorAnim;
     [SerializeField] private Animator[] syringeCanisterAnims;
     [SerializeField] private GameObject[] syringeGlassElements;
     [SerializeField] private GameObject canHealText;
     [SerializeField] private Animator syringeHealAnim;
-
+    [SerializeField] private AudioSource audioSource;
 
     private void Awake() {
         PlayerData.OnCogCountIncreased += CogCountIncreased;
@@ -57,6 +57,7 @@ public class SyringeUI : MonoBehaviour {
         if (slotToUse == 1) canHealText.SetActive(false);
         PlayerData.Heal(healAmount);
         syringeHealAnim.Play("SyringeFade");
+        audioSource.Play();
         syringeCanisterAnims[slotToUse-1].SetBool("Filled", false);
     }
 

@@ -1,11 +1,11 @@
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private GameObject fadeDeathPanel;
+    [SerializeField] private AudioClip[] deathSounds;
+    [SerializeField] private AudioSource audioSource;
 
     private static Player _currentPlayer;
 
@@ -42,6 +42,10 @@ public class Player : MonoBehaviour {
     public void DieAnimFinished() {
         PlayerData.ReloadScene();
         PlayerData.SetHealth(maxHealth);
-        //AudioManager.PlayAudio(AudioType.Death_Player);
+        
+        //Death sound
+        var clipToPlay = deathSounds[Random.Range(0, deathSounds.Length-1)];
+        audioSource.clip = clipToPlay;
+        audioSource.Play();
     }
 }
