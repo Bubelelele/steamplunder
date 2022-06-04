@@ -604,11 +604,6 @@ MonoBehaviour:
   maxHealth: 100
   fadeDeathPanel: {fileID: 1995056970985029087, guid: 98d2a2ad6c4a3f64992cc10fd95ba831,
     type: 3}
-  deathSounds:
-  - {fileID: 8300000, guid: 645c239bb92924947893c19a25eff897, type: 3}
-  - {fileID: 8300000, guid: b56b65f19995e4ac39954fcf32b25440, type: 3}
-  - {fileID: 8300000, guid: 469738df998254ea5b95bc996cf68549, type: 3}
-  audioSource: {fileID: 0}
 --- !u!114 &8164949201382134669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,6 +638,14 @@ MonoBehaviour:
   lvl3Object: {fileID: 6403743899689314491}
   damageLvl2: 30
   comboTimingWindow: 0.3
+--- !u!81 &8025019779568459984
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465104100900399947}
+  m_Enabled: 1
 --- !u!4 &2989862055847571953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24dcea61176b0b74083f14a9e996e2c3,
