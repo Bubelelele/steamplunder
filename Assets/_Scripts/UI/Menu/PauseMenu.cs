@@ -32,5 +32,5 @@ public class PauseMenu : MonoBehaviour {
         PlayerData.ReloadScene();
     }
 
-    public void ExitApplication() => Application.Quit();
+    public void Exit() => SceneManager.LoadScene(0);
 }
