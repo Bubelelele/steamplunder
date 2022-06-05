@@ -22,7 +22,10 @@ public static class PlayerData {
         MaxHealth = maxHealth;
         SetHealth(maxHealth);
         SetupArtifactStatus();
-
+#if UNITY_EDITOR
+        UnlockSyringeSlot();
+#endif
+        
         _initialized = true;
     }
 
@@ -203,15 +206,17 @@ public static class PlayerData {
 
     public static readonly string isSavedGame = nameof(isSavedGame);
     public static readonly string savedGameVersion = nameof(savedGameVersion);
+    private static readonly string savedShrineId = nameof(savedShrineId);
     private static readonly string savedScene = nameof(savedScene);
     private static readonly string savedHealth = nameof(savedHealth);
     private static readonly string savedCogCount = nameof(savedCogCount);
     private static readonly string savedSyringeSlots = nameof(savedSyringeSlots);
     private static readonly string savedFilledSyringes = nameof(savedFilledSyringes);
 
-    public static void Save() {
+    public static void Save(int shrineId) {
         isSavedGame.SaveBool(true);
         savedGameVersion.SaveString(Application.version);
+        savedShrineId.SaveInt(shrineId);
         
         //Player related
         savedScene.SaveString(SceneManager.GetActiveScene().name);
@@ -254,6 +259,11 @@ public static class PlayerData {
     public static void ReloadScene() {
         if (isSavedGame.GetSavedBool()) Load();
         else SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public static bool ShouldSpawnAtShrine(int shrineId) {
+        return shrineId == savedShrineId.GetSavedInt() &&
+               savedScene.GetSavedString() == SceneManager.GetActiveScene().name;
     }
     
     //Saving and loading extension methods

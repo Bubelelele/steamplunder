@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -37,11 +35,12 @@ public class Player : MonoBehaviour {
         if (fadeDeathPanel != null) {
             Instantiate(fadeDeathPanel, Vector3.zero, Quaternion.identity);
         }
+        
+        AudioManager.PlayAudio(AudioType.Death_Player);
     }
 
     public void DieAnimFinished() {
         PlayerData.ReloadScene();
         PlayerData.SetHealth(maxHealth);
-        //AudioManager.PlayAudio(AudioType.Death_Player);
     }
 }

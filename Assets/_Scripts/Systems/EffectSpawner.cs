@@ -9,6 +9,7 @@ public class EffectSpawner : MonoBehaviour {
     [SerializeField] private GameObject bloodFX;
     [SerializeField] private GameObject pickupFX;
     [SerializeField] private GameObject[] slashFX;
+    [SerializeField] private GameObject barricadeFX;
 
     private static EffectSpawner _instance;
     private void Awake() => _instance = this;
@@ -18,7 +19,8 @@ public class EffectSpawner : MonoBehaviour {
     public static void SpawnBloodFX(Vector3 position) => _instance.BloodFX(position);
     public static void SpawnPickupFX(Vector3 position) => _instance.PickupFX(position);
     public static void SpawnSlashFX(int index, Transform followTransform) => _instance.SlashFX(index, followTransform);
-
+    public static void SpawnBarricadeFX(Vector3 position) => _instance.BarricadeFX(position);
+    
     //Local instantiates
     private void SpawnFX(GameObject prefab, Vector3 position) => Instantiate(prefab, position, Quaternion.identity);
 
@@ -31,6 +33,7 @@ public class EffectSpawner : MonoBehaviour {
     
     private void BloodFX(Vector3 position) => SpawnFX(bloodFX, position);
     private void PickupFX(Vector3 position) => SpawnFX(pickupFX, position);
+    private void BarricadeFX(Vector3 position) => SpawnFX(barricadeFX, position);
 
     private void SlashFX(int index, Transform followTransform) {
         var handler = Instantiate(slashFX[index], followTransform.position, followTransform.rotation).GetComponent<VisualEffectHandler>();
