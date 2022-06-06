@@ -4,6 +4,7 @@ public class HeavyBandit : BanditBase
 {
     [Header("References")]
     public GameObject leftGauntlet;
+    public GameObject rightGauntlet;
 
     [HideInInspector] public bool lethal = false;
 
@@ -139,7 +140,12 @@ public class HeavyBandit : BanditBase
     }
     public override void Hit(int damage, Artifact source)
     {
-        if (canStun) damage = 0;
+        if (canStun)
+        {
+            damage = 0;
+            EffectSpawner.SpawnSparksFX(rightGauntlet.transform.position + Vector3.up * 0.5f);
+        }
+        
         base.Hit(damage, source);
     }
 
