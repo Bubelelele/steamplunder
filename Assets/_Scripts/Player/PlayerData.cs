@@ -217,7 +217,7 @@ public static class PlayerData {
         isSavedGame.SaveBool(true);
         savedGameVersion.SaveString(Application.version);
         savedShrineId.SaveInt(shrineId);
-        
+
         //Player related
         savedScene.SaveString(SceneManager.GetActiveScene().name);
         savedHealth.SaveInt(Health);
@@ -253,6 +253,8 @@ public static class PlayerData {
         _syringeSlots = savedSyringeSlots.GetSavedInt();
         _filledSyringes = savedFilledSyringes.GetSavedInt();
 
+        previousDoorId = null; //Prevent spawn at door instead of shrine on death
+        
         SceneManager.LoadSceneAsync(savedScene.GetSavedString());
     }
 
