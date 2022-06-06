@@ -997,9 +997,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onCall:
-    m_PersistentCalls:
+  - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1968316032}
+      - m_Target: {fileID: 1977404810}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -1788,6 +1788,7 @@ Transform:
   - {fileID: 558059698}
   - {fileID: 1670639495}
   - {fileID: 6281715094653006882}
+  - {fileID: 7130065394406406334}
   m_Father: {fileID: 630381595}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11507,18 +11508,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1977404810}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayDelayed
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.2
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1213157490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14174,7 +14163,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh66970
+  m_Name: pb_Mesh159440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20080,7 +20069,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7679a1696a13e084c89161a58233f129, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -22435,12 +22424,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 232753501}
     m_Modifications:
     - target: {fileID: 7130065394601693061, guid: 772460ad3337c3542a5423adf8c79f98,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7130065394601693061, guid: 772460ad3337c3542a5423adf8c79f98,
         type: 3}
@@ -22465,17 +22454,17 @@ PrefabInstance:
     - target: {fileID: 7130065394601693061, guid: 772460ad3337c3542a5423adf8c79f98,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7130065394601693061, guid: 772460ad3337c3542a5423adf8c79f98,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7130065394601693061, guid: 772460ad3337c3542a5423adf8c79f98,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7130065394601693061, guid: 772460ad3337c3542a5423adf8c79f98,
         type: 3}
@@ -22499,6 +22488,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 772460ad3337c3542a5423adf8c79f98, type: 3}
+--- !u!4 &7130065394406406334 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7130065394601693061, guid: 772460ad3337c3542a5423adf8c79f98,
+    type: 3}
+  m_PrefabInstance: {fileID: 7130065394406406333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8650983722042041713
 PrefabInstance:
   m_ObjectHideFlags: 0
