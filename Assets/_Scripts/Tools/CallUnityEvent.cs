@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class CallUnityEvent : MonoBehaviour {
-    [SerializeField] private UnityEvent onCall;
+    [SerializeField] private UnityEvent[] onCall;
 
-    public void Call() {
-        onCall.Invoke();
+    public void Call(int i) {
+        onCall[i].Invoke();
     }
 }
