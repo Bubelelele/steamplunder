@@ -20,7 +20,7 @@ public class InteractionIndicator : MonoBehaviour {
             case "Mouse0":
                 return indicatorSprites[2];
             case "Mouse1":
-                return indicatorSprites[4];
+                return indicatorSprites[5];
             case "E":
                 return indicatorSprites[0];
             case "F":
