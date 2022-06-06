@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &403503607709424513
+--- !u!1 &6989550452996061034
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 403503607709424514}
-  - component: {fileID: 403503607709424515}
-  - component: {fileID: 403503607709424512}
+  - component: {fileID: 6989550452996061039}
+  - component: {fileID: 6989550452996061032}
+  - component: {fileID: 6989550452996061033}
   m_Layer: 0
-  m_Name: Steam
+  m_Name: Foam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &403503607709424514
+--- !u!4 &6989550452996061039
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403503607709424513}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071065, w: 0.7071071}
-  m_LocalPosition: {x: 39.81, y: -42.5, z: 51.12495}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 6989550452996061034}
+  m_LocalRotation: {x: 0.6951153, y: -0, z: -0, w: 0.7188983}
+  m_LocalPosition: {x: -0.19, y: 2.0249436, z: -0.05053425}
+  m_LocalScale: {x: 1, y: 2.4091, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!2083052967 &403503607709424515
+  m_LocalEulerAnglesHint: {x: 88.073, y: 0, z: 0}
+--- !u!2083052967 &6989550452996061032
 VisualEffect:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403503607709424513}
+  m_GameObject: {fileID: 6989550452996061034}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 91fc1adf774f7394a82c2ab369269dff, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: abf2dbf84012ae8448bd642902497ba7, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -70,14 +70,14 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
---- !u!73398921 &403503607709424512
+--- !u!73398921 &6989550452996061033
 VFXRenderer:
   serializedVersion: 1
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403503607709424513}
+  m_GameObject: {fileID: 6989550452996061034}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
