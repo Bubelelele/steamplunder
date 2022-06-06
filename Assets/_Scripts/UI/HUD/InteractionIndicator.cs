@@ -1,22 +1,36 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class InteractionIndicator : MonoBehaviour {
 
     [SerializeField] private TMP_Text interactionText;
-    [SerializeField] private TMP_Text keyText;
+    [SerializeField] private Image keyImage;
     [SerializeField] private GameObject holdIndicator;
+    [SerializeField] private Sprite[] indicatorSprites;
 
     public void SetIndicator(IInteractable interactable, string key) {
         interactionText.text = interactable.GetDescription();
-        keyText.text = KeyTextConversion(interactable.GetKeyText() ?? key);
+        keyImage.sprite = GetKeySprite(interactable.GetKeyText() ?? key);
         holdIndicator.SetActive(interactable.HoldToInteract);
     }
     
-    private string KeyTextConversion(string key) {
-        if (key == "Mouse0") return "LM";
-        if (key == "Mouse1") return "RM";
-        return key;
+    private Sprite GetKeySprite(string key) {
+        switch (key) {
+            case "Mouse0":
+                return indicatorSprites[2];
+            case "Mouse1":
+                return indicatorSprites[4];
+            case "E":
+                return indicatorSprites[0];
+            case "F":
+                return indicatorSprites[1];
+            case "Q":
+                return indicatorSprites[3];
+            default:
+                Debug.LogWarning($"Key {key} does not have a sprite set up!");
+                return indicatorSprites[0]; //Pass default to not break stuff
+        }
     }
     
 }
