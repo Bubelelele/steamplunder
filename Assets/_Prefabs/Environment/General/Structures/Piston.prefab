@@ -15,17 +15,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 967b0c2ad8be7d445934906a6a0ea36a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.8805444
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967b0c2ad8be7d445934906a6a0ea36a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.7765808
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967b0c2ad8be7d445934906a6a0ea36a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.2987595
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967b0c2ad8be7d445934906a6a0ea36a,
         type: 3}
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onCall:
-    m_PersistentCalls:
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -5480757927078149700}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -245,6 +245,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 7293634924184871049}
         m_TargetAssemblyTypeName: UnityEngine.VFX.VisualEffect, UnityEngine
         m_MethodName: Play
@@ -355,7 +357,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sparks
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4702791708302486500, guid: d424652f3bceec84789a117af47659b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d424652f3bceec84789a117af47659b0, type: 3}
 --- !u!2083052967 &7293634924184871049 stripped
 VisualEffect:
