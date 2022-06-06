@@ -100,7 +100,7 @@ public class MeleeBandit : BanditBase
         }
 
         //To not bump into the player
-        if(isAttacking && Vector3.Distance(player.transform.position, transform.position) < 1.1f)
+        if(isAttacking && Vector3.Distance(player.transform.position, transform.position) < 1.2f)
         {
             _navMeshAgent.SetDestination(transform.position);
         }
@@ -118,6 +118,7 @@ public class MeleeBandit : BanditBase
                     enemyAnim.SetInteger("Swing", 3);
                     CanMoveToDestination(movementSpeed);
                     CannotPivot();
+                    isAttacking = true;
                     runningAfter = false;
                 }
 
