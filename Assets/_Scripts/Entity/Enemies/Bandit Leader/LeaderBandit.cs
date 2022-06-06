@@ -5,6 +5,7 @@ public class LeaderBandit : EnemyBase
 
     public GameObject healthCanvas;
     public GameObject level2Gear;
+    public GameObject rightGauntlet;
 
     [HideInInspector] public bool isActive;
     [HideInInspector] public bool canBeHarmed;
@@ -22,7 +23,11 @@ public class LeaderBandit : EnemyBase
     }
     public override void Hit(int damage, Artifact source)
     {
-        if (!canBeHarmed) damage = 0;
+        if (!canBeHarmed) 
+        {
+            damage = 0;
+            EffectSpawner.SpawnSparksFX(rightGauntlet.transform.position + Vector3.up * 0.5f);
+        } 
         base.Hit(damage, source);
 
         if (_health <= maxHealth / 2 && !firstDone)

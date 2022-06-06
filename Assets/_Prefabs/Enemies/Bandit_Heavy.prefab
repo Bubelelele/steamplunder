@@ -564,6 +564,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feef6c791e0018e41b00562ecadeb4a7, type: 3}
+--- !u!1 &3513870062817846382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 783099198160330626, guid: feef6c791e0018e41b00562ecadeb4a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 4187756829886807020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3847090172041625337 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1116464477209986325, guid: feef6c791e0018e41b00562ecadeb4a7,
@@ -699,6 +705,7 @@ MonoBehaviour:
   patrol: 0
   patrolRange: 10
   leftGauntlet: {fileID: 3847090172041625337}
+  rightGauntlet: {fileID: 3513870062817846382}
   lethal: 0
 --- !u!4 &4438121353436142599 stripped
 Transform:
