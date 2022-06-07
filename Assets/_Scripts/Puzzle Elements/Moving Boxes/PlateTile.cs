@@ -7,7 +7,8 @@ public class PlateTile : PressableTile {
 
     public override bool IsPressed => _playerOn || TileOccupied;
 
-    private void OnCollisionEnter(Collision collision) {
+    //No longer allows player to step on plate
+    /*private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Player")) {
             _playerOn = true;
             StateChanged();
@@ -19,7 +20,7 @@ public class PlateTile : PressableTile {
             _playerOn = false;
             StateChanged();
         }
-    }
+    }*/
     
     
 }
