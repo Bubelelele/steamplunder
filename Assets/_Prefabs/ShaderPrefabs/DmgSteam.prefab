@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1238260362449828513}
   - component: {fileID: 1238260362449828514}
   - component: {fileID: 1238260362449828515}
+  - component: {fileID: 1708650878}
+  - component: {fileID: 1708650879}
   m_Layer: 0
   m_Name: DmgSteam
   m_TagString: Untagged
@@ -25,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238260362449828508}
-  m_LocalRotation: {x: -0, y: -0, z: -0.70710707, w: 0.7071066}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 39.66, y: -41.93, z: 53.47}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.84948, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,3 +112,33 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &1708650878
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238260362449828508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.23
+  m_Height: 8.3
+  m_Direction: 1
+  m_Center: {x: -0.008661403, y: 1.4014218, z: -0.018482344}
+--- !u!114 &1708650879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238260362449828508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58edd5068598b54db18cbf019f29ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tickDamage: 1
+  tickSpeed: 0.1
+  activeTime: 4
+  cooldownTime: 4

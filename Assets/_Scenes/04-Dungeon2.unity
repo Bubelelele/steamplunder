@@ -23658,11 +23658,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1238260362449828513, guid: 0ae693ba40d51af42a8192c91d80b6fe,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.84948
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238260362449828513, guid: 0ae693ba40d51af42a8192c91d80b6fe,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.33
       objectReference: {fileID: 0}
@@ -23719,42 +23714,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1075326928}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1075326930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1238260362449828508, guid: 0ae693ba40d51af42a8192c91d80b6fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 1075326928}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1075326931
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075326930}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.23
-  m_Height: 8.3
-  m_Direction: 1
-  m_Center: {x: -0.008661403, y: 1.4014218, z: -0.018482344}
---- !u!114 &1075326932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075326930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a58edd5068598b54db18cbf019f29ed0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tickDamage: 1
-  tickSpeed: 0.1
-  activeTime: 4
-  cooldownTime: 4
 --- !u!1001 &1076883647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37595,6 +37554,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 536498441}
     m_Modifications:
+    - target: {fileID: 1708650879, guid: 0ae693ba40d51af42a8192c91d80b6fe, type: 3}
+      propertyPath: activeTime
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1238260362449828508, guid: 0ae693ba40d51af42a8192c91d80b6fe,
         type: 3}
       propertyPath: m_Name
@@ -37604,11 +37567,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238260362449828513, guid: 0ae693ba40d51af42a8192c91d80b6fe,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.84948
       objectReference: {fileID: 0}
     - target: {fileID: 1238260362449828513, guid: 0ae693ba40d51af42a8192c91d80b6fe,
         type: 3}
@@ -37668,42 +37626,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1684254855}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1684254857 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1238260362449828508, guid: 0ae693ba40d51af42a8192c91d80b6fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 1684254855}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1684254858
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684254857}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.23
-  m_Height: 8.3
-  m_Direction: 1
-  m_Center: {x: -0.008661403, y: 1.4014218, z: -0.018482344}
---- !u!114 &1684254859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684254857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a58edd5068598b54db18cbf019f29ed0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tickDamage: 1
-  tickSpeed: 0.1
-  activeTime: 12
-  cooldownTime: 4
 --- !u!1001 &1689806733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38294,11 +38216,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1238260362449828513, guid: 0ae693ba40d51af42a8192c91d80b6fe,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.84948
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238260362449828513, guid: 0ae693ba40d51af42a8192c91d80b6fe,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.96
       objectReference: {fileID: 0}
@@ -38355,42 +38272,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1708650875}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1708650877 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1238260362449828508, guid: 0ae693ba40d51af42a8192c91d80b6fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 1708650875}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1708650878
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708650877}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.23
-  m_Height: 8.3
-  m_Direction: 1
-  m_Center: {x: -0.008661403, y: 1.4014218, z: -0.018482344}
---- !u!114 &1708650879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708650877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a58edd5068598b54db18cbf019f29ed0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tickDamage: 1
-  tickSpeed: 0.1
-  activeTime: 4
-  cooldownTime: 4
 --- !u!1001 &1709931273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47004,6 +46885,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 557653732703779278}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &557653732703779280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bb7bf71fb9f310040adc0407abcc8b91,
+    type: 3}
+  m_PrefabInstance: {fileID: 557653732703779278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &849465202407444222
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47316,6 +47203,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 557653732703779280}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
