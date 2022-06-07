@@ -55,6 +55,10 @@ public class BossMovement : MonoBehaviour
     {
         movementSpeed = speed;
     }
+    public void SetRotationSpeed(float speed)
+    {
+        rotationSpeed = speed;
+    }
 }
 
 

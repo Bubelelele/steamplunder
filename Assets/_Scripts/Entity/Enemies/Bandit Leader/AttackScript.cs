@@ -178,6 +178,7 @@ public class AttackScript : MonoBehaviour
             CancelInvoke();
             bossAnim.SetBool("Stunned", true);
             bossMovement.LookAtPlayer(false);
+            bossMovement.SetRotationSpeed(0);
             NotLethal();
             MaceColliderOff();
             GaunletColliderOff();
@@ -229,6 +230,7 @@ public class AttackScript : MonoBehaviour
         bossMovement.WalkToPlayer(true);
         bossMovement.LookAtPlayer(true);
         bossMovement.SetSpeed(7);
+        bossMovement.SetRotationSpeed(6);
         MaceColliderOff();
         GaunletColliderOff();
     }
