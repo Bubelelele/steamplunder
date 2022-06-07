@@ -10494,7 +10494,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh90236
+  m_Name: pb_Mesh573586
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16905,7 +16905,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4492513, y: 1}
+    m_SensorSize: {x: 1.796283, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -19673,7 +19673,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4492513, y: 1}
+    m_SensorSize: {x: 1.796283, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -20617,12 +20617,12 @@ PrefabInstance:
     - target: {fileID: 167718441927317229, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001547533
+      value: 0.000000015475328
       objectReference: {fileID: 0}
     - target: {fileID: 167718441927317229, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007521557
+      value: -0.000000007521556
       objectReference: {fileID: 0}
     - target: {fileID: 167718442290198862, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
@@ -20712,12 +20712,12 @@ PrefabInstance:
     - target: {fileID: 167718442428995536, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001547533
+      value: 0.000000015475328
       objectReference: {fileID: 0}
     - target: {fileID: 167718442428995536, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007521557
+      value: -0.000000007521556
       objectReference: {fileID: 0}
     - target: {fileID: 167718442428995539, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
@@ -39567,6 +39567,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1714722902}
     m_Modifications:
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 457825821}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1450524273}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DungeonDoor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CutscenePlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2312221466352561170, guid: d2d4b39add1ece84182295181ac253bb,
         type: 3}
       propertyPath: m_Name
@@ -43220,6 +43272,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 132332901}
     m_Modifications:
     - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: canUndoPuzzle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
       propertyPath: onPuzzleUndone.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1636258553}
@@ -43244,29 +43304,173 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1762286137}
     - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
       propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1636258553}
+      objectReference: {fileID: 1762286137}
     - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
       propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2011456472}
+      objectReference: {fileID: 1636258553}
     - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
       propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 630914690}
+      objectReference: {fileID: 2011456472}
     - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
       propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1722756724}
+      objectReference: {fileID: 630914690}
     - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
       propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 20327177}
+      objectReference: {fileID: 1722756724}
     - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
       propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 1762286137}
+      objectReference: {fileID: 20327177}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: SetBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: SetBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimatorRelay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AnimatorRelay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: AnimatorRelay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: AnimatorRelay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: AnimatorRelay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: AnimatorRelay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2312221466352561170, guid: d2d4b39add1ece84182295181ac253bb,
         type: 3}
       propertyPath: m_Name
@@ -44882,6 +45086,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246766244}
     m_Modifications:
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481447672}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DungeonDoor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370495335, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
+      propertyPath: onPuzzleCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2312221466352561170, guid: d2d4b39add1ece84182295181ac253bb,
         type: 3}
       propertyPath: m_Name
