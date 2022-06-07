@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 public class CutsceneTrigger : MonoBehaviour {
     
     [SerializeField] private PlayableDirector playableDirector;
+    [SerializeField] private bool freezeTime;
     [SerializeField] private bool playOnStart;
     [SerializeField] private bool inactiveOnStart;
     [SerializeField] private bool isStoryCutscene;
@@ -22,10 +23,11 @@ public class CutsceneTrigger : MonoBehaviour {
             _played = true;
         if (playableDirector.playableAsset == null)
             Debug.LogWarning($"{gameObject.name} needs a timeline asset!");
+        if (freezeTime) playableDirector.timeUpdateMode = DirectorUpdateMode.UnscaledGameTime;
         if (isStoryCutscene && storyCutsceneId == "") 
             Debug.LogWarning($"{gameObject.name} needs a story cutscene ID to function correctly!");
         if (playOnStart)
-            CutsceneManager.PlayCutscene(playableDirector);
+            CutsceneManager.PlayCutscene(playableDirector, freezeTime);
     }
     
     private void OnDestroy() => CutsceneManager.OnCutscenePlaying -= OnCutscenePlaying;
@@ -33,7 +35,7 @@ public class CutsceneTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (_played || _disabled || !other.CompareTag("Player")) return;
         CutsceneManager.OnCutscenePlaying += OnCutscenePlaying;
-        CutsceneManager.PlayCutscene(playableDirector);
+        CutsceneManager.PlayCutscene(playableDirector, freezeTime);
         _played = true;
         
         if (isStoryCutscene) {
