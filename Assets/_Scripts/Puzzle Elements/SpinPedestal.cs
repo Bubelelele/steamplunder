@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +9,11 @@ public class SpinPedestal : MonoBehaviour, IInteractable {
     [SerializeField] private Animator spinAnim;
 
     private bool _activated;
+    private PlayerMovement _playerMovement;
+
+    private void Start() {
+        _playerMovement = Player.GetPlayer().GetComponent<PlayerMovement>();
+    }
 
     public bool HoldToInteract => canHold;
 
@@ -19,6 +22,7 @@ public class SpinPedestal : MonoBehaviour, IInteractable {
         
         spinAnim.SetTrigger("Press");
         onActivate?.Invoke();
+        _playerMovement.FreezeLook();
         if (canOnlyActivateOnce) _activated = true;
     }
 

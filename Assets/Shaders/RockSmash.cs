@@ -9,14 +9,7 @@ public class RockSmash : MonoBehaviour
 	public float originalSpawnDelay;
 
 	private bool isPressed;
-
-	void Update()
-	{
-		if (Input.GetMouseButtonDown(0))
-		{
-			SpawnFracturedObject();
-		}
-	}
+	
 	public void SpawnFracturedObject()
 	{
 
@@ -28,7 +21,6 @@ public class RockSmash : MonoBehaviour
 
 
 			isPressed = true;
-			print(isPressed);
 		}
 
 

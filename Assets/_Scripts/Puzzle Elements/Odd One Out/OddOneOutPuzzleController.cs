@@ -10,6 +10,10 @@ public class OddOneOutPuzzleController : MonoBehaviour {
     [SerializeField] private UnityEvent onCompletion;
     [SerializeField] private OddOneOutPillar[] oddOneOutPillars;
     [SerializeField] private List<Sprite> symbolSprites;
+    [SerializeField] private AudioClip[] sequenceSounds;
+    [SerializeField] private AudioClip completionSound;
+    [SerializeField] private AudioClip failSound;
+    [SerializeField] private AudioSource audioSource;
 
     private int[] _correctPillars;
     private int _currentRow;
@@ -101,11 +105,18 @@ public class OddOneOutPuzzleController : MonoBehaviour {
 
         if (_correctPillars[_currentRow] == pillarIndex) {
             //Correct pillar touched
+            touchedPillar.PlaySound(sequenceSounds[_currentRow]);
             _currentRow++;
-            if (_currentRow == 5) onCompletion.Invoke();
+            if (_currentRow == 5) {
+                onCompletion.Invoke();
+                audioSource.clip = completionSound;
+                audioSource.Play();
+            }
         } else {
             //Incorrect pillar touched
             _currentRow = 0;
+            audioSource.clip = failSound;
+            audioSource.Play();
             foreach (var pillar in oddOneOutPillars) {
                 pillar.Deactivate();
             }

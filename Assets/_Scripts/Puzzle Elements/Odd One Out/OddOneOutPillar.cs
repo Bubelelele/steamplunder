@@ -5,7 +5,8 @@ public class OddOneOutPillar : MonoBehaviour, IInteractable {
 
     [SerializeField] private SpriteRenderer[] symbolSpriteRenderers;
     [SerializeField] private Animator[] symbolAnimators;
-    
+    [SerializeField] private AudioSource localAudioSource;
+
     public event Action<OddOneOutPillar> OnPillarTouched;
 
     private bool _active;
@@ -30,6 +31,11 @@ public class OddOneOutPillar : MonoBehaviour, IInteractable {
     public void Deactivate() {
         _active = false;
         Glow(false);
+    }
+
+    public void PlaySound(AudioClip clip) {
+        localAudioSource.clip = clip;
+        localAudioSource.Play();
     }
     
     private void Glow(bool glow) {

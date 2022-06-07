@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody _rb;
     private Animator _animator;
     private bool _frozen;
+    private bool _frozenLook;
     private Vector3 _moveVector;
 
     private void Awake() {
@@ -49,8 +50,9 @@ public class PlayerMovement : MonoBehaviour {
 
         if (_frozen) return;
         Move(movementVector);
-        
-        if (lookAtMouse || movementVector.magnitude < .1f) RotateToMouse();
+
+        if (_frozenLook) return;
+        if (lookAtMouse) RotateToMouse();
         else RotateToMovement(movementVector);
     }
 
@@ -94,6 +96,9 @@ public class PlayerMovement : MonoBehaviour {
 
         Vector3 targetPosition = transform.position + movementVector * speed;
         transform.position = targetPosition;
+
+        //Thaw look if playing resumes moving
+        if (movementVector.magnitude > .1f) _frozenLook = false;
     }
 
     //Get our movementVector by offsetting our inputVector by the camera's y rotation
@@ -120,8 +125,9 @@ public class PlayerMovement : MonoBehaviour {
     public void SetFreeze(bool freeze) {
         _frozen = freeze;
         _rb.isKinematic = freeze;
-        Debug.Log(freeze);
     }
+
+    public void FreezeLook() => _frozenLook = true;
 
     public bool IsSleeping() => _moveVector == Vector3.zero;
 
