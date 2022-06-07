@@ -35,7 +35,6 @@ public class Minecart : MonoBehaviour, IInteractable {
     private void PlayNextCutscene() {
         var nextCutscene = cutscenes[_nextCheckpoint-1];
         nextCutscene.stopped += OnCutsceneEnded;
-        _playerMovement.SetFreeze(true);
         _playerTransform.SetParent(playerSeat);
         _playerTransform.localPosition = Vector3.zero;
         nextCutscene.Play();
@@ -45,12 +44,14 @@ public class Minecart : MonoBehaviour, IInteractable {
     private void OnCutsceneEnded(PlayableDirector playableDirector) {
         playableDirector.stopped -= OnCutsceneEnded;
         _playerTransform.SetParent(null);
-        _playerMovement.SetFreeze(false);
     }
     
     private bool StandStill() => _nextCheckpoint == _currentCheckpoint;
 
     [ContextMenu("Next Checkpoint")]
     public void Proceed() => _nextCheckpoint++;
+    
+    [ContextMenu("Previous Checkpoint")]
+    public void PreviousCheckpoint() => _nextCheckpoint--;
 
 }
