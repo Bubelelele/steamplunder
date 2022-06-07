@@ -22,7 +22,7 @@ public class NoteUI : MonoBehaviour {
         if (noteImage.activeSelf && Input.GetKeyDown(exitKey)) {
             noteImage.SetActive(false);
             GameCanvas.SetHudActive(true);
-            Invoke(nameof(ReadyToDisplay), .5f);
+            Invoke(nameof(ReadyToDisplay), .2f);
             Time.timeScale = 1f;
         } 
     }
