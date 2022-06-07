@@ -21,7 +21,7 @@ public class CutscenePlayer : MonoBehaviour {
 
         _played = true;
         CutsceneManager.OnCutscenePlaying += OnCutscenePlaying;
-        CutsceneManager.PlayCutscene(playableDirector, freezeTime);
+        CutsceneManager.PlayCutscene(playableDirector);
     }
     
     private void OnCutscenePlaying(bool isPlaying) {

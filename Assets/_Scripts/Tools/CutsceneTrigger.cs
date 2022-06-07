@@ -27,7 +27,7 @@ public class CutsceneTrigger : MonoBehaviour {
         if (isStoryCutscene && storyCutsceneId == "") 
             Debug.LogWarning($"{gameObject.name} needs a story cutscene ID to function correctly!");
         if (playOnStart)
-            CutsceneManager.PlayCutscene(playableDirector, freezeTime);
+            CutsceneManager.PlayCutscene(playableDirector);
     }
     
     private void OnDestroy() => CutsceneManager.OnCutscenePlaying -= OnCutscenePlaying;
@@ -35,7 +35,7 @@ public class CutsceneTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (_played || _disabled || !other.CompareTag("Player")) return;
         CutsceneManager.OnCutscenePlaying += OnCutscenePlaying;
-        CutsceneManager.PlayCutscene(playableDirector, freezeTime);
+        CutsceneManager.PlayCutscene(playableDirector);
         _played = true;
         
         if (isStoryCutscene) {
