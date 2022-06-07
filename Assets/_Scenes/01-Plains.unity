@@ -3618,7 +3618,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.101145, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7733,6 +7733,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5716549984909375117, guid: 7c8fa8e2181b5e949be9828a0dedf40a,
         type: 3}
+      propertyPath: inactiveOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716549984909375117, guid: 7c8fa8e2181b5e949be9828a0dedf40a,
+        type: 3}
       propertyPath: isStoryCutscene
       value: 1
       objectReference: {fileID: 0}
@@ -7875,6 +7880,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storyBeat: 1
+--- !u!114 &1106579923 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5716549984909375117, guid: 7c8fa8e2181b5e949be9828a0dedf40a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1106579917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106579919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b646565d5bcca4c92db06fcd3bf991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1106579927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106579919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1ecb1ff0799f94c81d26d33d6bb0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyBeat: 0
+  onIfStoryBeatAchieved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1106579923}
+        m_TargetAssemblyTypeName: CutsceneTrigger, Assembly-CSharp
+        m_MethodName: EnableTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1128445015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8370,7 +8415,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.101145, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8600,7 +8645,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.101145, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13171,7 +13216,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.101145, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14877,7 +14922,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.101145, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
