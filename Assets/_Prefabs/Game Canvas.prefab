@@ -130,7 +130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitKey: 101
   noteImage: {fileID: 2048209510}
-  hud: {fileID: 8289367659181218940}
   noteText: {fileID: 306068189761658382}
 --- !u!1 &790077550299533934
 GameObject:
@@ -996,7 +995,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4580245335147276428}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6920827619878751101
 MonoBehaviour:
@@ -4477,6 +4476,7 @@ GameObject:
   - component: {fileID: 4580245335147276419}
   - component: {fileID: 4580245335147276418}
   - component: {fileID: 4580245335147276417}
+  - component: {fileID: 2125190668603969417}
   m_Layer: 5
   m_Name: Game Canvas
   m_TagString: Untagged
@@ -4498,6 +4498,7 @@ RectTransform:
   m_Children:
   - {fileID: 3287976326009532325}
   - {fileID: 8845345574474885691}
+  - {fileID: 132041410343362688}
   - {fileID: 2591655740031402156}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -4568,6 +4569,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2125190668603969417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580245335147276416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e194ed7d43357664ea90f1fd04362574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hud: {fileID: 8289367659181218940}
 --- !u!1 &4580245335181948771
 GameObject:
   m_ObjectHideFlags: 0
@@ -5446,13 +5460,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7435144169791217484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287976326009532325}
-  m_RootOrder: 9
+  m_Father: {fileID: 4580245335147276428}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -5936,7 +5950,6 @@ RectTransform:
   - {fileID: 4580245334072144974}
   - {fileID: 4580245335128402632}
   - {fileID: 4580245334015483048}
-  - {fileID: 132041410343362688}
   m_Father: {fileID: 4580245335147276428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

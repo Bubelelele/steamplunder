@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioListener))]
 public class AudioListenerLock : MonoBehaviour {
 
     private Camera _cam;

@@ -120,6 +120,7 @@ public class PlayerMovement : MonoBehaviour {
     public void SetFreeze(bool freeze) {
         _frozen = freeze;
         _rb.isKinematic = freeze;
+        Debug.Log(freeze);
     }
 
     public bool IsSleeping() => _moveVector == Vector3.zero;

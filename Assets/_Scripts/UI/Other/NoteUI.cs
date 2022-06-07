@@ -6,7 +6,6 @@ public class NoteUI : MonoBehaviour {
     
     [SerializeField] private KeyCode exitKey = KeyCode.E;
     [SerializeField] private GameObject noteImage;
-    [SerializeField] private GameObject hud;
     [SerializeField] private TMP_Text noteText;
 
     private bool _readyToDisplay = true;
@@ -22,7 +21,7 @@ public class NoteUI : MonoBehaviour {
     private void Update() {
         if (noteImage.activeSelf && Input.GetKeyDown(exitKey)) {
             noteImage.SetActive(false);
-            hud.SetActive(true);
+            GameCanvas.SetHudActive(true);
             Invoke(nameof(ReadyToDisplay), .5f);
             Time.timeScale = 1f;
         } 
@@ -33,7 +32,7 @@ public class NoteUI : MonoBehaviour {
         
         noteText.text = text;
         noteImage.SetActive(true);
-        hud.SetActive(false);
+        GameCanvas.SetHudActive(false);
         _readyToDisplay = false;
         Time.timeScale = 0f;
     }
