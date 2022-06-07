@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 public class Minecart : MonoBehaviour, IInteractable {
     
     [SerializeField] private Transform playerSeat;
-    [SerializeField] private PlayableDirector[] cutscenes;
+    [SerializeField] private CutscenePlayer[] cutscenes;
     [SerializeField] private UnityEvent[] onCutsceneFinished;
 
     private int _nextCheckpoint = 1;
@@ -37,7 +37,7 @@ public class Minecart : MonoBehaviour, IInteractable {
     private void PlayNextCutscene() {
         var nextCutscene = cutscenes[_currentCheckpoint];
         _currentCheckpoint = _nextCheckpoint;
-        nextCutscene.stopped += OnCutsceneEnded;
+        nextCutscene.playableDirector.stopped += OnCutsceneEnded;
         _playerTransform.SetParent(playerSeat);
         _playerTransform.localPosition = Vector3.zero;
         nextCutscene.Play();

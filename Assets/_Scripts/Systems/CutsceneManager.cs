@@ -28,6 +28,7 @@ public class CutsceneManager : MonoBehaviour {
         if (activePlayableDirector.timeUpdateMode == DirectorUpdateMode.UnscaledGameTime) {
             Time.timeScale = 0f;
         }
+        GameCanvas.SetHudActive(false);
         OnCutscenePlaying?.Invoke(true);
         _activePlayableDirector.Play();
         _activePlayableDirector.stopped += CutsceneEnded;
@@ -36,6 +37,7 @@ public class CutsceneManager : MonoBehaviour {
     private static void CutsceneEnded(PlayableDirector director) {
         if (_activePlayableDirector != null)
             _activePlayableDirector.stopped -= CutsceneEnded;
+        GameCanvas.SetHudActive(true);
         OnCutscenePlaying?.Invoke(false);
         _activePlayableDirector = null;
         Time.timeScale = 1f;

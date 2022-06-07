@@ -7,7 +7,7 @@ public class CutscenePlayer : MonoBehaviour {
     
     [SerializeField] private bool freezeTime;
     [SerializeField] private bool canPlayMultipleTimes;
-    [SerializeField] private PlayableDirector playableDirector;
+    [SerializeField] public PlayableDirector playableDirector;
     [SerializeField] private UnityEvent onCutsceneFinished;
 
     private bool _played;
