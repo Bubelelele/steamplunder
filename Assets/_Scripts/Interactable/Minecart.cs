@@ -1,13 +1,10 @@
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Playables;
 
 public class Minecart : MonoBehaviour, IInteractable {
     
     [SerializeField] private Transform playerSeat;
     [SerializeField] private CutscenePlayer[] cutscenes;
-    [SerializeField] private UnityEvent[] onCutsceneFinished;
 
     private int _nextCheckpoint = 1;
     private int _currentCheckpoint;
@@ -46,7 +43,6 @@ public class Minecart : MonoBehaviour, IInteractable {
     private void OnCutsceneEnded(PlayableDirector playableDirector) {
         playableDirector.stopped -= OnCutsceneEnded;
         _playerTransform.SetParent(null);
-        onCutsceneFinished[_currentCheckpoint-1].Invoke();
     }
     
     private bool StandStill() => _nextCheckpoint == _currentCheckpoint;

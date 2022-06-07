@@ -1,6 +1,3 @@
-using System;
-using UnityEngine;
-
 public class PlateTile : PressableTile {
     
     private bool _playerOn;
