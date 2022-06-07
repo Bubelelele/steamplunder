@@ -34,6 +34,7 @@ public class Minecart : MonoBehaviour, IInteractable {
         var nextCutscene = cutscenes[_nextCheckpoint-1];
         nextCutscene.stopped += OnCutsceneEnded;
         _playerTransform.SetParent(playerSeat);
+        _playerTransform.position = playerSeat.position;
         nextCutscene.Play();
         _currentCheckpoint = _nextCheckpoint;
     }
