@@ -6,10 +6,16 @@ public class Player : MonoBehaviour {
     [SerializeField] private GameObject fadeDeathPanel;
 
     private static Player _currentPlayer;
+    private static PlayerMovement _playerMovement;
 
     public static Player GetPlayer() {
         if (_currentPlayer == null) Debug.LogWarning($"No player assigned!");
         return _currentPlayer;
+    }
+
+    public static PlayerMovement GetPlayerMovement() {
+        if (_playerMovement == null) Debug.LogWarning($"No player assigned!");
+        return _playerMovement;
     }
 
     public static Vector3 GetPosition() {
@@ -19,6 +25,7 @@ public class Player : MonoBehaviour {
 
     private void Awake() {
         _currentPlayer = this;
+        _playerMovement = GetComponent<PlayerMovement>();
         PlayerData.Init(maxHealth);
         PlayerData.OnDie += OnDie;
     }

@@ -1,18 +1,22 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Playables;
 
 public class Minecart : MonoBehaviour, IInteractable {
     
     [SerializeField] private Transform playerSeat;
     [SerializeField] private PlayableDirector[] cutscenes;
-    
+    [SerializeField] private UnityEvent[] onCutsceneFinished;
+
     private int _nextCheckpoint = 1;
     private int _currentCheckpoint;
     private Transform _playerTransform;
+    private PlayerMovement _playerMovement;
 
     private void Start() {
-        _playerTransform = Player.GetPlayer().transform;
+        _playerMovement = Player.GetPlayerMovement();
+        _playerTransform = _playerMovement.transform;
     }
 
     public bool HoldToInteract { get; }
@@ -31,22 +35,26 @@ public class Minecart : MonoBehaviour, IInteractable {
     public string GetKeyText() => null;
 
     private void PlayNextCutscene() {
-        var nextCutscene = cutscenes[_nextCheckpoint-1];
+        var nextCutscene = cutscenes[_currentCheckpoint];
+        _currentCheckpoint = _nextCheckpoint;
         nextCutscene.stopped += OnCutsceneEnded;
         _playerTransform.SetParent(playerSeat);
         _playerTransform.localPosition = Vector3.zero;
         nextCutscene.Play();
-        _currentCheckpoint = _nextCheckpoint;
     }
 
     private void OnCutsceneEnded(PlayableDirector playableDirector) {
         playableDirector.stopped -= OnCutsceneEnded;
         _playerTransform.SetParent(null);
+        onCutsceneFinished[_currentCheckpoint-1].Invoke();
     }
     
     private bool StandStill() => _nextCheckpoint == _currentCheckpoint;
 
     [ContextMenu("Next Checkpoint")]
-    public void Proceed() => _nextCheckpoint++;
+    public void NextCheckpoint() => _nextCheckpoint++;
+    
+    [ContextMenu("Previous Checkpoint")]
+    public void PreviousCheckpoint() => _nextCheckpoint--;
 
 }

@@ -12,7 +12,7 @@ public class SpinPedestal : MonoBehaviour, IInteractable {
     private PlayerMovement _playerMovement;
 
     private void Start() {
-        _playerMovement = Player.GetPlayer().GetComponent<PlayerMovement>();
+        _playerMovement = Player.GetPlayerMovement();
     }
 
     public bool HoldToInteract => canHold;

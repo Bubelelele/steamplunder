@@ -137,18 +137,19 @@ public class Grapple : ArtifactBase {
     private void StopFlying() {
         Debug.Log("GRAPPLE FLY STOP");
         _animator.SetBool("Flying", false);
+        _playerMovement.SetFreeze(false);
         ActionEnded();
     }
 
     private void Retracted() {
         Debug.Log("GRAPPLE RETRACTED");
         _animator.SetTrigger("Detach");
+        _playerMovement.SetFreeze(false);
         ActionEnded();
     }
 
     protected override void ActionEnded() {
         base.ActionEnded();
-        _playerMovement.SetFreeze(false);
         clawTransform.localPosition = _clawLocalOrigin; //Reset claw position
         UpdateState(GrappleState.Idle);
         if (_whichPointToGrapple != null && _whichPointToGrapple.TryGetComponent<EnemyBase>(out _)) {

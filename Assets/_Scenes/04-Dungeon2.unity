@@ -1566,7 +1566,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.1555555, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12949,7 +12949,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.1555555, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -17139,6 +17139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPlayMultipleTimes: 0
   playableDirector: {fileID: 749043331}
+  onCutsceneFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!320 &749043331
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -27518,7 +27521,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.1555555, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -42825,6 +42828,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3998379311067090907, guid: d2d4b39add1ece84182295181ac253bb,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2d4b39add1ece84182295181ac253bb, type: 3}
 --- !u!1001 &1971705019
@@ -45672,6 +45680,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPlayMultipleTimes: 0
   playableDirector: {fileID: 2083677519}
+  onCutsceneFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!320 &2083677519
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -47340,6 +47351,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 557653732703779280}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1872467820886497725}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
