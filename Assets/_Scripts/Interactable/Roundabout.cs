@@ -8,7 +8,7 @@ public class Roundabout : MonoBehaviour {
 
     public void RotateTick() {
         var rotationAmount = rotationSpeed * Time.deltaTime;
-        bridge.Rotate(rotationAmount * Vector3.up);
+        bridge.Rotate(-rotationAmount * Vector3.up);
         backCog.Rotate(rotationAmount * Vector3.forward);
     }
     
