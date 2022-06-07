@@ -22,12 +22,13 @@ public class CutsceneManager : MonoBehaviour {
         }
     }
 
-    public static void PlayCutscene(PlayableDirector activePlayableDirector) {
+    public static void PlayCutscene(PlayableDirector activePlayableDirector, bool freezeTime) {
         _activePlayableDirector = activePlayableDirector;
 
         OnCutscenePlaying?.Invoke(true);
         _activePlayableDirector.Play();
         _activePlayableDirector.stopped += CutsceneEnded;
+        if (freezeTime) Time.timeScale = 0f;
     }
 
     private static void CutsceneEnded(PlayableDirector director) {
@@ -35,5 +36,6 @@ public class CutsceneManager : MonoBehaviour {
             _activePlayableDirector.stopped -= CutsceneEnded;
         OnCutscenePlaying?.Invoke(false);
         _activePlayableDirector = null;
+        Time.timeScale = 1f;
     }
 }
