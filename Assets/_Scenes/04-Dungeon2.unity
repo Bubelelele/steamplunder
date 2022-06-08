@@ -1572,7 +1572,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7376697, y: 1}
+    m_SensorSize: {x: 1.1791044, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6608,6 +6608,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Spin
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1556380438}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayDelayed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.25
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   onPuzzleUndone:
@@ -12810,7 +12822,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7376697, y: 1}
+    m_SensorSize: {x: 1.1791044, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -27231,7 +27243,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7376697, y: 1}
+    m_SensorSize: {x: 1.1791044, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -34881,6 +34893,12 @@ Animator:
 --- !u!4 &1556380437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2219149521885377414, guid: 517564a9ff5f41a4f97162af164c50b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 899615788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1556380438 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: -4433128088723520143, guid: 517564a9ff5f41a4f97162af164c50b8,
     type: 3}
   m_PrefabInstance: {fileID: 899615788}
   m_PrefabAsset: {fileID: 0}
