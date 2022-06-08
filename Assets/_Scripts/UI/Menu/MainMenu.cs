@@ -31,6 +31,7 @@ public class MainMenu : MonoBehaviour {
         Time.timeScale = 1f;
         
         if (newGame) {
+            PlayerData.ResetStaticData();
             PlayerPrefs.DeleteAll();
             SceneManager.LoadScene(1);
         }

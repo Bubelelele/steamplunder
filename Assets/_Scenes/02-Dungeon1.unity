@@ -3397,7 +3397,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1245952
+  m_Name: pb_Mesh47584
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10431,7 +10431,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1246088
+  m_Name: pb_Mesh47720
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16834,7 +16834,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.796283, y: 1}
+    m_SensorSize: {x: 1.7376697, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -19602,7 +19602,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.796283, y: 1}
+    m_SensorSize: {x: 1.7376697, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -27782,6 +27782,7 @@ GameObject:
   - component: {fileID: 1118761177}
   - component: {fileID: 1118761176}
   - component: {fileID: 1118761181}
+  - component: {fileID: 1118761182}
   m_Layer: 2
   m_Name: SinglePlatform
   m_TagString: Untagged
@@ -28134,6 +28135,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!208 &1118761182
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118761174}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75600004, y: 1.197, z: 0.762}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.6800001, y: -1.113, z: 0.042000003}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1121676508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42203,7 +42220,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1245178
+  m_Name: pb_Mesh46810
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -45747,6 +45764,7 @@ GameObject:
   - component: {fileID: 1771128340}
   - component: {fileID: 1771128339}
   - component: {fileID: 1771128338}
+  - component: {fileID: 1771128346}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -46122,6 +46140,22 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!208 &1771128346
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771128336}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.3590001, y: 3.203, z: 1.391}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.54700005, y: 2.703, z: 0.35900003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1772817628
 GameObject:
   m_ObjectHideFlags: 0
@@ -50565,6 +50599,7 @@ GameObject:
   - component: {fileID: 1943960493}
   - component: {fileID: 1943960492}
   - component: {fileID: 1943960498}
+  - component: {fileID: 1943960499}
   m_Layer: 2
   m_Name: MovingPlatform
   m_TagString: Untagged
@@ -50920,6 +50955,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!208 &1943960499
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943960491}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.3600001, y: 1.197, z: 2.398}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.559, y: -1.113, z: 0.07}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1946570276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52437,7 +52488,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1246330
+  m_Name: pb_Mesh47962
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -53410,7 +53461,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1244340
+  m_Name: pb_Mesh45972
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -53703,7 +53754,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1244266
+  m_Name: pb_Mesh45898
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
