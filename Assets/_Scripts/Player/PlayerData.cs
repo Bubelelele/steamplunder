@@ -191,6 +191,10 @@ public static class PlayerData {
     //SceneTransition Door
     public static int? previousDoorId;
 
+    public static bool ShouldSpawnAtDoor(int linkedDoorId) {
+        return previousDoorId != null && previousDoorId == linkedDoorId;
+    }
+
     //Story beats, ow puzzle completions, watched cutscenes
     private static List<StoryBeat> _achievedStoryBeats = new();
     public static void AddToAchievedStoryBeats(this StoryBeat storyBeat) => _achievedStoryBeats.Add(storyBeat);
@@ -265,7 +269,8 @@ public static class PlayerData {
 
     public static bool ShouldSpawnAtShrine(int shrineId) {
         return shrineId == savedShrineId.GetSavedInt() &&
-               savedScene.GetSavedString() == SceneManager.GetActiveScene().name;
+               savedScene.GetSavedString() == SceneManager.GetActiveScene().name &&
+               previousDoorId == null;
     }
     
     //Saving and loading extension methods

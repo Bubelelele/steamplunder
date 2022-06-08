@@ -25,8 +25,9 @@ public class SceneTransition : MonoBehaviour {
 
     private void Start() {
         //Spawn player next to corresponding door, if it exists
-        if (PlayerData.previousDoorId != null && PlayerData.previousDoorId == linkedDoorId)
+        if (PlayerData.ShouldSpawnAtDoor(linkedDoorId)) {
             Player.GetPlayer().transform.position = playerPosNextToDoor.position;
+        }
     }
 
     public void OnTriggerEnter(Collider other) {
