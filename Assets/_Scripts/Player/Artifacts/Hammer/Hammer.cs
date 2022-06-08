@@ -1,15 +1,7 @@
 using UnityEngine;
 
 public class Hammer : ArtifactWeaponBase {
-    
-    /*
-     * 1. Write out hammer functionality *
-     * 2. Add support for double interaction indicator *
-     * 3. No cooldown on puzzle element hit ?
-     * 4. Find similarities to axe and grapple and abstract them
-     * 5. Test slowing down player turn and move speed when using artifact
-     */
-    
+
     [SerializeField] private float knockbackStength = 10f;
 
     private HammerHitbox _hitbox;
@@ -28,6 +20,8 @@ public class Hammer : ArtifactWeaponBase {
 
     private void OnGroundHit() {
         if (_hitbox != null) _hitbox.EnableTrigger(this);
+        AudioManager.PlayAudio(AudioType.HammerSmash_Player);
+        EffectSpawner.SpawnHammerShockFX(artifactObject.transform.position);
     }
 
     public override void ProcessHitboxData(Collider collider) {
