@@ -1572,7 +1572,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.1791044, y: 1}
+    m_SensorSize: {x: 1.5250965, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4243,6 +4243,12 @@ Transform:
   m_Father: {fileID: 1460482743}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &168519542 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5939971220129628402, guid: 517564a9ff5f41a4f97162af164c50b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 899615788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &169694333
 GameObject:
   m_ObjectHideFlags: 0
@@ -6622,6 +6628,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 168519542}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayDelayed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPuzzleUndone:
     m_PersistentCalls:
       m_Calls:
@@ -6647,6 +6665,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: SpinBack
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1556380438}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayDelayed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.25
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   onPlatePressed:
@@ -11680,7 +11710,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh691012
+  m_Name: pb_Mesh705010
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12822,7 +12852,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.1791044, y: 1}
+    m_SensorSize: {x: 1.5250965, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13407,7 +13437,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh690648
+  m_Name: pb_Mesh704642
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15650,7 +15680,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh690080
+  m_Name: pb_Mesh704068
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19773,7 +19803,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh690564
+  m_Name: pb_Mesh704556
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20065,6 +20095,16 @@ PrefabInstance:
     - target: {fileID: 2219149521885377414, guid: 517564a9ff5f41a4f97162af164c50b8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939971220129628402, guid: 517564a9ff5f41a4f97162af164c50b8,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939971220129628402, guid: 517564a9ff5f41a4f97162af164c50b8,
+        type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -27243,7 +27283,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.1791044, y: 1}
+    m_SensorSize: {x: 1.5250965, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -33545,7 +33585,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh689166
+  m_Name: pb_Mesh703174
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
