@@ -155,6 +155,12 @@ public static class PlayerData {
         OnSyringeFilled?.Invoke(_filledSyringes);
     }
 
+    public static void RefreshSyringeUI() {
+        for (int i = 1; i <= _filledSyringes; i++) 
+            OnSyringeFilled?.Invoke(i);
+        OnCogCountIncreased?.Invoke(_cogCount);
+    }
+
     public static event Action<int> OnCogCountIncreased;
     public static event Action<int> OnSyringeSlotUnlocked;
     public static event Action<int> OnSyringeFilled;

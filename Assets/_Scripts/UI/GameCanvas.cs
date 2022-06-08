@@ -15,6 +15,7 @@ public class GameCanvas : MonoBehaviour {
             return;
         }
         _currentGameCanvas.hud.SetActive(state);
+        PlayerData.RefreshSyringeUI();
     }
 
 }
