@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21904,6 +21904,81 @@ MonoBehaviour:
   rotationAxis: {x: 0, y: 0, z: 1}
   speed: 1
   clockwise: 1
+--- !u!1001 &546084062
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 610086688173913794, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_Name
+      value: Paper Note
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -55.99462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5392873
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 99.077156
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9074215
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.4202217
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 49.697
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367519387174295338, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: textToDisplay
+      value: "Mechanical hand projectile prototype #7 finally works! \nFor now, it
+        only grapples stuff so the next iterations should be improved upon."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e195e741ef96a14fb6cd79566e92620, type: 3}
 --- !u!1001 &547269548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22279,7 +22354,7 @@ Transform:
   - {fileID: 563651281}
   - {fileID: 1818152632}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559048080
 GameObject:
@@ -26601,12 +26676,12 @@ PrefabInstance:
     - target: {fileID: 167718441927317229, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015475328
+      value: 0.00000001547533
       objectReference: {fileID: 0}
     - target: {fileID: 167718441927317229, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007521556
+      value: -0.000000007521557
       objectReference: {fileID: 0}
     - target: {fileID: 167718442290198862, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
@@ -26701,12 +26776,12 @@ PrefabInstance:
     - target: {fileID: 167718442428995536, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015475328
+      value: 0.00000001547533
       objectReference: {fileID: 0}
     - target: {fileID: 167718442428995536, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007521556
+      value: -0.000000007521557
       objectReference: {fileID: 0}
     - target: {fileID: 167718442428995539, guid: 1f5894d8bdbe76749a3f0e74f95414ff,
         type: 3}

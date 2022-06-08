@@ -7764,6 +7764,7 @@ Transform:
   - {fileID: 1061124234}
   - {fileID: 2136084483}
   - {fileID: 1636832073}
+  - {fileID: 888686737}
   m_Father: {fileID: 630381595}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10182,6 +10183,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad68fc2c92d4294db21c5d4d0179dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &888686737 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+    type: 3}
+  m_PrefabInstance: {fileID: 1297545175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &898054906 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 125178195315546778, guid: 54b1358c3d3e554458ee6631e0df13c5,
@@ -14439,6 +14446,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1296439807}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1297545175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 754648475}
+    m_Modifications:
+    - target: {fileID: 610086688173913794, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_Name
+      value: Paper Note
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.51887
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.4222806
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.247467
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439164436732758270, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367519387174295338, guid: 1e195e741ef96a14fb6cd79566e92620,
+        type: 3}
+      propertyPath: textToDisplay
+      value: "<i>Dear diary</i>,\r\nToday I overheard some bandits in the bar talking
+        about some ancient treasure on an Island undiscovered and far away. \n\nSo
+        I decided to go there, the only thing I needed was a ship. Actually foud
+        some pieces at a scrap yard, they will work. Now I hope I arrive safely,
+        I\u2019m so excited!"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e195e741ef96a14fb6cd79566e92620, type: 3}
 --- !u!1 &1304983122
 GameObject:
   m_ObjectHideFlags: 0
