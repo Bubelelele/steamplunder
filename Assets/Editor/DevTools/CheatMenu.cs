@@ -18,23 +18,7 @@ public static class CheatMenu {
     public static void Die() {
         PlayerData.Damage(99999);
     }
-    
-    [MenuItem("DevTools/Increase Cog Count")]
-    public static void IncreaseCogCount() {
-        PlayerData.CogPickedUp();
-    }
-    
-    [MenuItem("DevTools/Increase Cog Count x5")]
-    public static void IncreaseCogCount5() {
-        for (int i = 0; i < 5; i++)
-            PlayerData.CogPickedUp();
-    }
-    
-    [MenuItem("DevTools/Unlock Syringe Slot")]
-    public static void UnlockSyringeSlot() {
-        PlayerData.UnlockSyringeSlot();
-    }
-    
+
     [MenuItem("DevTools/Unlock All Artifacts")]
     public static void UnlockAll() {
         foreach (var artifact in PlayerData.ArtifactStatus.Keys.ToList()) {
@@ -70,6 +54,28 @@ public static class CheatMenu {
     [MenuItem("DevTools/Unlock Steamer")]
     public static void UnlockSteamer() {
         PlayerData.UnlockArtifact(Artifact.Steamer);
+    }
+    
+    [MenuItem("DevTools/Increase Cog Count")]
+    public static void IncreaseCogCount() {
+        PlayerData.CogPickedUp();
+    }
+    
+    [MenuItem("DevTools/Increase Cog Count x5")]
+    public static void IncreaseCogCount5() {
+        for (int i = 0; i < 5; i++)
+            PlayerData.CogPickedUp();
+    }
+    
+    [MenuItem("DevTools/Unlock Syringe Slot")]
+    public static void UnlockSyringeSlot() {
+        PlayerData.UnlockSyringeSlot();
+    }
+    
+    [MenuItem("DevTools/Spawn Cogs x5")]
+    public static void SpawnCogs() {
+        for (int i = 0; i < 5; i++)
+            EffectSpawner.SpawnDroppedCog(Player.GetPosition() + Vector3.up);
     }
 
     [MenuItem("DevTools/Delete Save (!!!)")]
