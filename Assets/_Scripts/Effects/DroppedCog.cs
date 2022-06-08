@@ -12,7 +12,6 @@ public class DroppedCog : MonoBehaviour {
     private void Update() {
         if (!_activated && rb.velocity == Vector3.zero) {
             _activated = triggerCollider.enabled = true;
-            rb.gameObject.layer = 0; //Set to default layer in order to allow for collisions with the player again
         }
     }
 
