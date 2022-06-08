@@ -1,11 +1,15 @@
+using System;
 using TMPro;
 using UnityEngine;
 
 public class NoteUI : MonoBehaviour {
     
     [SerializeField] private KeyCode exitKey = KeyCode.E;
-    [SerializeField] private GameObject noteImage;
+    [SerializeField] private GameObject panelObjects;
     [SerializeField] private TMP_Text noteText;
+    [SerializeField] private GameObject mysteryPanel;
+    [SerializeField] private GameObject paperPanel;
+    
 
     private bool _readyToDisplay = true;
 
@@ -18,19 +22,26 @@ public class NoteUI : MonoBehaviour {
     }
 
     private void Update() {
-        if (noteImage.activeSelf && Input.GetKeyDown(exitKey)) {
-            noteImage.SetActive(false);
+        if (panelObjects.activeSelf && Input.GetKeyDown(exitKey)) {
+            panelObjects.SetActive(false);
+            mysteryPanel.SetActive(false);
+            paperPanel.SetActive(false);
             GameCanvas.SetHudActive(true);
             Invoke(nameof(ReadyToDisplay), .2f);
             Time.timeScale = 1f;
         } 
     }
 
-    private void DisplayNote(string text) {
+    private void DisplayNote(string text, NoteType noteType) {
         if (!_readyToDisplay) return;
-        
+
+        if (noteType == NoteType.Mystery)
+            mysteryPanel.SetActive(true);
+        else if (noteType == NoteType.Paper) 
+            paperPanel.SetActive(true);
+
         noteText.text = text;
-        noteImage.SetActive(true);
+        panelObjects.SetActive(true);
         GameCanvas.SetHudActive(false);
         _readyToDisplay = false;
         Time.timeScale = 0f;
