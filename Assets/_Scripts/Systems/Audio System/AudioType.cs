@@ -5,5 +5,6 @@ public enum AudioType {
     AttackBash_Player,
     AttackSpin_Player,
     Death_Player,
-    Pickup_Cog
+    Pickup_Cog,
+    HammerSmash_Player
 }
