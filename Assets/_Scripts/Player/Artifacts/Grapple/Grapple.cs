@@ -112,6 +112,7 @@ public class Grapple : ArtifactBase {
     private void Shoot() {
         if (_currentGrappleState != GrappleState.WaitingToShoot) return;
         Debug.Log("SHOOT");
+        AudioManager.PlayAudio(AudioType.GrappleShoot_Player);
         UpdateState(GrappleState.Extending);
     }
 

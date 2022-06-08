@@ -62,6 +62,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7370156802671013846, guid: f234ca7d5c676a2429a9ff34c243c6c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: -7370156802671013846, guid: f234ca7d5c676a2429a9ff34c243c6c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7370156802671013846, guid: f234ca7d5c676a2429a9ff34c243c6c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: -7370156802671013846, guid: f234ca7d5c676a2429a9ff34c243c6c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -45
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f234ca7d5c676a2429a9ff34c243c6c7,
         type: 3}
       propertyPath: m_Name
@@ -103,4 +123,30 @@ MonoBehaviour:
   onLeverPulled:
     m_PersistentCalls:
       m_Calls: []
-  animator: {fileID: 0}
+  animator: {fileID: 1555726593908483746}
+--- !u!1 &8842527850953449919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2766212503428324877, guid: f234ca7d5c676a2429a9ff34c243c6c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6689384379472609202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1555726593908483746
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842527850953449919}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db5b28784db32624f8b3437c725a8a4e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
