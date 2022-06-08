@@ -23,6 +23,7 @@ public class HeavyBandit : BanditBase
     }
     protected override void UpdateSense()
     {
+        Debug.Log(canStun);
         distanceChase = distanceAttack + 1.5f;
         //Moving towards the player
         if (chasePlayer && !animationPlaying)
@@ -44,7 +45,7 @@ public class HeavyBandit : BanditBase
                 if (!isStunned)
                 {
                     enemyAnim.SetBool("Blocking", true);
-                    CanStun();
+                    //CanStun();
                 }
                 
                 ChangeSpeed(slowWalkingSpeed);
@@ -60,7 +61,7 @@ public class HeavyBandit : BanditBase
                 enemyAnim.SetBool("Blocking", false);
                 animationPlaying = false;
                 NotLethal();
-                CannotStun();
+                //CannotStun();
                 CanMoveToDestination(movementSpeed);
             }
         }
@@ -93,7 +94,7 @@ public class HeavyBandit : BanditBase
     }
     public override void Stun()
     {
-        
+        Debug.Log("lol");
         if (canStun)
         {
             isStunned = true;
