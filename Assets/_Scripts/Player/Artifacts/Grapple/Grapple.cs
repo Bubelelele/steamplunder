@@ -80,7 +80,7 @@ public class Grapple : ArtifactBase {
     }
 
     private bool CheckCanGrappleToPoint() {
-        if (GrapplePoint.Current == null) return false;
+        if (GrapplePoint.Current == null || !PlayerData.ArtifactStatus[Artifact.Grapple]) return false;
         
         var grapplePointPos = GrapplePoint.Current.transform.position;
         var vectorToGrapplePoint = grapplePointPos - transform.position;
