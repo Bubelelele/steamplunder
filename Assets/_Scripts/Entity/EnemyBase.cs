@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class EnemyBase : EntityBase {
     
     [SerializeField] private Healthbar healthbar;
     [SerializeField] private int numCogsDroppedOnDeath = 1;
-    
+    public UnityEvent onDeath;
+
     protected NavMeshAgent _navMeshAgent;
 
     protected override void Awake() {
@@ -24,6 +26,7 @@ public abstract class EnemyBase : EntityBase {
     protected override void Die() {
         for (int i = 0; i < numCogsDroppedOnDeath; i++) 
             EffectSpawner.SpawnDroppedCog(transform.position);
+        onDeath.Invoke();
     }
 
     public virtual void Stun() {
