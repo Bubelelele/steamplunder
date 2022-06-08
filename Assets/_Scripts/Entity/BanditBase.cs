@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public abstract class BanditBase : EnemyBase {
     
@@ -11,7 +12,6 @@ public abstract class BanditBase : EnemyBase {
     public float rangeForStopChasingPlayer;
     public float FOV;
     public int attackDamage;
-
 
     protected GameObject player;
     protected Animator enemyAnim;

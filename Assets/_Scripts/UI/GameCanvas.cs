@@ -12,7 +12,6 @@ public class GameCanvas : MonoBehaviour {
 
     public static void SetHudActive(bool state) {
         if (_currentGameCanvas.hud == null) {
-            Debug.LogWarning("init fail");
             return;
         }
         _currentGameCanvas.hud.SetActive(state);

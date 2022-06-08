@@ -89,6 +89,7 @@ public class Axe : ArtifactWeaponBase {
             if (collider.TryGetComponent<EnemyBase>(out _)) {
                 var hitPoint = collider.ClosestPointOnBounds(lvl2Object.transform.position);
                 EffectSpawner.SpawnBloodFX(hitPoint);
+                AudioManager.PlayAudio(AudioType.Hit);
             }
         }
     }

@@ -6,6 +6,7 @@ public class CutsceneTrigger : MonoBehaviour {
     
     [SerializeField] private PlayableDirector playableDirector;
     [SerializeField] private bool freezeTime;
+    [SerializeField] private bool hideHud = true;
     [SerializeField] private bool playOnStart;
     [SerializeField] private bool inactiveOnStart;
     [SerializeField] private bool isStoryCutscene;
@@ -26,7 +27,7 @@ public class CutsceneTrigger : MonoBehaviour {
         if (isStoryCutscene && storyCutsceneId == "") 
             Debug.LogWarning($"{gameObject.name} needs a story cutscene ID to function correctly!");
         if (playOnStart)
-            CutsceneManager.PlayCutscene(playableDirector);
+            CutsceneManager.PlayCutscene(playableDirector, hideHud);
     }
     
     private void OnDestroy() => CutsceneManager.OnCutscenePlaying -= OnCutscenePlaying;
@@ -34,7 +35,7 @@ public class CutsceneTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (_played || _disabled || !other.CompareTag("Player")) return;
         CutsceneManager.OnCutscenePlaying += OnCutscenePlaying;
-        CutsceneManager.PlayCutscene(playableDirector);
+        CutsceneManager.PlayCutscene(playableDirector, hideHud);
         _played = true;
         
         if (isStoryCutscene) {
