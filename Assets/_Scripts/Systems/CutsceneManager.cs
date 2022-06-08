@@ -22,13 +22,13 @@ public class CutsceneManager : MonoBehaviour {
         }
     }
 
-    public static void PlayCutscene(PlayableDirector activePlayableDirector) {
+    public static void PlayCutscene(PlayableDirector activePlayableDirector, bool hideHud) {
         _activePlayableDirector = activePlayableDirector;
 
         if (activePlayableDirector.timeUpdateMode == DirectorUpdateMode.UnscaledGameTime) {
             Time.timeScale = 0f;
         }
-        GameCanvas.SetHudActive(false);
+        GameCanvas.SetHudActive(!hideHud);
         OnCutscenePlaying?.Invoke(true);
         _activePlayableDirector.Play();
         _activePlayableDirector.stopped += CutsceneEnded;

@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 public class CutscenePlayer : MonoBehaviour {
     
     [SerializeField] private bool freezeTime;
+    [SerializeField] private bool hideHud = true;
     [SerializeField] private bool canPlayMultipleTimes;
     [SerializeField] public PlayableDirector playableDirector;
     [SerializeField] private UnityEvent onCutsceneFinished;
@@ -20,7 +21,7 @@ public class CutscenePlayer : MonoBehaviour {
 
         _played = true;
         CutsceneManager.OnCutscenePlaying += OnCutscenePlaying;
-        CutsceneManager.PlayCutscene(playableDirector);
+        CutsceneManager.PlayCutscene(playableDirector, hideHud);
     }
     
     private void OnCutscenePlaying(bool isPlaying) {
