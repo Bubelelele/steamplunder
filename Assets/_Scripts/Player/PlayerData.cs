@@ -23,7 +23,7 @@ public static class PlayerData {
         SetHealth(maxHealth);
         SetupArtifactStatus();
 #if UNITY_EDITOR
-        UnlockSyringeSlot();
+        if (_syringeSlots == 0) UnlockSyringeSlot();
 #endif
         
         _initialized = true;
@@ -45,7 +45,14 @@ public static class PlayerData {
 
     private static void NewSceneInit() {
         _dead = false;
-        
+    }
+
+    public static void ResetStaticData() {
+        _initialized = false;
+        //Health resets naturally
+        ResetSyringeCogData();
+        ResetArtifactData();
+        ResetMiscData();
     }
 
     #endregion
@@ -152,11 +159,15 @@ public static class PlayerData {
     public static event Action<int> OnSyringeSlotUnlocked;
     public static event Action<int> OnSyringeFilled;
 
+    private static void ResetSyringeCogData() {
+        _cogCount = _syringeSlots = _filledSyringes = 0;
+    }
+    
     #endregion
 
     #region Artifacts
 
-    public static Dictionary<Artifact, bool> ArtifactStatus { get; } = new();
+    public static Dictionary<Artifact, bool> ArtifactStatus { get; private set; } = new();
 
     private static void SetupArtifactStatus() {
         if (ArtifactStatus.Count != 0) return;
@@ -184,6 +195,10 @@ public static class PlayerData {
 
     public static event Action<Artifact> OnArtifactUnlocked;
 
+    private static void ResetArtifactData() {
+        ArtifactStatus = new Dictionary<Artifact, bool>();
+    }
+
     #endregion
 
     #region Misc
@@ -203,6 +218,12 @@ public static class PlayerData {
     private static List<string> _watchedStoryCutscenes = new();
     public static void AddToWatchedStoryCutscenes(this string storyCutsceneId) => _watchedStoryCutscenes.Add(storyCutsceneId);
     public static bool CheckWatchedStoryCutscenes(this string storyCutsceneId) => _watchedStoryCutscenes.Contains(storyCutsceneId);
+
+    private static void ResetMiscData() {
+        previousDoorId = null;
+        _achievedStoryBeats = new List<StoryBeat>();
+        _watchedStoryCutscenes = new List<string>();
+    }
     
     #endregion
 
