@@ -2,14 +2,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class EffectSpawner : MonoBehaviour {
-    
-    [Header("Prefabs")]
-    [SerializeField] private GameObject droppedCog;
-    [SerializeField] private GameObject bloodFX;
-    [SerializeField] private GameObject pickupFX;
-    [SerializeField] private GameObject[] slashFX;
-    [SerializeField] private GameObject barricadeFX;
-    [SerializeField] private GameObject sparksFX;
+
+    [SerializeField] private EffectCollectionSO effectCollection;
 
     private static EffectSpawner _instance;
     private void Awake() => _instance = this;
@@ -21,24 +15,26 @@ public class EffectSpawner : MonoBehaviour {
     public static void SpawnSlashFX(int index, Transform followTransform) => _instance.SlashFX(index, followTransform);
     public static void SpawnBarricadeFX(Vector3 position) => _instance.BarricadeFX(position);
     public static void SpawnSparksFX(Vector3 position) => _instance.SparksFX(position);
+    public static void SpawnHammerShockFX(Vector3 position) => _instance.HammerShockFX(position);
     
     //Local instantiates
     private void SpawnFX(GameObject prefab, Vector3 position) => Instantiate(prefab, position, Quaternion.identity);
 
     private void DroppedCog(Vector3 position) {
-        var cog = Instantiate(droppedCog, position + Vector3.up, Quaternion.identity);
+        var cog = Instantiate(effectCollection.droppedCog, position + Vector3.up, Quaternion.identity);
         if (cog.TryGetComponent<Rigidbody>(out var rb)) {
             rb.AddForce(Random.Range(-3f, 3f), 6f, Random.Range(-3f, 3f), ForceMode.Impulse);
         }
     }
     
-    private void BloodFX(Vector3 position) => SpawnFX(bloodFX, position);
-    private void PickupFX(Vector3 position) => SpawnFX(pickupFX, position);
-    private void BarricadeFX(Vector3 position) => SpawnFX(barricadeFX, position);
-    private void SparksFX(Vector3 position) => SpawnFX(sparksFX, position);
+    private void BloodFX(Vector3 position) => SpawnFX(effectCollection.bloodFX, position);
+    private void PickupFX(Vector3 position) => SpawnFX(effectCollection.pickupFX, position);
+    private void BarricadeFX(Vector3 position) => SpawnFX(effectCollection.barricadeFX, position);
+    private void SparksFX(Vector3 position) => SpawnFX(effectCollection.sparksFX, position);
+    private void HammerShockFX(Vector3 position) => SpawnFX(effectCollection.hammerShockFX, position);
 
     private void SlashFX(int index, Transform followTransform) {
-        var handler = Instantiate(slashFX[index], followTransform.position, followTransform.rotation).GetComponent<VisualEffectHandler>();
+        var handler = Instantiate(effectCollection.slashFX[index], followTransform.position, followTransform.rotation).GetComponent<VisualEffectHandler>();
         handler.follow = followTransform;
     }
 }
