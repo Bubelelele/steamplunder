@@ -7,11 +7,16 @@ public class EnemyDeathCheck : MonoBehaviour {
     [SerializeField] private EnemyBase[] enemiesToCheck;
     [SerializeField] private UnityEvent onEnemiesKilled;
 
+    private int _amountKilled;
+
     private void Start() {
         foreach (var enemyBase in enemiesToCheck) {
-            enemyBase.onDeath.AddListener(CallOnEnemiesKilled);
+            enemyBase.onDeath.AddListener(OnEnemyKilled);
         }
     }
 
-    private void CallOnEnemiesKilled() => onEnemiesKilled.Invoke();
+    private void OnEnemyKilled() {
+        _amountKilled++;
+        if (_amountKilled >= enemiesToCheck.Length) onEnemiesKilled.Invoke();
+    }
 }
