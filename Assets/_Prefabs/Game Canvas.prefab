@@ -1125,7 +1125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4580245333218346290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1909,7 +1909,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4580245333218346290}
   m_RootOrder: 2
@@ -2768,7 +2768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4580245334158102766
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3613,7 +3613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4580245334710025661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4224,7 +4224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4580245335022380797
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4270,6 +4270,9 @@ MonoBehaviour:
   healthbarImage: {fileID: 4580245333694387496}
   reduceSpeed: 2
   healthText: {fileID: 4580245333737223657}
+  onHealthbarEmpty:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8661773380208907587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5589,7 +5592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &132041410343362688
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5638,7 +5641,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa7915778b7f1204bad1d72c361d232d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 138c4502885f17f4ca7dd59850ab300c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

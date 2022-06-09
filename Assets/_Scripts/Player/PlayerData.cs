@@ -70,7 +70,6 @@ public static class PlayerData {
     }
     
     public static void Damage(int amount, Transform source = null) {
-        SetHealth(Health - amount);
         if (Health <= 0) Die(source);
     }
 

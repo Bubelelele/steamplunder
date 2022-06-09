@@ -28,6 +28,7 @@ public class Player : MonoBehaviour {
         _playerMovement = GetComponent<PlayerMovement>();
         PlayerData.Init(maxHealth);
         PlayerData.OnDie += OnDie;
+        Cursor.visible = false;
     }
 
     private void Start() {
