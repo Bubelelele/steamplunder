@@ -51,7 +51,7 @@ public class HeavyBandit : BanditBase
                 ChangeSpeed(slowWalkingSpeed);
                 if (!attackInvoked)
                 {
-                    Invoke("Attack", Random.Range(1f, 1.5f));
+                    Invoke("Attack", Random.Range(2f, 3f));
                     attackInvoked = true;
                 }
 
@@ -116,6 +116,7 @@ public class HeavyBandit : BanditBase
     private void CannotStun()
     {
         canStun = false;
+        CancelInvoke();
     }
     public void Lethal()
     {
