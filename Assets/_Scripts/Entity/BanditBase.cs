@@ -12,6 +12,7 @@ public abstract class BanditBase : EnemyBase {
     public float rangeForStopChasingPlayer;
     public float FOV;
     public int attackDamage;
+    public AudioClip[] deathSounds;
 
     protected GameObject player;
     protected Animator enemyAnim;
@@ -27,6 +28,7 @@ public abstract class BanditBase : EnemyBase {
     private bool checkedForNerbyEnemies = false;
     private bool calledByNerbyEnemies = false;
     private GameObject alertTrigger;
+    private AudioSource audioSource;
 
 
     [Header("Idle patroling")]
@@ -55,6 +57,7 @@ public abstract class BanditBase : EnemyBase {
         idle = true;
         player = Player.GetPlayer().gameObject;
         enemyAnim = gameObject.GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         homePoint = transform.position;
         alertTrigger = transform.GetComponentInChildren<AlertTrigger>().gameObject;
     }
@@ -245,6 +248,11 @@ public abstract class BanditBase : EnemyBase {
         _died = true;
         GetComponent<Collider>().enabled = false;
         enemyAnim.SetTrigger("Die");
+        
+        //death sound
+        if (audioSource == null || deathSounds.Length == 0) return;
+        audioSource.clip = deathSounds[Random.Range(0, deathSounds.Length)];
+        audioSource.Play();
     }
 
     private void Destroy() => Destroy(gameObject);
