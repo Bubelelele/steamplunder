@@ -16,6 +16,7 @@ public class MissingCogInteractable : MonoBehaviour, IInteractable {
 
     public void CogPickedUp() {
         _cogPickedUp = true;
+        AudioManager.PlayAudio(AudioType.Pickup_Cog);
         cogIndicator.SetActive(true);
     }
 
