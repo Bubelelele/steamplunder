@@ -28,8 +28,8 @@ public abstract class BanditBase : EnemyBase {
     private bool checkedForNerbyEnemies = false;
     private bool calledByNerbyEnemies = false;
     private GameObject alertTrigger;
-    private AudioSource audioSource;
-
+    private AudioSource _audioSource;
+    private static AudioClip _previousDeathSound;
 
     [Header("Idle patroling")]
     //Idle
@@ -57,7 +57,7 @@ public abstract class BanditBase : EnemyBase {
         idle = true;
         player = Player.GetPlayer().gameObject;
         enemyAnim = gameObject.GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
         homePoint = transform.position;
         alertTrigger = transform.GetComponentInChildren<AlertTrigger>().gameObject;
     }
@@ -246,13 +246,19 @@ public abstract class BanditBase : EnemyBase {
     protected override void Die() {
         base.Die();
         _died = true;
+        CancelInvoke();
         GetComponent<Collider>().enabled = false;
         enemyAnim.SetTrigger("Die");
         
         //death sound
-        if (audioSource == null || deathSounds.Length == 0) return;
-        audioSource.clip = deathSounds[Random.Range(0, deathSounds.Length)];
-        audioSource.Play();
+        if (_audioSource == null || deathSounds.Length == 0) return;
+        AudioClip deathSoundToPlay;
+        do deathSoundToPlay = deathSounds[Random.Range(0, deathSounds.Length)];
+        while (deathSoundToPlay == _previousDeathSound);
+        
+        _audioSource.clip = deathSoundToPlay;
+        _audioSource.Play();
+        _previousDeathSound = deathSoundToPlay;
     }
 
     private void Destroy() => Destroy(gameObject);
