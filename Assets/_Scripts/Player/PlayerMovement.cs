@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate() {
         Vector3 inputVector = PlayerInput.Dir3;
-        Vector3 movementVector = GetMovementVector(inputVector);
+        Vector3 movementVector = transform.forward;
         _moveVector = movementVector;
 
         if (_animator != null) {
