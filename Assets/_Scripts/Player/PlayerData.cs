@@ -285,7 +285,7 @@ public static class PlayerData {
         _filledSyringes = savedFilledSyringes.GetSavedInt();
 
         previousDoorId = null; //Prevent spawn at door instead of shrine on death
-        _shouldSpawnAtShrine = true;
+        _shouldSpawnAtAShrine = true;
         
         SceneManager.LoadSceneAsync(savedScene.GetSavedString());
     }
@@ -295,10 +295,10 @@ public static class PlayerData {
         else SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private static bool _shouldSpawnAtShrine;
+    private static bool _shouldSpawnAtAShrine;
     public static bool ShouldSpawnAtShrine(int shrineId) {
-        if (!_shouldSpawnAtShrine) return false;
-        _shouldSpawnAtShrine = false;
+        if (!_shouldSpawnAtAShrine) return false;
+        _shouldSpawnAtAShrine = false;
         return shrineId == savedShrineId.GetSavedInt() &&
                savedScene.GetSavedString() == SceneManager.GetActiveScene().name;
     }
