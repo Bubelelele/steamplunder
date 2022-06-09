@@ -47,7 +47,7 @@ public class Player : MonoBehaviour {
     }
 
     public void DieAnimFinished() {
-        PlayerData.ReloadScene();
         PlayerData.SetHealth(maxHealth);
+        PlayerData.ReloadScene();
     }
 }

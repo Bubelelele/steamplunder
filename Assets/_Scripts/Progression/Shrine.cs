@@ -25,8 +25,8 @@ public class Shrine : MonoBehaviour, IInteractable {
     }
 
     private IEnumerator Save() {
-        onSave.Invoke();
         PlayerData.Save(shrineId);
+        onSave.Invoke();
         _onSaveTimeout = true;
         yield return new WaitForSeconds(saveDelay);
         _onSaveTimeout = false;

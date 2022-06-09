@@ -832,16 +832,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0dbee1f75539c343bd6092162cc980d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 70
   healthbar: {fileID: 8594307189452075235}
   numCogsDroppedOnDeath: 1
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
   movementSpeed: 7
   slowWalkingSpeed: 5
   rotationSpeed: 10
   sightRange: 8
   rangeForStopChasingPlayer: 20
   FOV: 80
-  attackDamage: 4
+  attackDamage: 6
   patrol: 1
   patrolRange: 5
   lethal: 0

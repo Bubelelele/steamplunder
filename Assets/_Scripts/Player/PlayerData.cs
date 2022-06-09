@@ -103,13 +103,13 @@ public static class PlayerData {
     public static bool AllSlotsFull => _filledSyringes >= _syringeSlots;
     
     public static void CogPickedUp() {
-        if (_cogCount >= CogsToFillSyringe || _syringeSlots == _filledSyringes) return;
+        if (_syringeSlots == _filledSyringes) return;
         
         Debug.Log("New cog");
         _cogCount++;
         if (_cogCount > CogsToFillSyringe) _cogCount = CogsToFillSyringe;
         OnCogCountIncreased?.Invoke(_cogCount);
-        if (_cogCount == CogsToFillSyringe) FillSyringe();
+        if (_cogCount >= CogsToFillSyringe) FillSyringe();
     }
     
     public static void UnlockSyringeSlot() {
